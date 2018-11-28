@@ -1,4 +1,4 @@
-## cached credentials 
+## Cached credentials 
 
 ```
 shell vaultcmd /listcreds:"Windows Credentials" /all
