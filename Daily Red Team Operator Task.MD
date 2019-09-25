@@ -106,6 +106,6 @@
 
 | Linxu and Microsoft RPC Enumeration  |
 | ------------- |
-| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
+| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' | TEST|
 | smbclient -N -L \\\\10.10.10.103 |
 
