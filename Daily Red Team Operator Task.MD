@@ -19,9 +19,15 @@
 
 | for Example |
 | ------------- |
+|smbmap -H 10.10.10.103 # N No password |
+|smbclient -N -L \\\\192.168.1.1|
+|smbclient -N //192.168.1.1/SYSVOL|
+|smbmap -H 10.10.10.103 -u MeMe -p 123456aQ |
+|smbclient \\\\10.10.10.100\\NETLOGON|
+|smbclient \\\\10.10.10.100\\Replication|
+|smbmap.py -H 10.10.10.100 -d active.htb -u SVC_TGS -p GPPstillStandingStrong2k18|
 | smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
-| smbmap -H 10.10.10.103 # N No password |
-|smbclient -N -L \\\\10.10.10.103|
+|smbclient \\\\10.10.10.103\\C$  -U "Administrator" --pw-nt-hash f6b7160bfc91823792e0ac3a162c9267|
 
 ### Commonly Users and Service Enumeration Through Running RPC and SNMP Services
 
