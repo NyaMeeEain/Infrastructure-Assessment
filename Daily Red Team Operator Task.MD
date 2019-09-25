@@ -39,19 +39,6 @@
 
 
 
-
-
-| Linxu and Microsoft RPC Enumeration  |
-| ------------- |
-| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
-| smbclient -N -L \\\\10.10.10.103 |
-
-| Linxu and Microsoft RPC Enumeration  |
-| ------------- |
-| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
-| smbclient -N -L \\\\10.10.10.103 |
-
-
 ### Advanced SSH Tunneling and Port Forward
 
 | for Example |
@@ -108,5 +95,13 @@
 | xdpyinfo -display 192.168.2.75:0 | head -n 5 |
 |xspy -display 192.168.1.23:0 -delay 100|
 
+| Linxu and Microsoft RPC Enumeration  |
+| ------------- |
+| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
+| smbclient -N -L \\\\10.10.10.103 |
 
+| Linxu and Microsoft RPC Enumeration  |
+| ------------- |
+| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
+| smbclient -N -L \\\\10.10.10.103 |
 
