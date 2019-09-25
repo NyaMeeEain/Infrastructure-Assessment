@@ -104,8 +104,10 @@
 | smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
 | smbclient -N -L \\\\10.10.10.103 |
 
-| Linxu and Microsoft RPC Enumeration  | TEst |
+### Active Directory Enumeration 
+
+|Active Directory Enumeration | for Example |
 | ------------- | ------------- |
-| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' | TEST|
-| smbclient -N -L \\\\10.10.10.103 |
+| Test | TEST|
+
 
