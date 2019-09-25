@@ -24,7 +24,7 @@
 
 ### Commonly Users and Service Enumeration Through Running RPC and SNMP Services
 
-| Commonly Users and Service Enumeration Through Running Services  |
+|How To Do   |
 | ------------- |
 |rpcclient –U “” [target IP address] |
 | > querydominfo |
