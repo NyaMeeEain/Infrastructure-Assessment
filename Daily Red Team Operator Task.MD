@@ -21,11 +21,22 @@
 | nmap -sT -PN -n -sV -p 21,22,23,25,80,110,139,443,445,1433,1521,3306,3389,8080,10000 192.168.2.9/24 | awk '/22\/open/ {print $2}' |
 
 
-
-| First Header  |
+| Linxu and Microsoft RPC Enumeration  |
 | ------------- |
-| Data |
+| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
+| smbclient -N -L \\\\10.10.10.103 |
 
-| First Header  |
+| Linxu and Microsoft RPC Enumeration  |
 | ------------- |
-| Data |
+| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
+| smbclient -N -L \\\\10.10.10.103 |
+
+| Linxu and Microsoft RPC Enumeration  |
+| ------------- |
+| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
+| smbclient -N -L \\\\10.10.10.103 |
+
+| Linxu and Microsoft RPC Enumeration  |
+| ------------- |
+| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
+| smbclient -N -L \\\\10.10.10.103 |
