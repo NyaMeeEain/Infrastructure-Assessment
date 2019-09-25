@@ -22,16 +22,15 @@
 | nmap -sT -PN -n -sV -p 21,22,23,25,80,110,139,443,445,1433,1521,3306,3389,8080,10000 192.168.2.9/24 |
 | nmap -sT -PN -n -sV -p 21,22,23,25,80,110,139,443,445,1433,1521,3306,3389,8080,10000 192.168.2.9/24 | awk '/22\/open/ {print $2}' |
 
-### Commonly Users and Service Enumeration Through Running Services
+### Commonly Users and Service Enumeration Through Running RPC and SNMP Services
 
 | Commonly Users and Service Enumeration Through Running Services  |
 | ------------- |
 |rpcclient –U “” [target IP address] |
 | > querydominfo |
-|>enumdomusers|
+| >enumdomusers|
 | >queryuser msfadmin| 
-### SNMP
-|>queryuser msfadmin|
+| >queryuser msfadmin|
 
 
 
