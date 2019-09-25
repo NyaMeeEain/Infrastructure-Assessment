@@ -30,6 +30,8 @@
 | > querydominfo |
 |>enumdomusers|
 | >queryuser msfadmin| 
+### SNMP
+|>queryuser msfadmin|
 
 
 
