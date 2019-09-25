@@ -31,6 +31,18 @@
 | smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
 | smbclient -N -L \\\\10.10.10.103 |
 
+| Linxu and Microsoft RPC Enumeration  |
+| ------------- |
+| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
+| smbclient -N -L \\\\10.10.10.103 |
+
+| Advanced SSH Tunneling and Port Forward |
+| ------------- |
+| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
+| smbclient -N -L \\\\10.10.10.103 |
+
+
+
 | NFS Exported Shares|
 | ------------- |
 | showmount -e 192.168.100.25 #Check if any share is available |
