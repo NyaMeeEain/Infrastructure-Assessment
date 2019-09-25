@@ -114,7 +114,7 @@
 | Get-NetDomain | gets the name of the current user's domain|
 | Get-NetForest | gets the forest associated with the current user's domain|
 | Get-NetForestDomain | gets all domains for the current forest|
-|Get-NetDomainController | gets the domain controllers for the current computer's domain|
+| Get-NetDomainController | gets the domain controllers for the current computer's domain|
 | Get-NetComputer | gets a list of all current servers in the domain|
 | Get-NetDomainTrust  | gets all trusts for the current user's domain|
 | Get-NetForestTrust |  gets all trusts for the forest associated with the current user's domain|
