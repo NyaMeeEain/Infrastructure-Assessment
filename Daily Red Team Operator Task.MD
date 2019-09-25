@@ -1,6 +1,6 @@
 
 
-### Procdump - text in red
+### Service Enumeration
 ```
 nmap -Pn -n --open -p3389  172.31.6.0/24
 
