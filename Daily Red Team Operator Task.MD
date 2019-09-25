@@ -26,8 +26,10 @@
 
 | Commonly Users and Service Enumeration Through Running Services  |
 | ------------- |
-| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
-| smbclient -N -L \\\\10.10.10.103 |
+|rpcclient –U “” [target IP address] |
+| > querydominfo |
+|>enumdomusers|
+| >queryuser msfadmin| 
 
 
 
