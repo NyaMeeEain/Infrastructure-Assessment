@@ -36,7 +36,7 @@
 | smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
 | smbclient -N -L \\\\10.10.10.103 |
 
-| Linxu and Microsoft RPC Enumeration  |
+| MySQL UDF Privilge Escalation  |
 | ------------- |
-| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
-| smbclient -N -L \\\\10.10.10.103 |
+|gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc|
+| use mysql; |
