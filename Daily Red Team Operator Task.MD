@@ -24,7 +24,7 @@ nmap -sT -O -P0 -T5 --open -oN result.txt -p80-89,8080-8099,8000-8009,7001-7009,
 
 | RPC Enumeation  |
 | ------------- |
-| Data  Data |
+| nmap -Pn -n --open -p3389  172.31.6.0/24 |
 
 | First Header  |
 | ------------- |
