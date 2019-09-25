@@ -43,7 +43,7 @@
 
 
 
-### Advanced SSH Tunneling and Window PortProxy Forwarding
+### Advanced SSH and Window PortProxy Tunneling and Port Forwarding
 
 | for Example |
 | ------------- |
