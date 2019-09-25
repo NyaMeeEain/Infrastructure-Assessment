@@ -48,6 +48,7 @@
 |ssh -p 13339 -f -N j0hn@10.11.1.252  |
 |ssh -N -f -D 8888 -p 22000 j0hn@192.168.13.252 |
 |ssh -nNT -R 3389:localhost:3389 user@pivot host #Remote Port Forward |
+|netsh interface portproxy add v4tov4 listenport=1111 listenaddress=10.100.11.101 connectport=1111 connectaddress=175.12.80.10|
 
 
 
