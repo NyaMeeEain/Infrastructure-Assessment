@@ -31,6 +31,13 @@
 | >enumdomusers|
 | >queryuser msfadmin| 
 | >queryuser msfadmin|
+|snmpwalk -c public -v1 $TARGET 1.3.6.1.4.1.77.1.2.25 #User|
+|snmpwalk -c public -v1 $TARGET 1.3.6.1.2.1.25.4.2.1.2 # Running Service|
+| snmpwalk -c public -v1 $TARGET .1.3.6.1.2.1.1.5 #Hostname |
+|snmpwalk -c public -v1 $TARGET 1.3.6.1.4.1.77.1.2.3.1.1 #Share Information|
+|snmpwalk -c public -v1 $TARGET4 1.3.6.1.2.1.6.13.1.3 #Openning Port|
+
+
 
 
 
