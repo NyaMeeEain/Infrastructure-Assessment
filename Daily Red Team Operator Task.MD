@@ -36,17 +36,18 @@
 | smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
 | smbclient -N -L \\\\10.10.10.103 |
 
+
 ### Advanced SSH Tunneling and Port Forward
 
-| Advanced SSH Tunneling and Port Forward |
+| Advanced SSH and Window Portproxy Tunneling and Port Forward |
 | ------------- |
 |ssh -L 127.0.0.1:8080:127.0.0.1:80 remotehost |
-| ssh -nNT -L 8000:localhost:3306 user@pivoting host #Local Port Forwarding |
-| ssh -nNT -R 0.0.0.0:4000:192.168.1.101:631 user@pivot host |
-| ssh -D 5000 -nNT user@pivoting host #SOCKS Proxy|
-| ssh -p 13339 -f -N j0hn@10.11.1.252  |
+|ssh -nNT -L 8000:localhost:3306 user@pivoting host #Local Port Forwarding |
+|ssh -nNT -R 0.0.0.0:4000:192.168.1.101:631 user@pivot host |
+|ssh -D 5000 -nNT user@pivoting host #SOCKS Proxy|
+|ssh -p 13339 -f -N j0hn@10.11.1.252  |
 |ssh -N -f -D 8888 -p 22000 j0hn@192.168.13.252 |
-| ssh -nNT -R 3389:localhost:3389 user@pivot host #Remote Port Forward |
+|ssh -nNT -R 3389:localhost:3389 user@pivot host #Remote Port Forward |
 
 
 
