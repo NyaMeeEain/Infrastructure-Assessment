@@ -146,7 +146,7 @@
 
 
 
-### MiMikatz
+### Mimikatz Guide
 
 | Pass-the-Hash  |
 | ------------- |
