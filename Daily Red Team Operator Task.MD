@@ -31,10 +31,14 @@
 | smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
 | smbclient -N -L \\\\10.10.10.103 |
 
-| Linxu and Microsoft RPC Enumeration  |
+| NFS Exported Shares|
 | ------------- |
-| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
-| smbclient -N -L \\\\10.10.10.103 |
+| showmount -e 192.168.100.25 #Check if any share is available |
+| mount -t nfs 192.168.100.25:/home /tmp/NFS |
+| mount -t nfs 192.168.1.112:/ /mnt -o nolock |
+| mkdir /tmp/NFS |
+| mkdir /tmp/NFS |
+| mkdir /tmp/NFS |
 
 | MySQL UDF Privilge Escalation  |
 | ------------- |
