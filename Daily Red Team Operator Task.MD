@@ -109,9 +109,10 @@
 |Active Directory Enumeration | for Example |
 | ------------- | ------------- |
 | [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain() | current domain info|
-| Test | TEST|
-| Test | TEST|
-| Test | TEST|
+| ([System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()).GetAllTrustRelationships() | domain trusts|
+| [System.DirectoryServices.ActiveDirectory.Forest]::GetCurrentForest() | current forest info|
+| ([System.DirectoryServices.ActiveDirectory.Forest]::GetForest((New-Object System.DirectoryServices.ActiveDirectory.DirectoryContext('Forest', 'forest-of-interest.local')))).GetAllTrustRelationships()
+ |  get forest trust relationships|
 | Test | TEST|
 | Test | TEST|
 | Test | TEST|
