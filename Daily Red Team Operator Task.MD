@@ -111,8 +111,17 @@
 | [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain() | current domain info|
 | ([System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()).GetAllTrustRelationships() | domain trusts|
 | [System.DirectoryServices.ActiveDirectory.Forest]::GetCurrentForest() | current forest info|
-| Test | TEST|
-| Test | TEST|
-| Test | TEST|
+| Get-NetDomain | gets the name of the current user's domain|
+| Get-NetForest | gets the forest associated with the current user's domain|
+| Get-NetForestDomain | gets all domains for the current forest|
+|Get-NetDomainController | gets the domain controllers for the current computer's domain|
+| Get-NetComputer | gets a list of all current servers in the domain|
+| Get-NetDomainTrust  | gets all trusts for the current user's domain|
+| Get-NetForestTrust |  gets all trusts for the forest associated with the current user's domain|
+| Find-LocalAdminAccess | finds machines on the domain that the current user has local admin access to|
+| Get-ExploitableSystem |  finds systems likely vulnerable to common exploits|
+| Get-ObjectAcl | returns the ACLs associated with a specific active directory object|
+| Get-DomainSID | return the SID for the specified domain|
+| Get-NetFileServer | get a list of file servers used by current domain users|
 
 
