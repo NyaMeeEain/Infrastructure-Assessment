@@ -125,9 +125,10 @@
 | Get-NetFileServer | get a list of file servers used by current domain users|
 
 
-### Remotely Command Execute Using Both Plaintext and NTLM 
+### Commands Execute Remotely using Both Plaintext and NTLM
 
-| Remotely Command Execute Using Both Plaintext and NTLM  |
+
+| for Example |
 | ------------- |
 |PsExec64.exe \\192.168.1.104 -u administrator -p forever cmd |
 |psexec \\192.168.122.66 -u Administrator -p 123456Ww ipconfig|
