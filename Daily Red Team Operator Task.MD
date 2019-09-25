@@ -108,6 +108,12 @@
 
 |Active Directory Enumeration | for Example |
 | ------------- | ------------- |
+| [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain() | current domain info|
+| Test | TEST|
+| Test | TEST|
+| Test | TEST|
+| Test | TEST|
+| Test | TEST|
 | Test | TEST|
 
 
