@@ -38,7 +38,12 @@
 
 | Advanced SSH Tunneling and Port Forward |
 | ------------- |
-| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
+|ssh -L 127.0.0.1:8080:127.0.0.1:80 remotehost |
+| ssh -nNT -L 8000:localhost:3306 user@pivoting.com #Local Port Forwarding |
+| ssh -nNT -R 0.0.0.0:4000:192.168.1.101:631 user@server.com |
+| smbclient -N -L \\\\10.10.10.103 |
+| smbclient -N -L \\\\10.10.10.103 |
+| smbclient -N -L \\\\10.10.10.103 |
 | smbclient -N -L \\\\10.10.10.103 |
 
 
