@@ -24,4 +24,9 @@
 |http://[2001:db7::1234:2] |
 |telnet 3ffe:400:100::1 80 |
 |mount -t nfs [2001:db8::60fe:5bff:febc:912]:/home/MeMe /home/mount/ |
-|ssh MeMe@fe80::ea9a:8fff:fe67:190d%eth0 |
+|curl -g [fe80::ba27:ebff:fe60:89af] |
+|curl -g [::1]:8080|
+|curl -g http://[::1]:8080/ |
+|curl -I [2001:db7::1234:1] -v -V -K|
+|dirb http://[2001:db7::1234:1]|
+
