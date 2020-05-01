@@ -14,7 +14,7 @@
 |nmap -sT -PN -n -sV -p 21,22,23,25,80,110,139,443,445,1433,1521,3306,3389,8080,10000 192.168.2.9/24 | awk '/22\/open/ {print $2}' |
 
 
-### Linux and Microsoft RPC service Enumeration
+### RPC services Enumeration
 
 | for Example |
 | ------------- |
