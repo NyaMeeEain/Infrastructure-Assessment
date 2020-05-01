@@ -1,6 +1,6 @@
 ### lateral movement
-| ------------- |
 | for Example |
+| -------------|
 | crackmapexec 192.168.100.1/24 |
 | crackmapexec cme-hosts.txt --shares |
 | cme-hosts.txt -u username.txt -p password.txt --shares |
