@@ -1,6 +1,5 @@
 
-### Service Enumeration To Identify how Many TCP and UDP Port is being Opened
-
+### Service Enumeration
 | for Example  |
 | ------------- |
 |nmap -Pn -n --open -p500  192.168.0.0/24 |
