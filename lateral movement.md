@@ -1,5 +1,12 @@
-### RPC services Enumeration
-
+### lateral movement
 | for Example |
 | ------------- |
-|smbmap -H 10.10.10.103 # N No password |
+|crackmapexec 192.168.100.10 -u Administrator -p 'Passw0rd!' -x "net users" |
+| ------------- |
+| ------------- |
+| ------------- |
+| ------------- |
+| ------------- |
+| ------------- |
+| ------------- |
+| ------------- |
