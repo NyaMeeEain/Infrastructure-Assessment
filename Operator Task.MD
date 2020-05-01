@@ -100,7 +100,6 @@
 
 | for Example  |
 | ------------- |
-| use auxiliary/scanner/x11/open_x11 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
 | nmap -p 6000 --script=x11-access 192.168.2.26,75 |
 | create table npn(line blob); |
 | xdpyinfo -display 192.168.2.75:0 | head -n 5 |
