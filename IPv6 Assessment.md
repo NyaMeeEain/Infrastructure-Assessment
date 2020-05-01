@@ -26,7 +26,7 @@
 |mount -t nfs [2001:db8::60fe:5bff:febc:912]:/home/MeMe /home/mount/ |
 |curl -g [fe80::ba27:ebff:fe60:89af] |
 |curl -g [::1]:8080|
-|curl -g http://[::1]:8080/ |
-|curl -I [2001:db7::1234:1] -v -V -K|
-|dirb http://[2001:db7::1234:1]|
+|curl -g http://[IPV6]:8080/ |
+|curl -I [IPV6] -v -V -K|
+|dirb http://[IPV6]|
 
