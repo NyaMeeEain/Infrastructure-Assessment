@@ -19,4 +19,9 @@
 ### IPv6 Services
 | for Example  |
 | ------------- |
-|ssh carla@fe80::ea9a:8fff:fe67:190d%eth0 |
+|ssh MeMe@fe80::ea9a:8fff:fe67:190d%eth0 |
+|smbclient -L //2001:db7::1234:1%eth0 |
+|http://[2001:db7::1234:2] |
+|telnet 3ffe:400:100::1 80 |
+|mount -t nfs [2001:db8::60fe:5bff:febc:912]:/home/MeMe /home/mount/ |
+|ssh MeMe@fe80::ea9a:8fff:fe67:190d%eth0 |
