@@ -71,7 +71,9 @@
 
 Then use `mimikatz` to load the ticket.
 
+### Mimikatz 
 ```powershell
+
 mimikatz.exe "kerberos::ptc c:\temp\TGT_darthsidious@lab.adsecurity.org.ccache"
 ```
 
