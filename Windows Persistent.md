@@ -39,7 +39,7 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Userinit
 ```
 ### Services
 ```
-New-Service -Name "Backdoor" -BinaryPathName " C:\Users\KarMarKhaing\MS_Startup.exe" -Description "Microsoft Service for Startups"
+New-Service -Name "MS_Service for Startups" -BinaryPathName " C:\Users\KarMarKhaing\MS_Startup.exe" -Description "Microsoft Service for Startups"
 
 ```
 
