@@ -22,3 +22,8 @@ powershell Get-DomainGroupMember  "Enterprise Admins"
 powershell Get-DomainGroupMember "Enterprise Admins" –Domain acmebank.local
 powershell Get-DomainGroup *admin* -Properties samaccountname | Get-DomainGroupMember
 ```
+### DomainPolicy
+```
+Get-DomainPolicy  -Domain acmebank.local
+powershell Get-DomainPolicy -Source DC -Domain acmebank.local
+```
