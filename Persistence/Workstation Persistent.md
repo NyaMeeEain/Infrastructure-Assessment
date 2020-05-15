@@ -1,8 +1,9 @@
 
 
 ### Registry Persistence
+## Userland AutoRun Persistence:
 ```
-#Userland AutoRun Persistence:
+
 reg query "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
 shell reg delete  HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v Vmware-Services /f
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v Service /t REG_SZ /d "C:\Users\Public\\MeMe.exe"
