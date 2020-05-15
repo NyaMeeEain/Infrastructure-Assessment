@@ -28,3 +28,21 @@ Get-Domain | Select-Object -Expand name
 Get-DomainPolicy  -Domain acmebank.local
 powershell Get-DomainPolicy -Source DC -Domain acmebank.local
 ```
+### Forest Manipulation and abusive
+
+```
+#Get a list of all Domain Trusts for the current Domain
+Get-NetDomainTrust
+Get-NetDomainTrust -Domain <domain>
+
+#Get details about the current Forest
+Get-NetForest
+powershell Get-NetForest -Forest  acmebank.local
+
+#Get all Domains in the current Forest
+Get-NetForestDomain
+Get-NetForestDomain -Forest acmebank.local
+```
+
+
+
