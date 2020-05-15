@@ -13,8 +13,7 @@ net group "domain admins" John /add /domain
 
 ###  DCShadow Persistence
 
-
-DCShadow is a persistence technique which is  allowing an attacker to push malicious changes into the environment by modifying active directory objects.domain privileges is requiredto carry out this attack
+DCShadow is persistence technique used by adversary that allow  an adversary to push unauthorized changes into the environment by modifying active directory objects.domain privileges is requiredto carry out this attack
 
 DCShadow is persistence technique used by adversary to maintain access on compromise domain controller. to carry out such a persistence technique two active administrative session is required.one of which has to be domain privilege session and one of another session has to be system privilege session where compromised box.
 ```
