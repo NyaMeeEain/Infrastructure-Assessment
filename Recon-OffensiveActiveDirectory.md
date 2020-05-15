@@ -6,6 +6,13 @@ Powershell Get-NetUser -Identity John
 PowerShell Get-NetUser | Format-Table name, samaccountname, userprincipalname, description
 Get-NetUser -Credential $Cred | Format-Table name, samaccountname, userprincipalname, description
 ```
+### Get a list of computers in the current Domain
+```
+powershell Get-DomainComputer | select cn,objectsid,dnshostname
+powershell Get-NetComputer -OperatingSystem "*Server 2016*" | select operatingsystem,lastlogon,dnshostname
+```
+
+
 ### Domain Group Members Enumeration
 ```
 To enumerate members of the Domain Admins group
