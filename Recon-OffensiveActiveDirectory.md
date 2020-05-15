@@ -1,5 +1,8 @@
-### Recon OffensiveActiveDirectory
+### Get list of users in the current Domain
+
 ```
+PowerShell Get-NetUser | select cn
+Powershell Get-NetUser -Identity John
 PowerShell Get-NetUser | Format-Table name, samaccountname, userprincipalname, description
 Get-NetUser -Credential $Cred | Format-Table name, samaccountname, userprincipalname, description
 ```
