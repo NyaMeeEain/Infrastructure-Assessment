@@ -24,6 +24,7 @@ powershell Get-DomainGroup *admin* -Properties samaccountname | Get-DomainGroupM
 ```
 ### DomainPolicy
 ```
+Get-Domain | Select-Object -Expand name
 Get-DomainPolicy  -Domain acmebank.local
 powershell Get-DomainPolicy -Source DC -Domain acmebank.local
 ```
