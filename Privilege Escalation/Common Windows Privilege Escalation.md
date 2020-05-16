@@ -52,3 +52,15 @@ sc stop WeakService4
 sc start WeakService4
 
 ```
+### Weak Folder Permissions 
+```
+icacls c:\kioware_com
+C:\kioware_com Everyone:(OI)(CI)(F)
+               NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+               BUILTIN\Administrators:(I)(OI)(CI)(F)
+               BUILTIN\Users:(I)(OI)(CI)(RX)
+               BUILTIN\Users:(I)(CI)(AD)
+               BUILTIN\Users:(I)(CI)(WD)
+               CREATOR OWNER:(I)(OI)(CI)(IO)(F)
+
+```
