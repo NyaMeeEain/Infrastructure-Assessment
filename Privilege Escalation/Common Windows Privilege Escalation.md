@@ -18,6 +18,8 @@ C:\Program Files (x86)\Program Folder\A Subfolder\Executable.exe
 ```
 If we can drop our malicious exe successfully on one of these paths, upon a restart of the service, Windows will run our exe as SYSTEM.In order to check the permissions of a folder
 ```
+icacls "C:\WeakServices\Weak Service 1\service1.exe"
+icacls "C:\WeakServices\Weak Service 1"
 icacls "C:\Program Files (x86)\Program Folder"
 icacls "C:\Program Files\Photodex\ProShow Producer\Scsiaccess.exe"
 ```
