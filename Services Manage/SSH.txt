@@ -1,0 +1,24 @@
+SSH-1.99
+This isn't actually a version of the protocol. The first piece of data exchanged by the client and server is their protocol version in what's called a protocol string.
+This is the only compatibility the two protocols share. Examples of version strings
+
+SSH-1.99-OpenSSH_2.5.2p2
+SSH-2-OpenSSH_2.9p1
+
+
+SSH-1
+SSH-1, such as SSH 1.3 and 1.5, are vulnerable. SSH servers that offer SSH version 1.99 support SSH version 1 and version 2
+SSHv1 had several iterations. Each iteration fixed certain security issues, but the protocol itself is vulnerable to several attacks. It uses RSA to encrypt 32 bytes of session key. It uses both the server's key and the host key.
+
+SSH-2
+SSHv2 is a completely different protocol. It uses an Ephemeral Diffie-Hellman exchange with proper integrity checks of the entire exchange. The entire packet is encrypted, including any SSH header information.
+
+OpenSSH 3.5
+complete SSH protocol version 1.3, 1.5 and 2.0
+
+
+OpenSSH 5.4 was released on 2010-03-08. It is available from the
+mirrors listed at https://www.openssh.com/.
+OpenSSH is a 100% complete SSH protocol version 1.3, 1.5 and 2.0
+
+this release disables SSH protocol 1 by default
