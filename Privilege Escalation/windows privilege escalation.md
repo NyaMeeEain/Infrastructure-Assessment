@@ -1,8 +1,9 @@
 wmic service get name,displayname,startmode,pathname | findstr /i /v "C:\Windows\\" |findstr /i /v """
 
-accesschk.exe /accepteula 
+
 ```
 #Find all weak folder permissions per drive.
+accesschk.exe /accepteula 
 accesschk.exe -uwdqs Users c:\
 accesschk.exe -uwdqs "Authenticated Users" c:\
 accesschk.exe -uwdqs "John" c:\
