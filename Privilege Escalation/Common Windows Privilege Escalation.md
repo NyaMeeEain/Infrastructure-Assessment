@@ -63,5 +63,18 @@ C:\kioware_com Everyone:(OI)(CI)(F)
                BUILTIN\Users:(I)(CI)(AD)
                BUILTIN\Users:(I)(CI)(WD)
                CREATOR OWNER:(I)(OI)(CI)(IO)(F)
+sc qc KWSService
+[SC] QueryServiceConfig SUCCESS
+
+SERVICE_NAME: KWSService
+        TYPE               : 10  WIN32_OWN_PROCESS
+        START_TYPE         : 2   AUTO_START  (DELAYED)
+        ERROR_CONTROL      : 1   NORMAL
+        BINARY_PATH_NAME   : "C:\kioware_com\KWSS.exe"
+        LOAD_ORDER_GROUP   :
+        TAG                : 0
+        DISPLAY_NAME       : KWS Service
+        DEPENDENCIES       :
+        SERVICE_START_NAME : LocalSystem               
 
 ```
