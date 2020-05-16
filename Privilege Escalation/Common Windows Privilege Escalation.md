@@ -1,4 +1,7 @@
 ### Unquoted Service Path
+
+Technically Unquoted Service Path vulnerability is caused by the CreateProcess function in Windows operating systems which may allow unprivileged loc users to modify the affected executable file as a system privilege in order to elevate their privileged from unprivilege to system privilged.
+
 ```
 wmic service get name,displayname,pathname,startmode |findstr /i "Auto" |findstr /i /v "C:\Windows\\" |findstr /i /v """
 ```
