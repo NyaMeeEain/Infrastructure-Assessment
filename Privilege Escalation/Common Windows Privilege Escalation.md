@@ -53,6 +53,7 @@ sc start WeakService4
 
 ```
 ### Weak Folder Permissions 
+weak folder permissions granting any user full permission "Everyone: (F)" to the contents of the directory and it's sub-folders. In addition, the program installs a service called "KWSService" which runs as "Localsystem", this will allow any user to escalate privileges to "NT AUTHORITY\SYSTEM" by substituting the service's binary with a malicious one
 ```
 icacls c:\kioware_com
 C:\kioware_com Everyone:(OI)(CI)(F)
