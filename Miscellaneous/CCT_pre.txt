@@ -1,0 +1,11 @@
+In this example, you can find the following:
+
+status (rpc.statd) on TCP port 32771 and UDP port 32772
+
+nlockmgr (rpc.lockd) on TCP and UDP port 4045
+
+nfsd on UDP port 2049
+
+rquotad on UDP port 32822
+
+rusersd on TCP port 33180 and UDP port 32823
