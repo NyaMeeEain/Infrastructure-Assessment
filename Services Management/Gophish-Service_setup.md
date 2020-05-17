@@ -1,3 +1,4 @@
+```
 mkdir /opt/gophish
 curl -L https://github.com/gophish/gophish/releases/download/v0.9.0/gophish-v0.9.0-linux-64bit.zip -o gophish-v0.9.0-linux-64bit.zip
 unzip gophish-v0.9.0-linux-64bit.zip -d /opt/gophish/
@@ -36,12 +37,4 @@ sudo systemctl start gophish
 sudo systemctl enable gophish
 sudo systemctl status gophish
 
-#Configure firewall
-ufw enable
-ufw allow ssh
-ufw allow http
-ufw allow https
-ufw allow 8080/tcp
-ufw allow 50050/tcp
-ufw allow 53/udp
-ufw allow 5353/udp
+```
