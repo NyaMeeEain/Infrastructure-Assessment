@@ -2,6 +2,7 @@
 Get-SQLInstanceDomain -Verbose
 Get-SQLServerInfo -Verbose -Instance DESKTOP-4D21EQP\SQLEXPRESS
 Get-SQLInstanceLocal -Instance "DESKTOP-4D21EQP\SQLEXPRESS" | Get-SQLServerInfo
+Get-SQLInstanceLocal -Instance "DESKTOP-4D21EQP\SQLEXPRESS" -username 'sa' -password '123456' | Get-SQLServerInfo
 ```
 ### Follow Out
 ```
