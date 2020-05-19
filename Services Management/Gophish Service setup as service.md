@@ -23,7 +23,9 @@ ExecStart=/bin/sh -c "/opt/gophish/gophish >>${STDOUT} 2>>${STDERR}"
 [Install]
 WantedBy=multi-user.target
 Alias=gophish.service
+```
 
+```
 #Create the log directory and give our user permission:
 mkdir /var/log/gophish
 sudo chown -R gophish:gophish /opt/gophish/ /var/log/gophish/
