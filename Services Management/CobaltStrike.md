@@ -19,6 +19,9 @@ ExecStart=/bin/sh -c "/opt/CobaltStrike/Service.sh >>${STDOUT} 2>>${STDERR}"
 WantedBy=multi-user.target
 Alias=CobaltStrike.service
 ```
+
+
+
 ```
 #Create the log directory and give our user permission:
 mkdir /var/log/CobaltStrike
