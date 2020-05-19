@@ -18,7 +18,8 @@ ExecStart=/bin/sh -c "/opt/CobaltStrike/Service.sh >>${STDOUT} 2>>${STDERR}"
 [Install]
 WantedBy=multi-user.target
 Alias=CobaltStrike.service
-
+```
+```
 #Create the log directory and give our user permission:
 mkdir /var/log/CobaltStrike
 sudo chown -R Cobalt:Cobalt /opt/CobaltStrike/Service.sh /var/log/CobaltStrike/
