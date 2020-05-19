@@ -31,6 +31,9 @@ ExecStart=/bin/sh -c "/opt/Covenant/Covenant.sh >>${STDOUT} 2>>${STDERR}"
 WantedBy=multi-user.target
 Alias=Covenant.service
 
+```
+
+```
 #Create the log directory and give our user permission:
 mkdir /var/log/Covenant
 sudo chown -R Covenant:Covenant /opt/Covenant/Covenant.sh/ /var/log/Covenant/
