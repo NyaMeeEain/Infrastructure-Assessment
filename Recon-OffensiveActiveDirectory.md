@@ -17,6 +17,14 @@ powershell Get-NetComputer -OperatingSystem "*Server 2016*" | select operatingsy
 ```
  PowerShell Get-DomainOU -Properties Name | Sort-Object -Property Name
 ```
+### DomainGPOLocalGroup
+```
+PowerShell Get-DomainGroup -Identity 'Domain Admins' | Select-Object -ExpandProperty Member
+PowerShell Get-DomainGroupMember -Identity 'Domain Admins' | Select-Object MemberDistinguishedName 
+PowerShell Get-DomainGPOLocalGroup | Select-Object GPODisplayName, GroupName
+PowerShell Find-DomainUserLocation | Select-Object UserName, SessionFromName
+
+```
 
 
 ### Domain Group Members Enumeration
