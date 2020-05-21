@@ -25,7 +25,18 @@ PowerShell Get-DomainGPOLocalGroup | Select-Object GPODisplayName, GroupName
 PowerShell Find-DomainUserLocation | Select-Object UserName, SessionFromName
 
 ```
+### NetLocalGroupMember
+```
+PowerShell Get-NetLocalGroup | Select-Object GroupName
+PowerShell Get-NetLocalGroupMember -GroupName Administrators | Select-Object MemberName, IsGroup, IsDomain
+PowerShell Get-NetLoggedOn
 
+
+```
+### Net Session
+```
+PowerShell Get-NetSession -ComputerName fs-1 | Select-Object CName, UserName
+```
 
 ### Domain Group Members Enumeration
 ```
