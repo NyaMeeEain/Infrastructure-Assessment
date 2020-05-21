@@ -9,7 +9,13 @@ Get-NetUser -Credential $Cred | Format-Table name, samaccountname, userprincipal
 ### Get a list of computers in the current Domain
 ```
 powershell Get-DomainComputer | select cn,objectsid,dnshostname
+PowerShell Get-DomainComputer -Properties DnsHostName | Sort-Object -Property DnsHostName
 powershell Get-NetComputer -OperatingSystem "*Server 2016*" | select operatingsystem,lastlogon,dnshostname
+```
+
+### DomainOU
+```
+ PowerShell Get-DomainOU -Properties Name | Sort-Object -Property Name
 ```
 
 
