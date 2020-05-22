@@ -36,7 +36,7 @@ Alias=Covenant.service
 ```
 #Create the log directory and give our user permission:
 mkdir /var/log/Covenant
-sudo chown -R Covenant:Covenant /opt/Covenant/Covenant.sh/ /var/log/Covenant/
+sudo chown -R Covenant:Covenant /opt/Covenant/Covenant/Covenant.sh /var/log/Covenant/
 
 #Give our user permission to launch the service on TCP ports:
 sudo setcap cap_net_bind_service=+ep /opt/Covenant/Covenant.sh
