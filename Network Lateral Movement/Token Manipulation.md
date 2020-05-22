@@ -12,3 +12,6 @@ ImpersonateUser resilience\n.John
 ls \\n.John\c$
 
 ```
+impersonateprocess 7775
+steal_token 7777
+```
