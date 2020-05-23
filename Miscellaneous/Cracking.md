@@ -21,3 +21,7 @@ hashcat64.exe -a 0 -m 18200 C:\Users\NyaMeeEain\hashes.asreproast C:\Users\NyaMe
 
 
 ```
+### NTLM
+```
+hashcat64.exe -a 0 -m 1000 C:\Users\NyaMeeEain\Desktop\ntlm.txt rockyou.txt
+```
