@@ -1,4 +1,5 @@
 ### Make Token
+When a Windows account logs in, the system reads the account information from an internal database and then uses the information to generate an access token. Processes started in the account environment will get a copy of this token, and the threads in the process hold this token by default. When a thread wants to access an object or perform certain system management-related operations, Windows uses the token held by this thread to perform access checks
 MakeToken Used Window API LOGON32_LOGON_NEW_CREDENTIALS.
 This API creates a Logon Session from the specified credentials, copies existing Token, associates the new Logon Session with the new Access Token
 ```
