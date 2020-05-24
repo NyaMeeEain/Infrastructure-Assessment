@@ -23,6 +23,7 @@ named pipe is based on a simple SMB inter-process communication (Internet Proces
 In computer programming, named pipes can support reliable, one-way, or two-way data communication between different processes on the same computer or between different processes on different computers across a network.
 Unlike general pipelines, named pipelines can be called by different processes in different ways (cross-language and cross-platform).
 As long as the program knows the name of the named pipe, any process can open the other end of the pipe by that name and communicate with the server process according to the given permissions.
+https://rcoil.me/2019/11/%E3%80%90%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE%E3%80%91%E5%91%BD%E5%90%8D%E7%AE%A1%E9%81%93/
 
 
 
