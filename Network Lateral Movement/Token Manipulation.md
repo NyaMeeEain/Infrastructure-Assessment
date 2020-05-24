@@ -17,3 +17,11 @@ ls \\n.John\c$
 impersonateprocess 7775
 steal_token 7777
 ```
+
+### Named Pipes
+```
+named pipe is based on a simple SMB inter-process communication (Internet Process Connection - IPC ) mechanism. In computer programming, named pipes can support reliable, one-way, or two-way data communication between different processes on the same computer or between different processes on different computers across a network.
+Unlike general pipelines, named pipelines can be called by different processes in different ways (cross-language and cross-platform). As long as the program knows the name of the named pipe, any process can open the other end of the pipe by that name and communicate with the server process according to the given permissions.
+```
+
+
