@@ -3,6 +3,7 @@
 ```
 PowerShell Get-NetUser | select cn
 Powershell Get-NetUser -Identity John
+Powershell Get-NetUser -Identity n.glover | select msexchhomeservername,userprincipalname,primarygroupid,homedrive,homedirectory | fl
 PowerShell Get-NetUser | select userprincipalname,userprincipalname,homedirectory,serviceprincipalname
 PowerShell Get-NetUser | Format-Table name, samaccountname, userprincipalname, description
 Get-NetUser -Credential $Cred | Format-Table name, samaccountname, userprincipalname, description
