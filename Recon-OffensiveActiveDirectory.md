@@ -13,6 +13,29 @@ powershell Get-DomainComputer | select cn,objectsid,dnshostname
 PowerShell Get-DomainComputer -Properties DnsHostName | Sort-Object -Property DnsHostName
 powershell Get-NetComputer -OperatingSystem "*Server 2016*" | select operatingsystem,lastlogon,dnshostname
 ```
+### Figure out The Domain Administator GroupMember
+```
+powershell Get-DomainGroupMember -identity *admin* -recurse | select -exp membername
+powershell Get-DomainGroup *admin* -Properties samaccountname | Get-DomainGroupMember | select MemberDomain,GroupName,MemberName
+powershell Get-DomainGroup *admin* -Properties samaccountname | Get-DomainGroupMember | select MemberDomain,GroupName,MemberName | fl
+```
+### Unconstrained Delegation
+```
+powershell Get-DomainComputer -Unconstrained | select -exp dnshostname
+powershell Get-DomainComputer -Unconstrained | select samaccountname,dnshostname,operatingsystem,useraccountcontrol
+powershell Get-DomainComputer -Unconstrained | select samaccountname,dnshostname,useraccountcontrol,dnshostname,operatingsystem
+powershell Get-DomainGPOLocalGroup
+powershell Get-DomainGPOLocalGroup | select GroupName,GPODisplayName,GPOType
+powershell Get-DomainGPOLocalGroup | select GroupName,GPODisplayName,GPOType,GPOName
+powershell Get-DomainOU -GPLink '{A572138C-69A5-4A6B-8210-FE08E6B0282D}' | % {Get-DomainComputer -SearchBase $_.distinguishedname -Properties dnshostname}
+powershell Get-DomainOU -GPLink '{66465373-16CB-4F96-BD3A-12AE7D2C2371}' | % {Get-DomainComputer -SearchBase $_.distinguishedname -Properties dnshostname}
+powershell Get-DomainOU -GPLink '{8D791281-636D-400A-B495-C9B32753F717}' | % {Get-DomainComputer -SearchBase $_.distinguishedname -Properties dnshostname}
+powershell Get-DomainGroupMember -identity *admin* -recurse | select -exp membername
+powershell Find-DomainUserLocation -userIdentity 'w.schneider' # Figure out The Location of Each Member system
+
+
+```
+
 
 ### DomainOU
 ```
