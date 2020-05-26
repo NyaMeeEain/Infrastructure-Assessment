@@ -11,6 +11,7 @@ Get-NetUser -Credential $Cred | Format-Table name, samaccountname, userprincipal
 ### Get a list of computers in the current Domain
 ```
 powershell Get-DomainComputer | select cn,objectsid,dnshostname
+PowerShell Find-DomainUserLocation | Select-Object UserName, SessionFromName # Identify Each user Sesson On Network
 PowerShell Get-DomainComputer -Properties DnsHostName | Sort-Object -Property DnsHostName
 powershell Get-NetComputer -OperatingSystem "*Server 2016*" | select operatingsystem,lastlogon,dnshostname
 ```
@@ -36,11 +37,17 @@ powershell Find-DomainUserLocation -userIdentity 'w.schneider' # Figure out The 
 
 
 ```
-
+### DomainGPO
+```
+PowerShell Get-DomainGPO -Properties DisplayName | Sort-Object -Property DisplayName
+PowerShell Get-DomainGPO -ComputerIdentity wkstn-1555 -Properties DisplayName | Sort-Object -Property DisplayName
+PowerShell Get-DomainGPOLocalGroup | Select-Object GPODisplayName, GroupName
+```
 
 ### DomainOU
 ```
  PowerShell Get-DomainOU -Properties Name | Sort-Object -Property Name
+ 
 ```
 ### DomainGPOLocalGroup
 ```
