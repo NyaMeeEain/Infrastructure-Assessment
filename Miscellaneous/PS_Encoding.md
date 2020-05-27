@@ -1,5 +1,8 @@
+
+### PS Base64 Encode
+
 ```
-#Encode Command
+
   $command = "command”
   $bytes = [Text.Encoding]::Unicode.GetBytes($command)
   $encodedCommand = [Convert]::ToBase64String($bytes)
