@@ -29,3 +29,6 @@ $encodedCommand = [Convert]::ToBase64String($bytes)
   ```
    [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("C:\Users\Commando\Desktop\x64\MeMe.kirbi"))
    ```
+```
+ [System.IO.File]::WriteAllBytes("C:\Users\MeMe\Desktop\MeMe.kirbi", [System.Convert]::FromBase64String("doIF[...snip...]Lmlv"))
+ ```
