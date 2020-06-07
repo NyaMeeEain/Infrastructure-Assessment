@@ -23,6 +23,14 @@ MATCH (u:User {owned:true}), (c:Computer {unconstraineddelegation:true}), p=shor
 ```
 MATCH (c:Computer), (t:Computer), p=((c)-[:AllowedToDelegate]->(t)) RETURN p
 MATCH (u:User {owned:true}), (c:Computer {name: "WEB-2.CYBERBOTIC.IO"}), p=shortestPath((u)-[*1..]->(c)) RETURN p
+```
+### Show all high value target group             
+```
+MATCH p=(n:User)-[r:MemberOf*1..]->(m:Group {highvalue:true}) RETURN p
 
+```
+### Find if unprivileged users have rights to add members into groups:        
+```
+MATCH (n:User {admincount:False}) MATCH p=allShortestPaths((n)-[r:AddMember*1..]->(m:Group)) RETURN p
 
 ```
