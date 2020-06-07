@@ -16,3 +16,10 @@ MATCH (c:Computer {unconstraineddelegation:true}) RETURN c
 MATCH (u:User {owned:true}), (c:Computer {unconstraineddelegation:true}), p=shortestPath((u)-[*1..]->(c)) RETURN p
 
 ```
+### Constrained Delegation
+```
+MATCH (c:Computer), (t:Computer), p=((c)-[:AllowedToDelegate]->(t)) RETURN p
+MATCH (u:User {owned:true}), (c:Computer {name: "WEB-2.CYBERBOTIC.IO"}), p=shortestPath((u)-[*1..]->(c)) RETURN p
+
+
+```
