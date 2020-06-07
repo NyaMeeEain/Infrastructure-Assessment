@@ -39,6 +39,9 @@ powershell Find-DomainUserLocation -userIdentity 'w.schneider' # Figure out The 
 ```
 ### DomainGPO
 ```
+powershell Get-DomainGPOLocalGroup
+powershell Get-DomainGroupMember -identity 'Workstation Admins' -recurse | select -exp membername 
+powershell Get-DomainGroupMember -identity 'Helpdesk\Admins' -recurse | select -exp membername 
 PowerShell Get-DomainGPO -Properties DisplayName | Sort-Object -Property DisplayName
 PowerShell Get-DomainGPO -ComputerIdentity wkstn-1555 -Properties DisplayName | Sort-Object -Property DisplayName
 PowerShell Get-DomainGPOLocalGroup | Select-Object GPODisplayName, GroupName
