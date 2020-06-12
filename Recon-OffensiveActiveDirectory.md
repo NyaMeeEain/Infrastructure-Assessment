@@ -1,12 +1,12 @@
 ### Get list of users in the current Domain
 
 ```
-PowerShell Get-NetUser | select cn
-Powershell Get-NetUser -Identity John
-Powershell Get-NetUser -Identity n.glover | select msexchhomeservername,userprincipalname,primarygroupid,homedrive,homedirectory | fl
-PowerShell Get-NetUser | select userprincipalname,userprincipalname,homedirectory,serviceprincipalname
-PowerShell Get-NetUser | Format-Table name, samaccountname, userprincipalname, description
-Get-NetUser -Credential $Cred | Format-Table name, samaccountname, userprincipalname, description
+powershell Get-NetUser | select cn
+powershell Get-NetUser -Identity John
+powershell Get-NetUser -Identity n.glover | select msexchhomeservername,userprincipalname,primarygroupid,homedrive,homedirectory | fl
+powershell Get-NetUser | select userprincipalname,userprincipalname,homedirectory,serviceprincipalname
+powershell Get-NetUser | Format-Table name, samaccountname, userprincipalname, description
+powershell Get-NetUser -Credential $Cred | Format-Table name, samaccountname, userprincipalname, description
 ```
 ### Get a list of computers in the current Domain
 ```
@@ -68,15 +68,15 @@ PowerShell Find-DomainUserLocation | Select-Object UserName, SessionFromName
 ```
 ### NetLocalGroupMember
 ```
-PowerShell Get-NetLocalGroup | Select-Object GroupName
-PowerShell Get-NetLocalGroupMember -GroupName Administrators | Select-Object MemberName, IsGroup, IsDomain
-PowerShell Get-NetLoggedOn
+powershell Get-NetLocalGroup | Select-Object GroupName
+powershell Get-NetLocalGroupMember -GroupName Administrators | Select-Object MemberName, IsGroup, IsDomain
+powershell Get-NetLoggedOn
 
 
 ```
 ### Net Session
 ```
-PowerShell Get-NetSession -ComputerName fs-1 | Select-Object CName, UserName
+powershell Get-NetSession -ComputerName fs-1 | Select-Object CName, UserName
 ```
 
 ### Domain Group Members Enumeration
@@ -98,16 +98,16 @@ powershell Get-DomainPolicy -Source DC -Domain acmebank.local
 
 ```
 #Get a list of all Domain Trusts for the current Domain
-Get-NetDomainTrust
-Get-NetDomainTrust -Domain <domain>
+powershell Get-NetDomainTrust
+powershell Get-NetDomainTrust -Domain <domain>
 
 #Get details about the current Forest
-Get-NetForest
-powershell Get-NetForest -Forest  acmebank.local
+powershell Get-NetForest
+powershell powershell Get-NetForest -Forest  acmebank.local
 
 #Get all Domains in the current Forest
-Get-NetForestDomain
-Get-NetForestDomain -Forest acmebank.local
+powershell Get-NetForestDomain
+powershell Get-NetForestDomain -Forest acmebank.local
 ```
 #### LAPS 
 ```
