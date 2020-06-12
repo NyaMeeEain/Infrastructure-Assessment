@@ -53,7 +53,13 @@ PowerShell Get-DomainGPOLocalGroup | Select-Object GPODisplayName, GroupName
  
 ```
 ### DomainGPOLocalGroup
+
 ```
+powershell Get-DomainGPOLocalGroup
+powershell Get-DomainGroupMember -identity 'Workstation Admins' -recurse | select -exp membername 
+powershell Get-DomainGroupMember -identity 'Helpdesk\Admins' -recurse | select -exp membername  
+powershell Get-DomainOU -GPLink '{66465373-16CB-4F96-BD3A-12AE7D2C2371}' | % {Get-DomainComputer -SearchBase $_.distinguishedname -Properties dnshostname}
+powershell Find-DomainUserLocation -userIdentity 'Workstation\Admins' 
 PowerShell Get-DomainGroup -Identity 'Domain Admins' | Select-Object -ExpandProperty Member
 PowerShell Get-DomainGroupMember -Identity 'Domain Admins' | Select-Object MemberDistinguishedName 
 PowerShell Get-DomainGPOLocalGroup | Select-Object GPODisplayName, GroupName
