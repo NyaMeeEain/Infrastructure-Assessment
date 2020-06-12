@@ -109,6 +109,9 @@ powershell Get-NetForest -Forest  acmebank.local
 Get-NetForestDomain
 Get-NetForestDomain -Forest acmebank.local
 ```
+#### LAPS 
+```
+powershell Get-DomainGPO -Identity "*LAPS*"
+Parse-PolFile "\\testlab.local\SysVol\testlab.local\Policies\{C3801BA8-56D9-4F54-B2BD-FE3BF1A71BAA}\Machine\Registry.pol"
 
-
-
+```
