@@ -8,13 +8,15 @@ powershell Get-NetUser | select userprincipalname,userprincipalname,homedirector
 powershell Get-NetUser | Format-Table name, samaccountname, userprincipalname, description
 powershell Get-NetUser -Credential $Cred | Format-Table name, samaccountname, userprincipalname, description
 ```
-### Get a list of computers in the current Domain
+### DomainComputer
 ```
+powershel Get-DomainComputer -Properties DnsHostName | Sort-Object -Property DnsHostName
 powershell Get-DomainComputer | select cn,objectsid,dnshostname
 PowerShell Find-DomainUserLocation | Select-Object UserName, SessionFromName # Identify Each user Sesson On Network
 PowerShell Get-DomainComputer -Properties DnsHostName | Sort-Object -Property DnsHostName
 powershell Get-NetComputer -OperatingSystem "*Server 2016*" | select operatingsystem,lastlogon,dnshostname
 ```
+
 ### Figure out The Domain Administator GroupMember
 ```
 powershell Get-DomainGroupMember -identity *admin* -recurse | select -exp membername
@@ -42,14 +44,14 @@ powershell Find-DomainUserLocation -userIdentity 'w.schneider' # Figure out The 
 powershell Get-DomainGPOLocalGroup
 powershell Get-DomainGroupMember -identity 'Workstation Admins' -recurse | select -exp membername 
 powershell Get-DomainGroupMember -identity 'Helpdesk\Admins' -recurse | select -exp membername 
-PowerShell Get-DomainGPO -Properties DisplayName | Sort-Object -Property DisplayName
-PowerShell Get-DomainGPO -ComputerIdentity wkstn-1555 -Properties DisplayName | Sort-Object -Property DisplayName
-PowerShell Get-DomainGPOLocalGroup | Select-Object GPODisplayName, GroupName
+powershell Get-DomainGPO -Properties DisplayName | Sort-Object -Property DisplayName
+powershell Get-DomainGPO -ComputerIdentity wkstn-1555 -Properties DisplayName | Sort-Object -Property DisplayName
+powershell Get-DomainGPOLocalGroup | Select-Object GPODisplayName, GroupName
 ```
 
-### DomainOU
+### Organization Units
 ```
- PowerShell Get-DomainOU -Properties Name | Sort-Object -Property Name
+ powershell Get-DomainOU -Properties Name | Sort-Object -Property Name
  
 ```
 ### DomainGPOLocalGroup
