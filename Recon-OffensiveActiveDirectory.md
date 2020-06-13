@@ -19,8 +19,8 @@ powershell Get-NetComputer -OperatingSystem "*Server 2016*" | select operatingsy
 
 ### Figure out The Domain Administator GroupMember
 ```
-powershell Get-DomainGroupMember -identity *admin* -recurse | select -exp membername
 powershell Get-DomainGroup *admin* -Properties samaccountname | Get-DomainGroupMember | select MemberDomain,GroupName,MemberName
+powershell Get-DomainGroupMember -identity *admin* -recurse | select -exp membername
 powershell Get-DomainGroup *admin* -Properties samaccountname | Get-DomainGroupMember | select MemberDomain,GroupName,MemberName | fl
 ```
 ### Unconstrained Delegation
@@ -39,6 +39,7 @@ powershell Find-DomainUserLocation -userIdentity 'w.schneider' # Figure out The 
 
 
 ```
+
 ### DomainGPO
 ```
 powershell Get-DomainGPOLocalGroup
@@ -114,6 +115,11 @@ powershell Get-NetForestDomain -Forest acmebank.local
 #### LAPS 
 ```
 powershell Get-DomainGPO -Identity "*LAPS*"
+powershell-import C:\Users\Commando\Desktop\Weapon\LAPSToolkit.ps1
+powershell Get-LAPSComputers 
+powershell Find-LAPSDelegatedGroups
+make_token MeMe 123456qWE
+make_token insomnia.io\MeMe 123456qWE
 Parse-PolFile "\\testlab.local\SysVol\testlab.local\Policies\{C3801BA8-56D9-4F54-B2BD-FE3BF1A71BAA}\Machine\Registry.pol"
 
 ```
