@@ -10,7 +10,7 @@ powershell Get-NetUser -Credential $Cred | Format-Table name, samaccountname, us
 ```
 ### DomainComputer
 ```
-powershel Get-DomainComputer -Properties DnsHostName | Sort-Object -Property DnsHostName
+powershell Get-DomainComputer -Properties DnsHostName | Sort-Object -Property DnsHostName
 powershell Get-DomainComputer | select cn,objectsid,dnshostname
 PowerShell Find-DomainUserLocation | Select-Object UserName, SessionFromName # Identify Each user Sesson On Network
 PowerShell Get-DomainComputer -Properties DnsHostName | Sort-Object -Property DnsHostName
