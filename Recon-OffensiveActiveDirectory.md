@@ -29,7 +29,6 @@ powershell Get-DomainComputer -Unconstrained | select -exp dnshostname
 powershell Get-DomainComputer -Unconstrained | select samaccountname,dnshostname,operatingsystem,useraccountcontrol
 powershell Get-DomainComputer -Unconstrained | select samaccountname,dnshostname,useraccountcontrol,dnshostname,operatingsystem
 powershell Get-DomainGPOLocalGroup
-powershell Get-DomainGPOLocalGroup | select GroupName,GPODisplayName,GPOType
 powershell Get-DomainGPOLocalGroup | select GroupName,GPODisplayName,GPOType,GPOName
 powershell Get-DomainOU -GPLink '{A572138C-69A5-4A6B-8210-FE08E6B0282D}' | % {Get-DomainComputer -SearchBase $_.distinguishedname -Properties dnshostname}
 powershell Get-DomainOU -GPLink '{66465373-16CB-4F96-BD3A-12AE7D2C2371}' | % {Get-DomainComputer -SearchBase $_.distinguishedname -Properties dnshostname}
