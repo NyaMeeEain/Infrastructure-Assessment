@@ -1,0 +1,3 @@
+import base64
+ecoded = base64.b64decode("JABXAEMAPQBOAGUAdwAt")
+decoded.replace("\x00","")
