@@ -1,3 +1,7 @@
+```
+execute-assembly C:\tools\SharpHound3\SharpHound3\bin\Debug\SharpHound.exe -c All -D imsonia.io 
+```
+
 ### Kerberoasting
 ```
 MATCH (u:User {hasspn:true}) RETURN u
