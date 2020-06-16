@@ -8,3 +8,7 @@ powershell ([adsisearcher]"(&(objectClass=User)(samaccountname=*))").FindAll().P
 powershell ([adsisearcher]"(&(objectClass=User)(admincount=1))").FindAll().Properties.samaccountname # Get a list of Domain Admin
 
 ```
+### Constrained Delegation
+```
+powershell Get-ADComputer -Filter {(msDS-AllowedToDelegateTo -ne "{}")} -Properties TrustedForDelegation,TrustedToAuthForDelegation,ServicePrincipalName,Description,msDS-AllowedToDelegateTo
+```
