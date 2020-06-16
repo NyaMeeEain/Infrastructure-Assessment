@@ -38,12 +38,13 @@ powershell Find-DomainUserLocation -userIdentity 'w.schneider' # Figure out The 
 ```
 ### Constrained Delegation
 ```
-powerpick Get-DomainComputer -TrustedToAuth | select name,msds-allowedtodelegateto,useraccountcontrol
-powershell Get-DomainComputer -TrustedToAuth -Properties DnsHostName, MSDS-AllowedToDelegateTo
-powershell Get-DomainComputer web-2.cyberbotic.io | select -exp msds-AllowedToDelegateTo 
+Get-NetUser -TrustedToAuth
 powershell Get-DomainComputer -TrustedToAuth | select -exp dnshostname 
+powerpick Get-DomainComputer -TrustedToAuth | select name,msds-allowedtodelegateto,useraccountcontrol
 powershell Get-DomainComputer -TrustedToAuth -Properties distinguishedname,msds-allowedtodelegateto,useraccountcontrol -Verbose | fl 
 powershell Get-DomainComputer web-2.cyberbotic.io | select -exp msds-AllowedToDelegateTo #To find what services it could delegate for
+powershell Get-NetComputer WEB-2 | select name, msds-allowedtodelegateto, useraccountcontrol | fl
+powershell Get-NetComputer WEB-2 | Select-Object -ExpandProperty msds-allowedtodelegateto | fl
 ```
 ### DomainGPO
 ```
