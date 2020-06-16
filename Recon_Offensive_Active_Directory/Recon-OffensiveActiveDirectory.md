@@ -35,10 +35,16 @@ powershell Get-DomainOU -GPLink '{66465373-16CB-4F96-BD3A-12AE7D2C2371}' | % {Ge
 powershell Get-DomainOU -GPLink '{8D791281-636D-400A-B495-C9B32753F717}' | % {Get-DomainComputer -SearchBase $_.distinguishedname -Properties dnshostname}
 powershell Get-DomainGroupMember -identity *admin* -recurse | select -exp membername
 powershell Find-DomainUserLocation -userIdentity 'w.schneider' # Figure out The Location of Each Member system
-
-
 ```
-
+### Constrained Delegation
+```
+powerpick Get-DomainComputer -TrustedToAuth | select name,msds-allowedtodelegateto,useraccountcontrol
+powershell Get-DomainComputer -TrustedToAuth -Properties DnsHostName, MSDS-AllowedToDelegateTo
+powershell Get-DomainComputer web-2.cyberbotic.io | select -exp msds-AllowedToDelegateTo 
+powershell Get-DomainComputer -TrustedToAuth | select -exp dnshostname 
+powershell Get-DomainComputer -TrustedToAuth -Properties distinguishedname,msds-allowedtodelegateto,useraccountcontrol -Verbose | fl 
+powershell Get-DomainComputer web-2.cyberbotic.io | select -exp msds-AllowedToDelegateTo #To find what services it could delegate for
+```
 ### DomainGPO
 ```
 powershell Get-DomainGPOLocalGroup
