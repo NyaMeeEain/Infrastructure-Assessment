@@ -1,4 +1,17 @@
 ### Active Directory_Module Hunt Down
+
+### Get A list of Compuer
+```
+powershell ([adsisearcher]"objectclass=computer").FindAll().Properties.name
+```
+### User Identify
+```
+powershell [System.Security.Principal.WindowsIdentity]::GetCurrent() | Format-Table -auto
+powershell ([adsisearcher]'(samaccountname=n.glover)').FindOne().Properties.memberof
+powershell ([adsisearcher]'(samaccountname=n.glover)').FindAll()
+
+```
+
 ```
 powershell [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()
 powershell ([System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()).GetAllTrustRelationships()
