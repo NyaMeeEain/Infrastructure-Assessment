@@ -25,6 +25,7 @@ powershell ([adsisearcher]"(&(objectClass=User)(admincount=1))").FindAll().Prope
 ```
 ### Get Domain Groups
 ```
+powershell Get-WmiObject -Class Win32_Group
 powershell Get-WmiObject -Class Win32_GroupInDomain | Foreach-Object {[wmi]$_.PartComponent}
 powershell Get-WmiObject -Class Win32_GroupInDomain | where-object {$_.GroupComponent -match “domain”} | foreach-object {[wmi]$_.PartComponent}  
 
@@ -32,6 +33,7 @@ powershell Get-WmiObject -Class Win32_GroupInDomain | where-object {$_.GroupComp
 ### Get Domain Admins Group Members
 ```
 powershell Get-WmiObject -Class Win32_GroupUser | where-object {$_.GroupComponent -match "Domain Admins"} | foreach-object {[wmi]$_.PartComponent}  
+powershell Get-WmiObject -Class Win32_GroupUser | where-object {$_.GroupComponent -match "Enterprise Admins"} | foreach-object {[wmi]$_.PartComponent}
 powershell Get-WmiObject -Class Win32_GroupUser | where-object {$_.GroupComponent -match "Helpdesk"} | foreach-object {[wmi]$_.PartComponent}
 
 ```
