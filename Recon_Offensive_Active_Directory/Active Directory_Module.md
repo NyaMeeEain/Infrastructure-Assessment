@@ -13,9 +13,9 @@ powershell ([adsisearcher]'(samaccountname=n.glover)').FindAll()
 ```
 ###  Search for all users that do not have homedirectory attribute set
 ```
-([adsisearcher]'(!homedirectory=*)').FindAll()
-([adsisearcher]'(&(objectcategory=user)(!homedirectory=*))').FindAll()
-([adsisearcher]'(&(objectcategory=user)(!homedirectory=*))').FindAll().Count
+powershell ([adsisearcher]'(!homedirectory=*)').FindAll()
+powershell ([adsisearcher]'(&(objectcategory=user)(!homedirectory=*))').FindAll()
+powershell ([adsisearcher]'(&(objectcategory=user)(!homedirectory=*))').FindAll().Count
 ```
 
 
