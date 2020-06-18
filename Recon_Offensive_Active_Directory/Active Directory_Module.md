@@ -11,6 +11,10 @@ powershell ([adsisearcher]'(samaccountname=n.glover)').FindOne().Properties.memb
 powershell ([adsisearcher]'(samaccountname=n.glover)').FindAll()
 
 ```
+### GET A list of Admin
+```
+powershell ([adsisearcher]"(&(objectClass=User)(admincount=1))").FindAll().Properties.samaccountname
+```
 ###  Search for all users that do not have homedirectory attribute set
 ```
 powershell ([adsisearcher]'(!homedirectory=*)').FindAll()
@@ -27,6 +31,10 @@ powershell ([System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain(
 powershell ([adsisearcher]"(&(objectClass=User)(samaccountname=*))").FindAll().Properties.samaccountname #Get all existing Users
 powershell ([adsisearcher]"(&(objectClass=User)(admincount=1))").FindAll().Properties.samaccountname # Get a list of Domain Admin
 
+```
+### SQL
+```
+powershell [System.Data.Sql.SqlDataSourceEnumerator]::Instance.GetDataSources()
 ```
 ### Constrained Delegation
 ```
