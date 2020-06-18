@@ -1,3 +1,11 @@
+### AppLockerPolicy
+```
+Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections
+Get-ChildItem 'C:\Windows\temp*' | % { try { Get-Acl $_ -EA SilentlyContinue | Where {($_.Access|select -ExpandProperty IdentityReference) -match 'Everyone'} } catch {}}
+Get-ChildItem 'C:\Windows\tasks*' | % { try { Get-Acl $_ -EA SilentlyContinue | Where {($_.Access|select -ExpandProperty IdentityReference) -match 'Everyone'} } catch {}}
+Get-ChildItem 'C:\Windows\tracing*' | % { try { Get-Acl $_ -EA SilentlyContinue | Where {($_.Access|select -ExpandProperty IdentityReference) -match 'Everyone'} } catch {}} 
+```
+
 
 ### MSBuildShell
 ```
