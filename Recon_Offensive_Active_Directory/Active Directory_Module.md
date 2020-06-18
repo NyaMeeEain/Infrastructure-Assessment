@@ -45,17 +45,16 @@ powershell ([adsisearcher]'(!homedirectory=*)').FindAll()
 powershell ([adsisearcher]'(&(objectcategory=user)(!homedirectory=*))').FindAll()
 powershell ([adsisearcher]'(&(objectcategory=user)(!homedirectory=*))').FindAll().Count
 ```
-
-
+### Get Current Domain
 ```
 powershell [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()
-powershell ([System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()).GetAllTrustRelationships()
 powershell [System.DirectoryServices.ActiveDirectory.Forest]::GetCurrentForest() 
-powershell ([System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()).GetAllTrustRelationships() 
-powershell ([adsisearcher]"(&(objectClass=User)(samaccountname=*))").FindAll().Properties.samaccountname #Get all existing Users
-powershell ([adsisearcher]"(&(objectClass=User)(admincount=1))").FindAll().Properties.samaccountname # Get a list of Domain Admin
-
 ```
+### Get Domain Trusts
+```
+powershell ([System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()).GetAllTrustRelationships() 
+```
+
 ### SQL
 ```
 powershell [System.Data.Sql.SqlDataSourceEnumerator]::Instance.GetDataSources()
