@@ -11,6 +11,13 @@ powershell ([adsisearcher]'(samaccountname=n.glover)').FindOne().Properties.memb
 powershell ([adsisearcher]'(samaccountname=n.glover)').FindAll()
 
 ```
+###  Search for all users that do not have homedirectory attribute set
+```
+([adsisearcher]'(!homedirectory=*)').FindAll()
+([adsisearcher]'(&(objectcategory=user)(!homedirectory=*))').FindAll()
+([adsisearcher]'(&(objectcategory=user)(!homedirectory=*))').FindAll().Count
+```
+
 
 ```
 powershell [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()
