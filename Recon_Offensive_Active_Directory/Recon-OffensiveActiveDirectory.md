@@ -131,3 +131,7 @@ make_token insomnia.io\MeMe 123456qWE
 Parse-PolFile "\\testlab.local\SysVol\testlab.local\Policies\{C3801BA8-56D9-4F54-B2BD-FE3BF1A71BAA}\Machine\Registry.pol"
 
 ```
+### Enumerates all the crackable service accounts
+```
+powershell ([adsisearcher]”(&(objectClass=User)(primarygroupid=513) (servicePrincipalName=*))”).FindAll() | ForEach-Object { “Name:$($_.properties.name)””SPN:$($_.properties.serviceprincipalname)””Path:$($_.Path)””” }
+```
