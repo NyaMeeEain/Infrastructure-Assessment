@@ -10,6 +10,7 @@
 
 ```
 ### Always Install Elevated With CS Beason
+```
 First, generate the desired payload: Attacks > Packages > Windows Executable (S). Select Windows EXE as the output and make it x64.
 Open Visual Studio and create a new Setup Wizard project
 Click Next through the wizard leaving everything as default, then click Finish.
