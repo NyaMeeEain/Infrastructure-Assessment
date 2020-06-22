@@ -1,5 +1,11 @@
 ### Always Install Elevated
 ```
+reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+
+
+
+
 1. Download wixtoolset binaries from: https://github.com/wixtoolset/wix3/releases/tag/wix3112rtm
 2. Generate powershell one liner through Cobat Strike
 3. Use template as such installer.xml and update the PS Payload
