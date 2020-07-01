@@ -2,6 +2,8 @@
 ###  Process
 ```
 powershell get-item function:
+Get-Command *cmd* | select Name,Source
+Get-Command -Module *In   
 Get-Process | Where-Object {$_.ProcessName –eq "explorer"}
 Get-Process | ? {$_.ProcessName –eq “explorer”} | select Id,Handles
 (Get-Process | ? {$_.ProcessName –eq “explorer”}).Id
