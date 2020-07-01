@@ -1,7 +1,7 @@
 ### Local Administrator Password Solution
 ```
 PowerShell Get-Command *AdmPwd*
-PowerShell Get-AdmPwdPassword -ComputerName wkstn-1921 | fl
+PowerShell Get-AdmPwdPassword -ComputerName Alice_PC | fl
 
 ```
 ```
