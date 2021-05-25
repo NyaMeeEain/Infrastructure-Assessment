@@ -1,6 +1,5 @@
 ### Fundamental Phishing Simulation
-
-
+Simple HTM File
 ```
 <html>
 <script>	
@@ -9,5 +8,4 @@
 	Value.run(Data );
 </script>
 </html>
-
 ```
