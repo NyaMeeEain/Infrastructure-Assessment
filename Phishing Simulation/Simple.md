@@ -1,7 +1,7 @@
 ### Fundamental Phishing Simulation
 
 
-### Simple HTM File
+### Simple HTA File
 ```
 <html>
 <script>	
