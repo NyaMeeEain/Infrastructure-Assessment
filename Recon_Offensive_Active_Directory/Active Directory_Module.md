@@ -15,8 +15,8 @@ powershell Get-WmiObject -Class Win32_UserAccount | select caption,SID,name
 ### User Identify
 ```
 powershell [System.Security.Principal.WindowsIdentity]::GetCurrent() | Format-Table -auto
-powershell ([adsisearcher]'(samaccountname=n.glover)').FindOne().Properties.memberof
-powershell ([adsisearcher]'(samaccountname=n.glover)').FindAll()
+powershell ([adsisearcher]'(samaccountname=john)').FindAll()
+powershell ([adsisearcher]'(samaccountname=john)').FindOne().Properties.memberof
 
 ```
 ### Get Domain Admin
