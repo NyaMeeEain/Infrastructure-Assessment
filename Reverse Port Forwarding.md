@@ -4,6 +4,10 @@
 
 ```
 socks 1080
+proxychains socat TCP4-LISTEN:1344,fork TCP4:x.x.x.x:1344 #Modify proxychains.conf to use 127.0.0.1 on port 1080
+```
+
+```
 rportfwd 8080 192.168.100.100 80
 proxychains socat TCP4-Listen:1433,fork TCP:192.168.100.199:1433
 runas /netonly /user:CYBER\svc_mssql "C:\Program Files\HeidiSQL\heidisql.exe"
