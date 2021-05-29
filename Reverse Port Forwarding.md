@@ -47,3 +47,11 @@ ssh -L 0.0.0.0:9999:10.10.10.128:80 lab@192.168.100.137 -Nf
 ssh lab@127.0.0.1 -p 7000
 ```
 
+### Metasploit
+
+```
+use auxiliary/server/socks4a
+set SRVPORT 1080 # Modify proxychains.conf to use 127.0.0.1 on port 1080
+
+```
+
