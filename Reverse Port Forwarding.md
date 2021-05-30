@@ -5,6 +5,7 @@
 ```
 socks 1080
 proxychains socat TCP4-LISTEN:1344,fork TCP4:192.168.100.100:1344 #Modify proxychains.conf to use 127.0.0.1 on port 1080
+proxychains python mssqlclient.py sa:123456@192.168.100.100
 ```
 
 ```
