@@ -1,5 +1,5 @@
 ### Aggressive out of Scope Scanning
-occasionally clients provided  a range of Ip Addess list,which containing  out of Scope, to scan entire network.in this case I alwasy utilize Iptable to block OUTgoing tcp and udp traffic.
+Occasionally clients provided  a range of Ip Addess list,which containing  out of Scope, to scan entire network.in this case I alwasy utilize Iptable to block OUTgoing tcp and udp traffic.
 
 ### Out of Scope of Ip Address range stop sending TCP Packets.
 ```
