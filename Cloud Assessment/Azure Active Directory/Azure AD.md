@@ -13,3 +13,20 @@ Get-AADIntTenantID -Domain <>
 Get-AADIntTenantDomains -Domain <>
 Invoke-AADIntReconAsOutsider -DomainName <>
 ```
+### AzureAD Enumeration
+```
+$passwd = ConvertTo-SecureString "<>" -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential
+("John@insomnia.onmicrosoft.com", $passwd)
+Connect-AzureAD -Credential $creds
+Get-AzureADCurrentSessionInfo
+Get-AzureADTenantDetail
+Get-AzureADUser -All $true
+Get-AzureADUser -ObjectId emailid
+Get-AzureADUser -SearchString "admin"
+Get-AzureADUser -All $true |?{$_.Displayname -match "admin"}
+Get-AzureADUser -ObjectId Emailid | fl *
+Get-AzureADUser -All $true | ?{$_.OnPremisesSecurityIdentifier -ne $null}
+Get-AzureADUser -All $true | ?{$_.OnPremisesSecurityIdentifier -eq $null}
+
+```
