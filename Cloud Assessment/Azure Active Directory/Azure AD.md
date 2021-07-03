@@ -68,3 +68,10 @@ Get-AzureADDevice -All $true | Get-AzureADDeviceRegisteredOwner
 Get-AzureADDevice -All $true | Get-AzureADDeviceRegisteredUser
 Get-AzureADUserOwnedDevice -ObjectId <Email>
 ```
+### Apps Enumeration
+```
+Get-AzureADApplication -All $true
+et-AzureADApplication -ObjectId <ObjectID> | fl *
+Get-AzureADApplication -All $true | ?{$_.DisplayName -match "app"}
+
+```
