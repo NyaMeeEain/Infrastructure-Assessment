@@ -37,3 +37,22 @@ Get-AzureADUser -All $true | ?{$_.OnPremisesSecurityIdentifier -ne $null}
 Get-AzureADUser -All $true | ?{$_.OnPremisesSecurityIdentifier -eq $null}
 
 ```
+### Objects Enumeration
+```
+Get-AzureADUser | Get-AzureADUserCreatedObject
+Get-AzureADUserOwnedObject -ObjectId <Email>
+```
+### Groups Enumerations
+```
+Get-AzureADGroup -All $true
+Get-AzureADGroup -ObjectId <ObjectID>
+Get-AzureADGroup -SearchString "Soe" | fl *
+Get-AzureADGroup -All $true |?{$_.Displayname -match "admin"}
+Get-AzureADMSGroup | ?{$_.GroupTypes -eq 'DynamicMembership'}
+Get-AzureADGroup -All $true | ?{$_.OnPremisesSecurityIdentifier -ne $null}
+Get-AzureADGroup -All $true | ?{$_.OnPremisesSecurityIdentifier -eq $null}
+Get-AzureADGroupMember -ObjectId <ObjecID> #Members of Group
+Get-AzureADUser -SearchString 'Admin' | GetAzureADUserMembership
+Get-AzureADUserMembership -ObjectId <Email>
+```
+
