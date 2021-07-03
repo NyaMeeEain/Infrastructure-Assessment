@@ -60,3 +60,11 @@ Get-AzureADUserMembership -ObjectId <Email>
 Get-AzureADDirectoryRole
 Get-AzureADDirectoryRole -Filter "DisplayName eq 'GlobalAdministrator'" | Get-AzureADDirectoryRoleMember
 ```
+### Devices Enumeration
+```
+Get-AzureADDevice -All $true | fl *
+Get-AzureADDeviceConfiguration | fl *
+Get-AzureADDevice -All $true | Get-AzureADDeviceRegisteredOwner
+Get-AzureADDevice -All $true | Get-AzureADDeviceRegisteredUser
+Get-AzureADUserOwnedDevice -ObjectId <Email>
+```
