@@ -23,7 +23,7 @@ $Pass = ConvertTo-SecureString $Password -AsPlainText -Force
 $Cred = New-Object System.Management.Automation.PSCredential `
 ($Username, $Pass)
 ```
-
+### AAD Basic Enumeration
 ```
 Connect-AzureAD -Credential $creds
 Get-AzureADCurrentSessionInfo
