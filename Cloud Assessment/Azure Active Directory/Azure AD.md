@@ -5,3 +5,11 @@ Application Service Principals part of Azure AD which allows an authenticated us
 az ad user list --output=table --query='[].{Created:createdDateTime,UPN:userPrincipalName,Name:displayName,Email:mail,UserId:mailNickname,Enabled:accountEnabled}'
 az ad sp list --output=table --query='[].{Name:displayName,Enabled:accountEnabled,URL:homepage,Publisher:publisherName,MetadataURL:samlMetadataUrl}'
 ```
+
+### Enumeration
+```
+Get-AADIntLoginInformation -UserName <>
+Get-AADIntTenantID -Domain <>
+Get-AADIntTenantDomains -Domain <>
+Invoke-AADIntReconAsOutsider -DomainName <>
+```
