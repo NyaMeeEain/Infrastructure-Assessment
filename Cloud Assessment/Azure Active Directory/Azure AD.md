@@ -55,4 +55,8 @@ Get-AzureADGroupMember -ObjectId <ObjecID> #Members of Group
 Get-AzureADUser -SearchString 'Admin' | GetAzureADUserMembership
 Get-AzureADUserMembership -ObjectId <Email>
 ```
-
+### Roles Enumerations
+```
+Get-AzureADDirectoryRole
+Get-AzureADDirectoryRole -Filter "DisplayName eq 'GlobalAdministrator'" | Get-AzureADDirectoryRoleMember
+```
