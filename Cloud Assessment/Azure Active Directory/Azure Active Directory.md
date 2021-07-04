@@ -56,7 +56,7 @@ Get-AzureADUser -SearchString 'Admin' | GetAzureADUserMembership
 Get-AzureADUserMembership -ObjectId <Email>
 ```
 ### Roles Enumerations
-Account Administrator, Service Administrator, and Co-Administrator are the three classic subscription administrator roles in Azure.
+Account Administrator, Service Administrator, and Co-Administrator are the three classic subscription administrator roles in Azure.Classic subscription administrators have full access to the Azure subscription. They can manage resources using the Azure portal.The Service Administrator and the Co-Administrators have the equivalent access of users who have been assigned the Owner role.
 
 **Account Administrator**
 
@@ -64,7 +64,7 @@ Account Administrator, Service Administrator, and Co-Administrator are the three
 
 **Co-Administrator**
 
-Classic subscription administrators have full access to the Azure subscription. They can manage resources using the Azure portal.The Service Administrator and the Co-Administrators have the equivalent access of users who have been assigned the Owner role.
+
 
 ```
 Get-AzureADDirectoryRole
