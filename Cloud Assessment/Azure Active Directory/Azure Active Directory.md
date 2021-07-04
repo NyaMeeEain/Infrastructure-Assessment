@@ -59,7 +59,9 @@ Get-AzureADUserMembership -ObjectId <Email>
 Account Administrator, Service Administrator, and Co-Administrator are the three classic subscription administrator roles in Azure.
 
 **Account Administrator**
+
 **Service Administrator**
+
 **Co-Administrator**
 
 Classic subscription administrators have full access to the Azure subscription. They can manage resources using the Azure portal.The Service Administrator and the Co-Administrators have the equivalent access of users who have been assigned the Owner role.
