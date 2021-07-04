@@ -13,9 +13,7 @@ Get-AADIntTenantID -Domain <>
 Get-AADIntTenantDomains -Domain <>
 Invoke-AADIntReconAsOutsider -DomainName <>
 ```
-### AzureAD Enumeration
-
-
+### Credential Setup for AzureAD Enumeration
 ```
 $Username = "<>"
 $Password = "<>"
