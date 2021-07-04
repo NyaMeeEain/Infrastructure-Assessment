@@ -46,9 +46,11 @@ Get-AzureADUserOwnedObject -ObjectId <Email>
 **Microsoft 365**. Provides collaboration opportunities by giving members access to a shared mailbox, calendar, files, SharePoint site, and more. 
 **Security**. Used to manage member and computer access to shared resources for a group of users. For example, you can create a security group for a specific security policy. By doing it this way, you can give a set of permissions to all the members at once, instead of having to add permissions to each member individually. A security group can have users, devices, groups and service principals as its members and users and service principals as its owners. 
 
-**Assigned**. Lets you add specific users to be members of this group and to have unique permissions. 
-**Dynamic user**. Lets you use dynamic membership rules to automatically add and remove members.
-**Dynamic device**. Lets you use dynamic group rules to automatically add and remove devices.
+**Assigned.Lets you add specific users to be members of this group and to have unique permissions. 
+
+**Dynamic user.Lets you use dynamic membership rules to automatically add and remove members.
+
+**Dynamic device.Lets you use dynamic group rules to automatically add and remove devices.
 
 ```
 Get-AzureADGroup -All $true
