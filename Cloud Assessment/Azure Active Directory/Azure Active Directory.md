@@ -6,13 +6,7 @@ az ad user list --output=table --query='[].{Created:createdDateTime,UPN:userPrin
 az ad sp list --output=table --query='[].{Name:displayName,Enabled:accountEnabled,URL:homepage,Publisher:publisherName,MetadataURL:samlMetadataUrl}'
 ```
 
-### Enumeration
-```
-Get-AADIntLoginInformation -UserName <>
-Get-AADIntTenantID -Domain <>
-Get-AADIntTenantDomains -Domain <>
-Invoke-AADIntReconAsOutsider -DomainName <>
-```
+
 ### Credential Setup for AzureAD Enumeration
 ```
 $Username = "<>"
@@ -34,6 +28,13 @@ Get-AzureADUser -ObjectId Emailid | fl *
 Get-AzureADUser -All $true | ?{$_.OnPremisesSecurityIdentifier -ne $null}
 Get-AzureADUser -All $true | ?{$_.OnPremisesSecurityIdentifier -eq $null}
 
+```
+###  Domain and Tenant Enumeration
+```
+Get-AADIntLoginInformation -UserName <>
+Get-AADIntTenantID -Domain <>
+Get-AADIntTenantDomains -Domain <>
+Invoke-AADIntReconAsOutsider -DomainName <>
 ```
 ### Objects Enumeration
 ```
