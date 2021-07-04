@@ -78,7 +78,8 @@ Get-AzureADDevice -All $true | Get-AzureADDeviceRegisteredOwner
 Get-AzureADDevice -All $true | Get-AzureADDeviceRegisteredUser
 Get-AzureADUserOwnedDevice -ObjectId <Email>
 ```
-### Apps Enumeration
+### Azure App Service Enumeration
+Azure App Service is an HTTP-based service for hosting web applications, REST APIs, and mobile back ends
 ```
 Get-AzureADApplication -All $true
 et-AzureADApplication -ObjectId <ObjectID> | fl *
