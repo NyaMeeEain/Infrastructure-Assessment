@@ -75,3 +75,12 @@ et-AzureADApplication -ObjectId <ObjectID> | fl *
 Get-AzureADApplication -All $true | ?{$_.DisplayName -match "app"}
 
 ```
+### Application and service principal objects 
+AD application is defined by its one and only application object, which resides in the Azure AD tenant where the application was registered.an application must be registered with an Azure AD tenant. When you register your application with Azure AD, you're creating an identity configuration for your application that allows it to integrate with Azure AD.
+```
+Get-AzureADServicePrincipal | GetAzureADServicePrincipalMembership
+Get-AzureADServicePrincipal -ObjectId <objectID> | Get-AzureADServicePrincipalOwner |fl *
+Get-AzureADServicePrincipal -ObjectId <ObjectID> | Get-AzureADServicePrincipalOwnedObject
+Get-AzureADServicePrincipal -ObjectId <ObjectID> | Get-AzureADServicePrincipalCreatedObject
+Get-AzureADServicePrincipal -ObjectId <ObjectID> | GetAzureADServicePrincipalMembership |fl *
+```
