@@ -81,7 +81,8 @@ Classic subscription administrators have full access to the Azure subscription. 
 Get-AzureADDirectoryRole
 Get-AzureADDirectoryRole -Filter "DisplayName eq 'GlobalAdministrator'" | Get-AzureADDirectoryRoleMember
 ```
-### Devices Enumeration
+### Azure registered Devices Enumeration
+Azure AD registered devices are signed in to using a local account like a Microsoft account on a Windows 10 device, but additionally have an Azure AD account attached for access to organizational resources.
 ```
 Get-AzureADDevice -All $true | fl *
 Get-AzureADDeviceConfiguration | fl *
