@@ -29,7 +29,8 @@ Get-AzureADUser -All $true | ?{$_.OnPremisesSecurityIdentifier -ne $null}
 Get-AzureADUser -All $true | ?{$_.OnPremisesSecurityIdentifier -eq $null}
 
 ```
-###  Domain and Tenant Enumeration
+### Tenant and Domain Enumeration
+A Tenant(Azure AD) refers to a single instance of Azure Active Directory which associated with a single identity such as person, company and  organization.Azure AD Tenants are unique and using a domain that ends with "onmicrosoft.com"
 ```
 Get-AADIntLoginInformation -UserName <>
 Get-AADIntTenantID -Domain <>
