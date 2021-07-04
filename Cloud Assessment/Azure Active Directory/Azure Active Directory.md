@@ -114,4 +114,6 @@ Get-AzureADServicePrincipal -ObjectId <ObjectID> | GetAzureADServicePrincipalMem
 
 ** https://docs.microsoft.com/en-us/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0
 
+** https://posts.specterops.io/attacking-azure-azure-ad-and-introducing-powerzure-ca70b330511a
+
 ** https://bootcamps.pentesteracademy.com/course/ad-azure-jun-21
