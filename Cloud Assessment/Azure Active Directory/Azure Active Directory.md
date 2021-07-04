@@ -102,3 +102,9 @@ Get-AzureADServicePrincipal -ObjectId <ObjectID> | Get-AzureADServicePrincipalOw
 Get-AzureADServicePrincipal -ObjectId <ObjectID> | Get-AzureADServicePrincipalCreatedObject
 Get-AzureADServicePrincipal -ObjectId <ObjectID> | GetAzureADServicePrincipalMembership |fl *
 ```
+
+
+### Reference 
+** https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/
+** https://docs.microsoft.com/en-us/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0
+** https://bootcamps.pentesteracademy.com/course/ad-azure-jun-21
