@@ -1,13 +1,13 @@
 
 
-### List-users
+### List-users Enumeration 
 To list IAM users for the current account
 ```
 aws iam list-users
 aws iam list-attached-user-policies --user-name soc_admin_1
 ```
 
-### IAM Group 
+### IAM Group Enumeration
 To list IAM group for the current account
 ```
 aws iam list-groups
@@ -16,7 +16,7 @@ aws iam list-group-policies --group-name group-name
 ```
 
 
-### IAM Role
+### IAM Role Enumeration
 To list IAM roles for the current account
 ```
 aws iam list-roles
@@ -25,7 +25,7 @@ aws iam list-role-policies --role-name role-name
 ```
 
 
-### policies
+### IAM  policies enumeration
 
 Lists all the managed policies that are available in your account, including your own customer-defined managed policies and all Amazon Web Services managed policies.
 ```
@@ -37,7 +37,7 @@ aws iam get-group-policy --group-name group-name --policy-name policy-name
 aws iam get-role-policy --role-name role-name --policy-name policy-name
 ```
 
-### S3 
+### S3 Basic Enumeration
 ```
 aws s3api list-buckets
 aws s3api get-bucket-acl --bucket Name
