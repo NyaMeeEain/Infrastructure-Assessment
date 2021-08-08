@@ -46,3 +46,6 @@ aws s3api get-public-access-block --bucket Name
 aws s3api list-objects --bucket Name
 aws s3api get-object-acl --bucket bucket-name --key object-name
 ```
+
+# Reference
+** https://docs.aws.amazon.com/cli/latest/index.html
