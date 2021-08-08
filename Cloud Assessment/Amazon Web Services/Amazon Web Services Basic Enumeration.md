@@ -36,7 +36,18 @@ aws iam get-user-policy --user-name user-name --policy-name policy-name
 aws iam get-group-policy --group-name group-name --policy-name policy-name
 aws iam get-role-policy --role-name role-name --policy-name policy-name
 ```
-
+### EC2Enumeration
+```
+aws ec2 describe-vpcs
+aws ec2 describe-subnets
+aws ec2 describe-route-tables
+aws ec2 describe-network-acls
+aws ec2 describe-vpc-peering-connections
+aws ec2 describe-instances
+aws ec2 describe-instances --instance-ids instance-id
+aws ec2 describe-instance-attribute –attribute userData --instance-id instance-id
+aws ec2 describe-iam-instance-profile-associations
+```
 ### S3 Basic Enumeration
 ```
 aws s3api list-buckets
