@@ -1,14 +1,19 @@
 
+
+### List-users
+To list IAM users for the current account
+
 aws iam list-users
 aws iam list-attached-user-policies --user-name soc_admin_1
 
-
+### IAM Group 
+To list IAM group for the current account
 aws iam list-groups
 aws iam list-attached-group-policies --group-name group-name
 aws iam list-group-policies --group-name group-name
 
 
-###IAM Role
+### IAM Role
 To list IAM roles for the current account
 aws iam list-roles
 aws iam list-attached-role-policies --role-name role-name
